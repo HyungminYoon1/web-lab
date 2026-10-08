@@ -68,6 +68,16 @@ export const projects = Object.freeze(catalog.map(project => Object.freeze({
   tags: Object.freeze(project.tags),
 })));
 
+export function countProjects(entries = projects) {
+  const counts = Object.fromEntries(categories.map(category => [category.id, 0]));
+  for (const project of entries) {
+    if (project.category === "all" || !Object.hasOwn(counts, project.category)) throw new RangeError("Unknown project category");
+    counts.all++;
+    counts[project.category]++;
+  }
+  return Object.freeze(counts);
+}
+
 export function selectProjects(category = "all") {
   if (!categories.some(item => item.id === category)) throw new RangeError("Unknown project category");
   return category === "all" ? [...projects] : projects.filter(project => project.category === category);

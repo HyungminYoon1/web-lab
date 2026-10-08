@@ -35,3 +35,12 @@
 - Rationale: direct selection, readable real imagery and keyboard/touch navigation without adding a framework. No-JavaScript links preserve access to all destinations.
 - Affected: dist/index.html, dist/styles.css, dist/src/app.js, test/catalog.test.js.
 - Review: validate 320px, phone and desktop layouts; verify image loading, category counts and all six dialog/link destinations.
+
+## D05 — Count-independent identity and catalog-derived totals
+
+- Context: the user expects more experiment/learning projects and explicitly requested removal of the fixed six-project title.
+- Options: repeatedly edit literal numbers; hide all totals; a stable title with catalog-derived totals.
+- Decision: use count-independent title, introduction and footer text. Calculate COLLECTION, accessible total and category button counts from the curated project list; preserve selected-result counting. No new services are implemented in this change.
+- Rationale: additions/removals cannot leave a stale total or category count. The static, manually reviewed catalog and deployment boundaries stay unchanged.
+- Affected: dist/index.html, dist/src/projects.js, dist/src/app.js, test/catalog.test.js, tools/check.mjs, README.md and architecture.md.
+- Review: test enlarged, reduced and empty catalog fixtures; verify browser counters and responsive layout. README and no-JavaScript links still need manual updates when actual services are added.

@@ -1,4 +1,4 @@
-import { getProject, selectProjects } from "./projects.js";
+import { countProjects, getProject, selectProjects } from "./projects.js";
 
 const grid = document.querySelector("#project-grid");
 const dialog = document.querySelector("#project-dialog");
@@ -89,6 +89,13 @@ dialog.addEventListener("close", () => {
   if (lastPreview?.isConnected) lastPreview.focus();
   lastPreview = null;
 });
+
+const counts = countProjects();
+const stamp = document.querySelector(".catalog-stamp");
+document.querySelector("#project-total").textContent = String(counts.all).padStart(2, "0");
+stamp.setAttribute("aria-label", `총 ${counts.all}개 프로젝트`);
+stamp.hidden = false;
+for (const button of filters.querySelectorAll("button")) button.querySelector("span").textContent = String(counts[button.dataset.filter]);
 
 render("all");
 filters.hidden = false;

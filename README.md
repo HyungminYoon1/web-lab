@@ -1,6 +1,6 @@
-# WEB LAB — 여섯 개의 웹 실험
+# WEB LAB — 브라우저 실험실
 
-감각 실험, 웹 요청 탐험, 문제은행과 세 가지 게임을 소개하는 독립적인 프로젝트 갤러리입니다.
+감각 실험, 웹 요청 탐험, 학습 도구와 게임을 소개하는 독립적인 프로젝트 갤러리입니다.
 
 - [갤러리](https://hyungminyoon1.github.io/web-lab/)
 - [구조](architecture.md) · [결정 기록](docs/decisions.md) · [검증 기록](docs/verification.md)
@@ -32,11 +32,13 @@ npm run check
 
 ## 내용 수정
 
-- dist/src/projects.js: 여섯 프로젝트의 소개, 기능, 구현 포인트와 링크.
+- dist/src/projects.js: 프로젝트의 소개, 기능, 구현 포인트와 링크. 전체 및 분류별 개수는 이 목록에서 계산합니다.
 - dist/assets/previews/: 프로젝트별 실제 화면 JPEG. 서비스의 이미지/코드는 이 저장소에 병합하지 않습니다.
 - dist/styles.css: 갤러리 레이아웃과 반응형 스타일.
 
 소개는 각 서비스의 README·architecture를 확인해 작성했습니다. 실제 화면은 기존 공개 사이트의 캡처를 재사용합니다. 보관된 이미지이며 서비스의 현재 상태나 접속 가능 여부를 실시간 측정하지 않습니다.
+
+새 프로젝트를 추가할 때는 프로젝트 메타데이터와 미리보기 이미지를 등록하고, 이 README의 표 및 index.html의 JavaScript 미사용 대체 링크도 함께 갱신합니다. 제목·소개·하단 문구에는 개수를 명시하지 않으며, 화면의 COLLECTION·분류 버튼·현재 표시된 프로젝트 개수는 실제 목록을 반영합니다.
 
 ## 데이터와 제작
 

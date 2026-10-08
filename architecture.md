@@ -2,13 +2,13 @@
 
 ## Scope and hosting
 
-Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the personal root repository and all six service repositories. Only this repository is changed or deployed. No Sites/Cloudflare manifest, backend, external API, identity, database or package runtime dependencies.
+Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the personal root repository and all linked service repositories. Only this repository is changed or deployed. No Sites/Cloudflare manifest, backend, external API, identity, database or package runtime dependencies.
 
 ## Layers
 
 - dist/index.html: Korean semantic shell, project navigation, no-JavaScript links, native preview dialog and public context.
 - dist/styles.css: dark catalog presentation, responsive layout, visible focus and reduced motion.
-- dist/src/projects.js: immutable, curated metadata and pure category/id selection. Six fixed, allowlisted services only.
+- dist/src/projects.js: immutable, curated metadata, pure category/id selection and total/category counts. Only manually reviewed, allowlisted public services; the catalog length is not fixed. This is not automatic repository discovery.
 - dist/src/app.js: DOM construction, category selection and native-dialog lifecycle. Text is assigned through textContent, not user-input HTML. Static data owns project URLs.
 - dist/assets/previews/: snapshots of the user's existing public sites, copied from verified local captures. No live iframe, autoplay, app execution or external image request.
 - tools/: loopback-only static preview and read-only integrity checks. Never deployed.
@@ -23,4 +23,4 @@ CSP metadata blocks app-initiated network connections, frame embeds and inline s
 
 Preview images are static snapshots, not live-status badges. Descriptions come from each service's README and architecture, with public HTTP/title checks. No fabricated uptime, user count, rating or global score is shown. Static images and descriptions are updated manually in this repository without editing the services.
 
-UTF-8 without BOM and CRLF for text. Images are binary. The gallery can be used without JavaScript through the six execution and source links.
+UTF-8 without BOM and CRLF for text. Images are binary. The gallery can be used without JavaScript through the maintained execution and source fallback links. Page titles and descriptive copy do not state a fixed catalog size; UI counts derive from the project catalog.

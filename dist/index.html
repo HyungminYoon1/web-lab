@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="감각 실험, 웹 요청 탐험, 수학·컴퓨터과학 문제은행과 세 가지 게임. 브라우저에서 직접 플레이하는 여섯 개의 웹 프로젝트를 만나보세요." />
+    <meta name="description" content="감각 실험, 웹 요청 탐험, 수학·컴퓨터과학 학습과 게임. 브라우저에서 직접 실험하고 배우고 플레이하는 웹 프로젝트를 만나보세요." />
     <meta name="theme-color" content="#171a21" />
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171a21'/%3E%3Cpath d='M6 9h4l3 13 3-9 3 9 3-13h4l-5 16h-4l-1-5-1 5h-4z' fill='%23d7ff53'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="styles.css" />
-    <title>WEB LAB — 여섯 개의 웹 실험</title>
+    <title>WEB LAB — 브라우저 실험실</title>
     <script type="module" src="src/app.js"></script>
   </head>
   <body>
@@ -25,21 +25,21 @@
       <section class="catalog-intro" aria-labelledby="page-title">
         <div>
           <p class="eyebrow">EXPERIMENTS / LEARNING / GAMES</p>
-          <h1 id="page-title">브라우저에서 여는<br />여섯 개의 실험.</h1>
+          <h1 id="page-title">브라우저에서 여는<br />웹 실험실.</h1>
           <p class="intro-copy">감각을 시험하고, 원리를 이해하고, 작은 세계를 움직여 보세요.</p>
         </div>
-        <div class="catalog-stamp" aria-label="총 여섯 개 프로젝트"><span>COLLECTION</span><strong>06</strong><span>각자 다른 방식으로, 직접 해보기.</span></div>
+        <div class="catalog-stamp" aria-label="프로젝트 모음" hidden><span>COLLECTION</span><strong id="project-total"></strong><span>각자 다른 방식으로, 직접 해보기.</span></div>
       </section>
       <section id="projects" class="catalog" aria-labelledby="catalog-title">
         <div class="catalog-toolbar">
           <h2 id="catalog-title">프로젝트</h2>
           <div class="filters" role="group" aria-label="프로젝트 분류" hidden>
-            <button type="button" data-filter="all" aria-pressed="true">전체 <span>6</span></button>
-            <button type="button" data-filter="experiment" aria-pressed="false">실험 <span>2</span></button>
-            <button type="button" data-filter="learning" aria-pressed="false">학습 <span>1</span></button>
-            <button type="button" data-filter="game" aria-pressed="false">게임 <span>3</span></button>
+            <button type="button" data-filter="all" aria-pressed="true">전체 <span></span></button>
+            <button type="button" data-filter="experiment" aria-pressed="false">실험 <span></span></button>
+            <button type="button" data-filter="learning" aria-pressed="false">학습 <span></span></button>
+            <button type="button" data-filter="game" aria-pressed="false">게임 <span></span></button>
           </div>
-          <p class="result-count" id="result-count" aria-live="polite" aria-atomic="true">6개 프로젝트</p>
+          <p class="result-count" id="result-count" aria-live="polite" aria-atomic="true">프로젝트 목록</p>
         </div>
         <div class="project-grid" id="project-grid"></div>
         <noscript>
@@ -59,13 +59,13 @@
       <section class="about" id="about" aria-labelledby="about-title">
         <div><p class="eyebrow">BEHIND THE LAB</p><h2 id="about-title">결과도, 만드는 방식도<br />열려 있습니다.</h2></div>
         <div class="about-copy">
-          <p>실험 두 개, 학습 도구 하나, 게임 세 개. 서로 다른 질문에서 출발한 여섯 프로젝트를 한곳에 모았습니다. 각 소개에서 주요 기능과 구현 포인트를 살펴보고, 실제 사이트와 코드를 함께 열어볼 수 있습니다.</p>
+          <p>실험, 학습 도구, 게임. 서로 다른 질문에서 출발한 프로젝트를 한곳에 모았습니다. 각 소개에서 주요 기능과 구현 포인트를 살펴보고, 실제 사이트와 코드를 함께 열어볼 수 있습니다.</p>
           <p>HTML, CSS, JavaScript와 브라우저 API로 만들고 GitHub Pages로 공개했습니다. AI 에이전트와 함께 기획·구현·검증한 프로젝트이며, 각각 독립된 저장소에서 관리합니다.</p>
           <p class="about-note">미리보기는 실제 실행 화면의 캡처입니다. 이 갤러리는 소리를 재생하거나 게임을 자동 실행하지 않으며, 방문 기록을 별도로 수집하거나 저장하지 않습니다.</p>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><span>WEB LAB / SIX SMALL WORLDS</span><span>HTML · CSS · JavaScript · GitHub Pages</span></footer>
+    <footer class="site-footer"><span>WEB LAB / SMALL WORLDS</span><span>HTML · CSS · JavaScript · GitHub Pages</span></footer>
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
       <div class="dialog-top"><p class="eyebrow" id="dialog-category"></p><button class="dialog-close" id="dialog-close" type="button" aria-label="미리보기 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button></div>
       <div class="dialog-body">

@@ -36,4 +36,4 @@ for (const filename of ["index.html", "styles.css", "src/app.js", "src/projects.
   const buffer = await readFile(resolve(root, filename));
   assert(!(buffer[0] === 0xef && buffer[1] === 0xbb && buffer[2] === 0xbf), `UTF-8 BOM: ${filename}`);
 }
-console.log(`PASS: ${count} public files, 6 JPEG previews, syntax, local references, CSP and no app storage/network.`);
+console.log(`PASS: ${count} public files, ${projects.length} JPEG previews, syntax, local references, CSP and no app storage/network.`);
