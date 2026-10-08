@@ -44,3 +44,12 @@
 - Rationale: additions/removals cannot leave a stale total or category count. The static, manually reviewed catalog and deployment boundaries stay unchanged.
 - Affected: dist/index.html, dist/src/projects.js, dist/src/app.js, test/catalog.test.js, tools/check.mjs, README.md and architecture.md.
 - Review: test enlarged, reduced and empty catalog fixtures; verify browser counters and responsive layout. README and no-JavaScript links still need manual updates when actual services are added.
+
+## D06 — 독립 실험·학습 도구 확장
+
+- Context: 사용자가 제안된 이미지·군집·교통·논리회로·길찾기·통계 도구의 전체 구현을 승인했습니다.
+- Options: 기존 서비스에 병합; 백엔드/유료 호스팅 추가; 독립 정적 서비스와 검토된 갤러리 항목 추가.
+- Decision: pixel-kitchen, swarm-garden, traffic-lab, logic-foundry, route-race, data-mirage를 독립 공개 저장소와 GitHub Pages로 배포합니다. 갤러리에는 소개·실제 화면·실행·코드 링크만 등록하고 실행은 사용자의 선택에 맡깁니다.
+- Rationale: 기존 릴리스를 보존하고 계산 모델·UI·검증을 분리하며 사진이나 방문자 정보의 서버 저장을 추가하지 않습니다. 제목은 개수와 무관하게 유지하고 표시 개수는 실제 카탈로그에서 계산합니다.
+- Affected: dist/src/projects.js, dist/assets/previews, dist/index.html, README.md, docs/verification.md 및 독립 저장소의 architecture.md/decisions.md.
+- Review: 이 변경의 실제 목록은 실험5·학습4·게임3입니다. 이 수치는 기록이며 UI 상수가 아닙니다. 새 파일 입력·영구 저장·서버 기능을 추가할 때는 별도 경계 검토가 필요합니다.
