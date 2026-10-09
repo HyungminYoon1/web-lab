@@ -1,11 +1,13 @@
 # Verification record
 
-## ORBIT COURIER 임무 안내 갱신 — 2026-10-09 / LOCAL
+## ORBIT COURIER 임무 안내 갱신 — 2026-10-09 / LOCAL + REMOTE_CI + LIVE
 
 - VERIFIED: 해당 앱의 임무·목표·힌트·실제 화면과 WEB LAB의 구조/README·해당 소개·카탈로그 시험. '배송'을 '정거장 도착'으로 바꾸고 해당 소개만 쉬운 한국어로 수정했습니다. 다른 앱의 소개와 이미지·공개 랭킹 설정은 변경하지 않습니다.
 - LOCAL_TEST: Orbit35/35·갤러리13/13 및 두 정적 검사 PASS. 192개 동일 입력의 전후 모델 비교에서 수치 규칙·성공/실패·궤적·점수 동일. 여섯 임무를 참고 계획으로 실제 완료하고 각 조준/결과320/390px, 코드·임무 복원, 관찰한 pageerror0·실행 네트워크0을 확인했습니다.
 - PREVIEW: 실제1440×1000의 3번 정거장 임무 화면을 JPEG로 갱신하며 나머지14개 미리보기는 보존합니다. 이미지 생성/목업이 아닙니다.
-- PARTIAL: 저장소 전체 재감사·다른 서비스 구현 변경·물리 기기·독립 초심자 이해도 평가는 수행하지 않았습니다. 로컬 시험과 원격 CI/공개 반영은 구분하고 배포 뒤 따로 확인합니다.
+- REMOTE_CI: 갤러리10d342a6d619fcd0246f750d3a5e980e301bc212 [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37907846367), Orbitc6427b98db8211fca91986d2317874cb7665bc07 [verify/deploy PASS](https://github.com/HyungminYoon1/orbit-courier/actions/runs/37907843872). 정상 fast-forward로 게시했습니다.
+- LIVE_FILES / BROWSER: 2026-10-09 17:56 KST, 두 공개 사이트29/29 파일 HTTP200·SHA-256 일치. 공개 Orbit에서 기본 실패·여섯 임무 실제 성공·설명/수치·힌트·결과·새로고침 복원 확인. 각 조준/결과390/320px 가로 넘침·관찰한 pageerror/실행 네트워크 없음. 공개 갤러리의 해당 소개·실제 JPEG 디코딩·1440/390/320px 확인. 콘솔 오류/경고0.
+- PARTIAL: 저장소 전체 재감사·다른 서비스 구현 변경·물리 기기·독립 초심자 이해도 평가는 수행하지 않았습니다. 후속 검증 문서 커밋은 dist를 변경하지 않으며 해당 워크플로는 [Actions 이력](https://github.com/HyungminYoon1/web-lab/actions)에서 구분합니다.
 
 ## 전체 보완본 공개 배포 — 2026-10-09 / REMOTE_CI + LIVE
 
