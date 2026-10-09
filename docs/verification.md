@@ -1,5 +1,14 @@
 # Verification record
 
+## 실험실 소개 보완 — 2026-10-09 / LOCAL
+
+- VERIFIED: WEB LAB의 architecture·README·정적 HTML/CSS·앵커/소개창 흐름·관련 테스트와 배포 도구/워크플로. SENSE LAB의 architecture·README·패턴 영역·experiments.js를 읽어 패턴 생성/PNG 내보내기 기능을 확인했습니다.
+- Scope: #about에 사이트 목적·세 분류·실행 방법을 추가하고 320px 헤더에서 소개 메뉴를 유지합니다. 부드러운 긴 스크롤 대신 기본 앵커로 즉시 이동합니다. SENSE LAB·다른 앱·카탈로그·미리보기15개·공개 랭킹 서버는 변경하지 않았습니다. 화학 앱은 구성 검토 후 제작이라는 사용자 답변에 따라 제안 단계입니다.
+- LOCAL_TEST: 갤러리14/14·정적 검사 PASS. 공개 파일20개와 기존 JPEG15개, CSP·자산·문법·요약 읽기 전용 경계를 검사했습니다.
+- BROWSER_LOCAL: headless Chromium의1440/390/320px에서 메뉴 클릭과 직접 #about 주소6개, 소개창 Escape/포커스 복귀 후 키보드 Enter, reduced-motion, 320px 자바스크립트 비활성 상태 등9개 흐름 PASS. 제목과 본문 표시·올바른 hash·닫힌 소개창·문서 가로 넘침 없음, 관찰한 페이지/콘솔 오류·경고와 fetch/XHR/WebSocket0. 실제 화면 캡처와 QA 스크립트는 공개 dist 밖 output/playwright/about-20261009에 있습니다.
+- QA distinction: 처음에는 스크롤 애니메이션 도중의 이동 경합과 자바스크립트 비활성 페이지 내부 대기 도구 때문에 조기 실패했습니다. 긴 스크롤을 제거하고 QA는 격리된 컨텍스트/호스트의 상태 확인으로 수정한 뒤9개 전체 흐름을 다시 확인했습니다. 페이지 상태나 성공 결과를 주입하지 않았습니다.
+- PARTIAL: 연결 앱의 전체 재검증이나 음감/색각 테스트 구현은 이번 범위가 아닙니다. 물리 기기·다른 브라우저 엔진·독립 스크린리더 검증은 NOT_RUN입니다. 위 내용은 게시 전 로컬 증거이며 공개 배포는 별도로 확인합니다.
+
 ## ORBIT COURIER 임무 안내 갱신 — 2026-10-09 / LOCAL + REMOTE_CI + LIVE
 
 - VERIFIED: 해당 앱의 임무·목표·힌트·실제 화면과 WEB LAB의 구조/README·해당 소개·카탈로그 시험. '배송'을 '정거장 도착'으로 바꾸고 해당 소개만 쉬운 한국어로 수정했습니다. 다른 앱의 소개와 이미지·공개 랭킹 설정은 변경하지 않습니다.
