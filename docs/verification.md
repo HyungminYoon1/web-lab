@@ -1,5 +1,14 @@
 # Verification record
 
+## 2026-10-10 화학·창작 확장 — REMOTE_CI / LIVE
+
+- 구현 커밋 `6b119e445c65949ba5d39d4cc023f8f3bef5e96e`의 [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37948108174). 원격 origin을 확인한 뒤 정상 fast-forward로 게시했습니다.
+- LIVE HTTP: `dist` 파일 24개 모두 HTTP200, 로컬 검증본과 SHA256 일치. 여섯 앱 총151개 일치. 최초 WEB LAB 확인은 배포 진행 중 이전 파일을 읽었고, CI 완료 후 전체 재검사로 일치했습니다.
+- LIVE BROWSER: 공개 카탈로그19개, 창작 필터3개, MIDI 검색1개, 소개창19개와 이미지 디코딩·실행 링크·Escape 닫기, 소개4분류 확인. 1440/390/320px 넘침·관찰한 페이지 예외·실패 자산 응답0. 실제 5개 새 미리보기 반영. 새 앱과 갤러리의 공유 완료 요약 변경0.
+- 이 기록 추가는 docs만 변경합니다. 물리 펜·스피커·모든 기기/브라우저·과학 원문 전체의 전문가 검증·외부 편집기 호환성은 이번 LIVE 증거에 포함하지 않습니다.
+
+
+
 ## 2026-10-09 화학 학습·창작 앱과 음높이 테스트 — LOCAL
 
 - 한 에이전트가 순차 구현했습니다. 새 독립 저장소 element-atlas/draw-desk/score-lab/clay-room과 기존 sense-lab, web-lab만 변경하며 기존 게임·랭킹 API·대표 사이트는 변경하지 않습니다.
