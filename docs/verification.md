@@ -5,7 +5,30 @@
 - Authorization: 사용자가 로컬 검토 이후 기존 개편본의 공개 배포를 명시적으로 승인했습니다. 이전 LOCAL ONLY 절은 승인 전 작업 단계의 기록이며, 아래 단계가 그 제한을 해제합니다.
 - VERIFIED: 13개 저장소의 architecture.md·README.md·package.json·.gitattributes·Pages 워크플로를 읽었습니다. 각 origin은 HyungminYoon1의 해당 저장소이며 원격 main과 작업 전 HEAD가 일치하고, Pages source는 workflow입니다. 모든 저장소의 커밋 신원은 GitHub noreply입니다.
 - LOCAL: 승인 후 285/285 테스트와 13개 정적 검사를 재실행해 통과했습니다. 변경 텍스트 UTF-8 without BOM/CRLF·git diff --check 통과, 검사한 자격 증명 패턴 일치0·환경 파일0.
-- DEPLOYMENT_PENDING: 이 절을 작성한 시점에는 커밋·푸시·원격 CI·공개 검증을 아직 수행하지 않았습니다. 실제 커밋·Actions·HTTP 파일 해시·LIVE 브라우저 결과는 완료 뒤 이 절에 기록합니다.
+- REMOTE_CI: 아래 13개 구현 커밋에서 verify/deploy 작업을 각각 조회해 모두 completed/success를 확인했습니다. 정상 fast-forward 푸시만 사용했고 배포 대상은 기존 dist입니다.
+
+| 저장소 | 공개 검증한 구현 커밋 | 원격 CI | 공개 파일 |
+| --- | --- | --- | --- |
+| web-lab | a46cfb844dd55bd09fabf940a532c995ad5c91aa | [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37877689760) | 16/16 HTTP200·SHA-256 일치 |
+| think-forge | 632c796f2db6a5eae33d0a33bcf26b2ac113e4b2 | [verify/deploy PASS](https://github.com/HyungminYoon1/think-forge/actions/runs/37877659364) | 12/12 HTTP200·SHA-256 일치 |
+| light-route | 9d943db310a3e26e522f8996415add9b9514bfb2 | [verify/deploy PASS](https://github.com/HyungminYoon1/light-route/actions/runs/37877657040) | 6/6 HTTP200·SHA-256 일치 |
+| orbit-courier | c1f7701bc5853b4e71ea581c45d09417c125aece | [verify/deploy PASS](https://github.com/HyungminYoon1/orbit-courier/actions/runs/37877660980) | 6/6 HTTP200·SHA-256 일치 |
+| pocket-city | 1c306344cacb74d2eaf28ba53fa1666d50cf4277 | [verify/deploy PASS](https://github.com/HyungminYoon1/pocket-city/actions/runs/37877658208) | 6/6 HTTP200·SHA-256 일치 |
+| sense-lab | 12e4bfc05206f6ddcc43cc16a40ed114dec04a9d | [verify/deploy PASS](https://github.com/HyungminYoon1/sense-lab/actions/runs/37877662176) | 7/7 HTTP200·SHA-256 일치 |
+| packet-journey | 3983173b79135cd1d5f35e8e24da03b9e98a14e4 | [verify/deploy PASS](https://github.com/HyungminYoon1/packet-journey/actions/runs/37877663550) | 5/5 HTTP200·SHA-256 일치 |
+| pixel-kitchen | 709d460f2168ddadd437f74599e1146f14dc5683 | [verify/deploy PASS](https://github.com/HyungminYoon1/pixel-kitchen/actions/runs/37877665367) | 6/6 HTTP200·SHA-256 일치 |
+| swarm-garden | 1d3d2456c0423d338c42462ff5965eeeda880d2a | [verify/deploy PASS](https://github.com/HyungminYoon1/swarm-garden/actions/runs/37877668184) | 6/6 HTTP200·SHA-256 일치 |
+| traffic-lab | d2866ef702e1af7165e6610f8c12a0a5a35f15e3 | [verify/deploy PASS](https://github.com/HyungminYoon1/traffic-lab/actions/runs/37877669243) | 6/6 HTTP200·SHA-256 일치 |
+| logic-foundry | 0a9c772e1a86f784f9601718b6fe41247a49d460 | [verify/deploy PASS](https://github.com/HyungminYoon1/logic-foundry/actions/runs/37877666772) | 5/5 HTTP200·SHA-256 일치 |
+| route-race | b51b967c876dbe842ed2683d02f952cd86f4ea29 | [verify/deploy PASS](https://github.com/HyungminYoon1/route-race/actions/runs/37877670796) | 5/5 HTTP200·SHA-256 일치 |
+| data-mirage | fa094076bc50768f0da78eb456316301fa9b89b7 | [verify/deploy PASS](https://github.com/HyungminYoon1/data-mirage/actions/runs/37877672840) | 8/8 HTTP200·SHA-256 일치 |
+
+- LIVE_FILES: 2026-10-09 12:10 KST, 13개 사이트의 dist 전체 **94/94** 파일이 직접 공개 URL에서 HTTP200을 반환했고 로컬 SHA-256과 일치했습니다. HTML·CSS·모듈·라이선스 페이지·아이콘·JPEG를 포함합니다. 첫 검증 도구의 Response.status 호출 오류는 QA 도구에서 고치고 전부 다시 검사했으며 서비스 오류가 아니었습니다.
+- LIVE_BOOT: 실제 공개 URL의 headless Chromium 초기 실행 13개를 확인했습니다. 1440×1000 및 320×780 화면 에뮬레이션에서 문서 가로 넘침·LOCAL PREVIEW 표시가 없었고, 관찰한 초기 로드의 콘솔 경고/오류·다른 origin HTTP 요청은 없었습니다.
+- LIVE_GALLERY: 12개 소개창의 공개 실행/소스 링크와 실제 이미지 로드, 기능 검색·분류 결합·빈 결과·선택 도우미·Escape 포커스 복귀를 확인했습니다.
+- LIVE_GAMEPLAY: THINK FORGE 기본 난이도4·MIT 출처/원문/해설/라이선스·동치 분수72/250 및 CS 답안20; LIGHT ROUTE의 실제 SVG 대각선·18단계·힌트를 사용한 마지막 단계 완료; ORBIT COURIER의 참고 발사 계획에 따른 6개 실제 성공 비행·예약 분사·예상과 실행 횟수 구분을 확인했습니다. 나머지 서비스의 전체 플레이는 별도 BROWSER_LOCAL 기록이며 이번 LIVE 실행은 초기 화면 검사입니다.
+- QA_ARTIFACTS_LOCAL: 공개 dist 밖의 ../output/playwright/publish-20261009에 HTTP 해시/boot/gallery/flow QA 스크립트와 실제 공개 스크린샷을 보관했습니다. Playwright CLI의 다중 h1 검사도 첫 제목 기준으로 수정 후 전체 초기 화면 검사를 재실행했습니다. 이 도구 수정은 공개 서비스 코드를 바꾸지 않았습니다.
+- Documentation follow-up: 이 결과를 적는 후속 문서 커밋은 dist를 변경하지 않습니다. 해당 문서 커밋의 워크플로는 Actions 이력에서 별도로 확인합니다. 신규 게임 구현·서버/DB/랭킹·개인 대표 사이트 변경은 없습니다.
 - PARTIAL: 선택한 구현/테스트·공개 파일 검증이며 모든 줄의 독립 재감사·모든 생성 시드 전수 플레이는 아닙니다. 물리적 모바일·청력·실제 도로/우주 관측·스크린리더는 NOT_RUN입니다.
 - Scope: 개인 대표 사이트, 무관한 저장소·개인 파일은 수정하지 않습니다. 새 게임은 아이디어 단계이며 구현하지 않았습니다.
 
