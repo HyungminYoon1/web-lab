@@ -1,5 +1,42 @@
 # Verification record
 
+## 전체 보완본 공개 배포 — 2026-10-09 / REMOTE_CI + LIVE
+
+- Authorization: 사용자 승인 범위인 전체 앱 보완·문구 정리·미리보기 갱신·무료 서버 구축과 선택적 공개 랭킹을 구현하고 정상 fast-forward로 게시했습니다. 개인 대표 사이트·무관한 파일·유료 요금제를 변경하지 않았습니다.
+- REMOTE_CI: 아래 17개 구현 커밋의 워크플로가 completed/success입니다. 정적 사이트 16개는 verify/deploy, API 저장소는 check입니다. GitHub의 API 소스 검증은 Worker 배포 증거가 아니며 실제 Worker 버전과 HTTP/SQLite 검증은 별도로 기록합니다.
+
+| 저장소 | 공개 검증한 구현 커밋 | 원격 CI | 공개 파일 |
+| --- | --- | --- | --- |
+| web-lab | 3aca7555e3c908dc7207c52594862092547eb459 | [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37902067174) | 20/20 HTTP200·SHA-256 일치 |
+| echo-vault | 94a47ba8b999a26ce5b6cd8cd261bfaa0e8b327d | [verify/deploy PASS](https://github.com/HyungminYoon1/echo-vault/actions/runs/37901872816) | 10/10 HTTP200·SHA-256 일치 |
+| parcel-panic | 4390a004db55be9fe6db99e073b10133267d98fd | [verify/deploy PASS](https://github.com/HyungminYoon1/parcel-panic/actions/runs/37901872838) | 15/15 HTTP200·SHA-256 일치 |
+| neon-tactics | fbec5cae1381d6e3b519ed1ca7d8b1df41a6da12 | [verify/deploy PASS](https://github.com/HyungminYoon1/neon-tactics/actions/runs/37901872568) | 14/14 HTTP200·SHA-256 일치 |
+| sense-lab | 9fe8e0de912e020b7f423b847c2480bf383ebbc0 | [verify/deploy PASS](https://github.com/HyungminYoon1/sense-lab/actions/runs/37902042834) | 11/11 HTTP200·SHA-256 일치 |
+| packet-journey | 7c6c26d02b217fd0e26d398615c3fe7c54add741 | [verify/deploy PASS](https://github.com/HyungminYoon1/packet-journey/actions/runs/37901880470) | 7/7 HTTP200·SHA-256 일치 |
+| think-forge | fdf3d071e3fd596d1c2a872d069ac762f08f0a9c | [verify/deploy PASS](https://github.com/HyungminYoon1/think-forge/actions/runs/37901881482) | 15/15 HTTP200·SHA-256 일치 |
+| orbit-courier | 04a410ee884c685cab8d6204d9f33d0073bca19a | [verify/deploy PASS](https://github.com/HyungminYoon1/orbit-courier/actions/runs/37902042664) | 9/9 HTTP200·SHA-256 일치 |
+| light-route | b6af395ff035d7f29979b91ca5c39bea87282082 | [verify/deploy PASS](https://github.com/HyungminYoon1/light-route/actions/runs/37902042781) | 9/9 HTTP200·SHA-256 일치 |
+| pocket-city | 21df1274c549d8ee1c62632f34f9677bf84fd683 | [verify/deploy PASS](https://github.com/HyungminYoon1/pocket-city/actions/runs/37902049418) | 9/9 HTTP200·SHA-256 일치 |
+| pixel-kitchen | 4011917fcd29bc1996ba3cb3b758d9f1a4aa3704 | [verify/deploy PASS](https://github.com/HyungminYoon1/pixel-kitchen/actions/runs/37902050078) | 8/8 HTTP200·SHA-256 일치 |
+| swarm-garden | ae3a8c494b7b96f2dfaacfd06934e48aeba3d84f | [verify/deploy PASS](https://github.com/HyungminYoon1/swarm-garden/actions/runs/37902051522) | 9/9 HTTP200·SHA-256 일치 |
+| traffic-lab | 35da8f490384bde1176091ef44a5a7cbf9c2d697 | [verify/deploy PASS](https://github.com/HyungminYoon1/traffic-lab/actions/runs/37902056910) | 9/9 HTTP200·SHA-256 일치 |
+| logic-foundry | 54b263c5c7cab737d62933963bb76c7395d0e3f9 | [verify/deploy PASS](https://github.com/HyungminYoon1/logic-foundry/actions/runs/37902057884) | 9/9 HTTP200·SHA-256 일치 |
+| route-race | a676934bf0750fd36827986df2fd25877999dbbd | [verify/deploy PASS](https://github.com/HyungminYoon1/route-race/actions/runs/37902058004) | 8/8 HTTP200·SHA-256 일치 |
+| data-mirage | d4535d1b89dc08ed5314e87c31969e23ce7fc5da | [verify/deploy PASS](https://github.com/HyungminYoon1/data-mirage/actions/runs/37902064158) | 12/12 HTTP200·SHA-256 일치 |
+| web-lab-ranking | 775a933a50263e2f8efbf1e6cec2ae6d87426ba0 | [check PASS](https://github.com/HyungminYoon1/web-lab-ranking/actions/runs/37902068531) | 별도 Worker API / LIVE 아래 |
+
+- LIVE_FILES: 2026-10-09 17:01 KST, 16개 공개 사이트의 dist 전체 174/174 파일이 직접 공개 URL에서 HTTP200을 반환했고 검증한 로컬 SHA-256과 일치했습니다. 갤러리의 실제 새 미리보기 JPEG 15개를 포함합니다.
+- LIVE_INITIAL: headless Chromium, 1440×1000 / 390×900 / 320×900에서 16개 공개 사이트를 확인했습니다. 문서 가로 넘침·관찰한 페이지/콘솔 오류 없음. 최초 fetch/XHR/WebSocket은 각 사이트 0입니다. 이 검사는 모든 게임의 완주나 물리 기기 검증이 아닙니다.
+- LIVE_GALLERY: 공개 갤러리의 15개 이미지 정상 디코딩, 320px 소개창·닫기·가로 넘침 없음, 변경된 랭킹 안내를 확인했습니다. 검색/필터/진행 요약·탭 간 기록 격리는 아래 LOCAL 상세 검증과 구분합니다.
+- LIVE_BROWSER_AND_LIVE_SQLITE_API: 실제 공개 PARCEL PANIC 계약14와 NEON TACTICS 임무16을 정상 설비/회전/키보드/명령 확인으로 완료했습니다. 서버 검증 점수는 각각1457/4280입니다. 사용자의 명시적 시작·등록·조회·인증 삭제 흐름 PASS; 완료창을 닫아도 재생 기록이 유지되고 320px에서 등록·삭제 가능합니다. 390/320px 문서 가로 넘침·관찰한 오류 없음. API 요청10개는 모두 승인된 정확한 Worker origin이며 다른 origin 요청0. 두 공개 보드에서 QA 기록 삭제를 확인했습니다.
+- QA distinction: 첫 공개 검증 도구는 등록 상태 문구 직후 비동기 보드 조회를 기다리지 않아 조기 실패했습니다. 이미 등록된 QA 기록을 실제 인증 삭제로 제거하고 도구에서 보드 응답을 기다린 뒤 두 게임 전체 흐름을 다시 실행해 PASS를 확인했습니다. 앱 코드는 이 도구 수정으로 변경하지 않았습니다. 자격 증명/요청 본문은 로그에 남기지 않았습니다.
+- RANKING_SCOPE: 고정된 최종 두 과제만 공개 경쟁입니다. 서버가 입력을 재실행하며 클라이언트 점수는 받지 않습니다. 같은 성과는 같은 순위이고 등록 시각/기기 속도/현실 시간이 점수에 영향을 주지 않습니다. 다른 13개 앱의 기록은 공개하지 않습니다. 인간만 플레이하거나 한 사람당 하나의 신원임을 보장하지는 않습니다.
+- FREE_BACKEND: Workers Free + SQLite Durable Object, 실제 공개 API/DB 동작 확인. 유료 전환·카드 등록·Neon/D1·배포 비밀값 게시 없음. 무료 한도와 별도 요청/저장 상한을 넘으면 거절합니다. provider 전체 계정의 과금/사용량을 제어하는 장치는 아닙니다. [API 구조·제한·삭제 정책·LIVE 증거](https://github.com/HyungminYoon1/web-lab-ranking).
+- LOCAL / PREVIEWS / COPY: 아래 통합 기록의 622개 Node 집계·15개 선택 브라우저 흐름·새 실제 캡처15개·간결한 공개 문구가 이 구현 커밋에 포함됩니다. 필수 조작·통계/단위·출처/라이선스·음향 주의·선택적 공개 기록 설명은 유지합니다.
+- Evidence boundary: 모든 생성 문제/스테이지의 브라우저 전수 완주, 독립적인 인간의 재미/극고난도 평가, 물리적 모바일/음향, 프로바이더 CPU·부하/남용 검사는 NOT_RUN입니다. 초기 화면 검사와 서버 재생을 이러한 증거로 바꾸어 설명하지 않습니다.
+- Documentation follow-up: 이 공개 검증 기록을 추가하는 후속 문서 커밋은 dist와 Worker 구현을 변경하지 않습니다. 후속 CI는 [WEB LAB Actions](https://github.com/HyungminYoon1/web-lab/actions), [API Actions](https://github.com/HyungminYoon1/web-lab-ranking/actions)에서 구분합니다. 아래 게시 전 snapshot과 과거 배포 기록은 해당 시점의 증거로 보존합니다.
+
+
 ## 전체 앱 보완과 선택적 공개 랭킹 — 2026-10-09
 
 ### 범위
