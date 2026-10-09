@@ -1,5 +1,30 @@
 # Verification record
 
+## 세 독립 게임 공개 배포 — 2026-10-09 / REMOTE_CI + LIVE
+
+- Authorization: 사용자의 “검증 후 바로 공개” 승인에 따라 세 게임을 각각 새 공개 저장소로 만들고 GitHub Pages에 배포했습니다. WEB LAB에는 새 소개 3개와 실제 플레이 화면 JPEG 3개를 추가했습니다. 정상 fast-forward 푸시만 사용했습니다.
+- VERIFIED sources: 세 게임의 권위 문서·전체 구현·캠페인·테스트·도구·워크플로와 WEB LAB의 변경 소개·문서·대체 링크·분류/검색·새 캡처. 기존 12개 서비스와 개인 대표 사이트는 이번 구현에서 변경하지 않았습니다. .env 내용과 무관한 개인 파일은 NOT_INSPECTED입니다.
+- LOCAL_TEST: 세 게임 20+23+23, WEB LAB 9 = **75/75 PASS**. 게임마다 12개, 총 36개 저작 스테이지의 실제 모델 해답을 실행했으며 경계·실패·연쇄·마감·되돌리기 규칙도 테스트했습니다. 이는 모든 캠페인의 사람 체감 난이도 인증이 아닙니다.
+- REMOTE_CI: 아래 구현 커밋의 verify와 deploy를 각각 조회해 모두 completed/success를 확인했습니다. 공개 파일과 검증된 구현 커밋의 대응을 기록합니다.
+
+| 저장소 | 공개 검증한 구현 커밋 | 원격 CI | 공개 파일 |
+| --- | --- | --- | --- |
+| echo-vault | ea7e13e7585aa800070fa48fbdad5e1a07a460c5 | [verify/deploy PASS](https://github.com/HyungminYoon1/echo-vault/actions/runs/37885456630) | 7/7 HTTP200·SHA-256 일치 |
+| parcel-panic | c1f321159038be5fbd4156d21009646238940b11 | [verify/deploy PASS](https://github.com/HyungminYoon1/parcel-panic/actions/runs/37885457598) | 7/7 HTTP200·SHA-256 일치 |
+| neon-tactics | f277ad3a181098fa662ff07e0431564f639e520e | [verify/deploy PASS](https://github.com/HyungminYoon1/neon-tactics/actions/runs/37885454614) | 7/7 HTTP200·SHA-256 일치 |
+| web-lab | 32e7cfd4c12c0329ecf5932bcde2790e81693056 | [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37885658536) | 19/19 HTTP200·SHA-256 일치 |
+
+- LIVE_FILES: 2026-10-09 13:51 KST, 네 공개 사이트의 dist 전체 **40/40** 파일이 직접 공개 URL에서 HTTP200을 반환했고 로컬 SHA-256과 일치했습니다. HTML·CSS·모듈·아이콘과 갤러리 JPEG 15개를 포함합니다.
+- LIVE_GAMEPLAY: 13:55–13:58 KST, headless Chromium에서 게임마다 1/7/12를 일반 키보드·팔레트·Canvas 클릭·명령 확인으로 실제 완료했습니다. ECHO VAULT 점수 2490/1810/1770, PARCEL PANIC 출고 12/24/29개 및 완료 69/69/79박자, NEON TACTICS 점수 5900/5160/4280 및 전력 12/12를 확인했습니다. 앱 상태 주입이나 가짜 시계로 만든 성공이 아닙니다.
+- LIVE_CONTROLS: 금고의 이동·되돌리기·힌트 비용 유지·실시간 시작/정지, 물류의 설비 취소/복구·실시간 가동/정지·운행 리셋, 전술의 키보드 기술·AP 복구·적 턴 취소·미확정 명령 보호·리셋을 확인했습니다.
+- LIVE_GALLERY: 총 15개/게임 6개, 새 소개 3개의 실제 이미지·공개 실행·소스 링크, 검색/분류 결합을 확인했습니다. 소개는 게임을 자동 실행하지 않습니다.
+- LIVE_RESPONSIVE: 네 사이트의 390×900/320×900 화면 에뮬레이션과 조작을 확인했습니다. 문서 가로 넘침 없음. 각 게임의 320px 실제 1번 스테이지 성공 카드가 화면 안에 들어오는 것은 아래 BROWSER_LOCAL 기록에서 별도로 확인했습니다.
+- LIVE_OBSERVED: 관찰한 공개 플레이/갤러리 실행에서 pageerror·콘솔 경고/오류·다른 origin HTTP 요청은 0입니다. 이 관찰이 모든 방문 세션의 무결성을 입증하지는 않습니다.
+- PARTIAL / NOT_RUN: 브라우저 완주는 선택한 9개 스테이지이며 나머지는 모델 해답입니다. 물리적 모바일·모든 브라우저 엔진·스크린리더·독립된 사람의 재미/난도 평가는 NOT_RUN입니다. headless의 실제 탭 숨김 전환은 NOT_OBSERVED; 합성 blur 핸들러 검증은 LOCAL이며 실제 백그라운드 전환 증거로 간주하지 않습니다.
+- QA_ARTIFACTS_LOCAL: 공개 dist 밖의 ../output/playwright/three-games-20261009에 실제 UI QA 스크립트·공개 스크린샷·live-evidence.json·HTTP 해시 검증 도구를 보관했습니다. 공개 Pages에는 앱의 전체 자동 해답을 배포하지 않고 개발용 모델 해답은 저장소의 dist 밖에 분리했습니다.
+- Scope / storage: 세 게임은 정적 ESM·순수 모델·별도 UI/Canvas 렌더링 구조입니다. 서버/DB/전체 사용자 랭킹·쿠키/분석·자동 소리는 추가하지 않았습니다. 진행과 최고점은 현재 페이지의 메모리에만 남으며 새로고침하면 초기화됩니다.
+- Documentation follow-up: 이 결과를 적는 후속 문서 커밋은 dist를 변경하지 않습니다. 해당 문서 커밋의 verify/deploy는 [WEB LAB Actions 이력](https://github.com/HyungminYoon1/web-lab/actions)에서 별도로 확인합니다. 아래 LOCAL snapshot과 이전 개편 배포 기록은 해당 시점의 과거 증거로 보존합니다.
+
 ## 세 독립 게임 — 2026-10-09 / LOCAL snapshot before publication
 
 - Authorization: 사용자가 높은 난도와 실제 게임 같은 화면의 세 게임 구현 및 “검증 후 바로 공개”를 승인했습니다. 이전 절의 “새 게임은 아이디어 단계”는 그 이전 작업 단계의 기록입니다.
