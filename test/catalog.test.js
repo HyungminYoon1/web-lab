@@ -44,6 +44,13 @@ test("direct preview selection only accepts known project ids", () => {
   assert.equal(getProject(""), null);
 });
 
+test("orbit introduction uses station arrival instead of shipping jargon", () => {
+  const project = getProject("orbit-courier");
+  assert.doesNotMatch([project.description, project.purpose, ...project.features].join(" "), /배송|섭동|플라이바이/);
+  assert.match(project.purpose, /정거장에 도착/);
+  assert.match(project.features[0], /6개 임무/);
+});
+
 test("new game entries are independent, searchable and included in game counts", () => {
   for (const id of ["echo-vault", "parcel-panic", "neon-tactics"]) {
     assert.equal(getProject(id)?.category, "game");
