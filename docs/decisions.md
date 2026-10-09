@@ -1,5 +1,32 @@
 # Decisions
 
+## D09 — 검토된 개편본의 승인 후 공개 배포
+
+- Context: 로컬 전용 검토를 마친 뒤 사용자가 기존 개편본의 배포를 명시적으로 승인하고, 신규 게임 세 개는 아이디어 제시를 요청했습니다.
+- Options: 계속 로컬에만 보관; 새 호스팅/서버 도입; 기존 13개 저장소의 main 및 고정 SHA Pages 워크플로 재사용.
+- Decision: 기존 갤러리와 12개 서비스의 검토된 변경만 일반 fast-forward 커밋·푸시하고 dist만 배포합니다. 강제 푸시·개인 대표 사이트 수정·외부 서버/DB/전체 랭킹 추가는 하지 않습니다. 신규 게임은 선택 전 구현·저장소 생성하지 않습니다.
+- Rationale: 승인된 범위의 공개만 수행하고 독립 저장소/계산/UI 경계와 기존 무료 정적 호스팅을 유지합니다.
+- Affected: 각 저장소의 승인된 변경 및 README.md, web-lab/docs/verification.md. 워크플로와 배포 권한은 기존 구성 그대로입니다.
+- Review: 각 origin/remote main 일치·noreply 커밋 신원·285개 테스트·정적 검사·변경 파일 비밀 패턴/인코딩 검사를 확인합니다. 원격 CI와 공개 파일 해시 및 실제 브라우저 증거는 로컬 기록과 별도로 남깁니다.
+
+## D08 — 로컬 개편의 소개와 실제 화면
+
+- Context: 12개 서비스의 기능·난이도가 달라져 기존 소개와 캡처가 현재 로컬 작업본을 설명하지 못합니다.
+- Options: 기존 설명·이미지 유지; 실제와 다른 목업 제작; 문서·실제 조작 검증 후 수동 갱신.
+- Decision: 구현된 기능과 제한을 카탈로그에 반영하고 로컬 브라우저의 실제 화면으로 JPEG를 갱신합니다. 미리보기의 LOCAL 배너는 캡처 DOM에서만 숨기며 코드·디자인 목업이나 공개 실행 증거로 사용하지 않습니다. 정적 수동 카탈로그와 독립 서비스 구조는 유지합니다.
+- Rationale: 사용자가 개편된 기능을 정확히 고를 수 있고 캡처 출처와 로컬/공개 상태를 혼동하지 않습니다. 새 개인정보·분석·실시간 API를 추가할 필요가 없습니다.
+- Affected: dist/src/projects.js, dist/assets/previews/*.jpg, README.md, docs/verification.md.
+- Review: 제목·미션 수·테스트 조건·라이선스 범위와 화면을 대조합니다. 미래 공개 승인은 별도이며 현재 LIVE 기록은 과거 커밋에만 해당합니다.
+
+## D07 — 로컬 검토와 프로젝트 탐색
+
+- Context: 사용자가 전체 서비스의 난이도·독창성을 높이고 공개 전 로컬에서 직접 검토하도록 요청했습니다.
+- Options: 즉시 공개 배포; 개별 개발 서버 링크만 제공; 기존 갤러리를 유지하며 기능 검색·선택 도우미와 분리된 loopback 미리보기 사용.
+- Decision: 갤러리에 메모리 내 검색과 현재 조건에서 하나를 고르는 기능을 추가합니다. 검색은 서버로 보내거나 저장하지 않으며 선택은 소개창만 열고 앱을 자동 실행하지 않습니다. 저장소의 공개 실행 링크는 유지하고 별도 로컬 미리보기 서버의 응답에서만 loopback 주소로 치환합니다. 커밋·푸시·배포는 하지 않습니다.
+- Rationale: 기존 정적 갤러리/서비스 분리와 개인정보 경계를 유지하면서 사용자가 새 버전을 한곳에서 확인할 수 있습니다.
+- Affected: dist/index.html, dist/styles.css, dist/src/app.js, dist/src/projects.js, test/catalog.test.js, README.md; 미리보기 도구는 공개 dist 밖의 로컬 output/playwright에 있습니다.
+- Review: 검색·분류 결합, 빈 결과, 추천 반복 방지와 포커스 복귀를 확인하고 서비스 소개는 실제 구현 검증 뒤 갱신합니다. 공개 승인을 받기 전에는 기존 LIVE/CI 기록을 이번 변경의 증거로 사용하지 않습니다.
+
 ## D01 — Independent project gallery on GitHub Pages
 
 - Context: the user explicitly chose web-lab rather than using the personal root website and requested six existing services in one gallery.

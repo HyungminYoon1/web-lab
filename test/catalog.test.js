@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { categories, countProjects, getProject, projects, selectProjects } from "../dist/src/projects.js";
+import { categories, countProjects, getProject, pickProject, projects, selectProjects } from "../dist/src/projects.js";
 import { readFile } from "node:fs/promises";
 
 test("catalog projects have unique ids and complete introductions", () => {
@@ -33,6 +33,26 @@ test("direct preview selection only accepts known project ids", () => {
   assert.equal(getProject("light-route")?.name, "LIGHT ROUTE");
   assert.equal(getProject("<script>"), null);
   assert.equal(getProject(""), null);
+});
+
+test("search combines category and all terms without mutating the catalog", () => {
+  assert.equal(selectProjects("all", "  think forge ")[0]?.id, "think-forge");
+  assert(selectProjects("all", "중력").some(project => project.id === "orbit-courier"));
+  assert.equal(selectProjects("learning", "중력").length, 0);
+  assert.equal(selectProjects("all", "<script>").length, 0);
+  assert.equal(selectProjects("all", "").length, projects.length);
+  assert.throws(() => selectProjects("all", "x".repeat(121)), TypeError);
+  assert.throws(() => selectProjects("all", null), TypeError);
+});
+
+test("recommendations use only the filtered catalog and avoid immediate repeats", () => {
+  const games = selectProjects("game");
+  assert.equal(pickProject(games, 0), games[0]);
+  assert.equal(pickProject(games, .9999), games.at(-1));
+  assert.notEqual(pickProject(games, 0, games[0].id)?.id, games[0].id);
+  assert.equal(pickProject([], .5), null);
+  assert.equal(pickProject([games[0]], .5, games[0].id), games[0]);
+  for (const bad of [-1, 1, Infinity, NaN]) assert.throws(() => pickProject(games, bad), TypeError);
 });
 
 test("totals adapt to added and removed projects without a fixed collection size", () => {

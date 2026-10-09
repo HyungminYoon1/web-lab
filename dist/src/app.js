@@ -1,9 +1,13 @@
-import { countProjects, getProject, selectProjects } from "./projects.js";
+import { countProjects, getProject, pickProject, selectProjects } from "./projects.js";
 
 const grid = document.querySelector("#project-grid");
 const dialog = document.querySelector("#project-dialog");
 const filters = document.querySelector(".filters");
 let lastPreview = null;
+let selectedCategory = "all";
+let lastPick = null;
+const search = document.querySelector("#catalog-search");
+const choose = document.querySelector("#choose-project");
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -40,7 +44,8 @@ function openPreview(project, opener) {
 }
 
 function render(category) {
-  const selected = selectProjects(category);
+  selectedCategory = category;
+  const selected = selectProjects(category, search.value);
   grid.replaceChildren(...selected.map((project, index) => {
     const article = element("article", "project-card");
     article.dataset.project = project.id;
@@ -71,12 +76,30 @@ function render(category) {
     return article;
   }));
   document.querySelector("#result-count").textContent = `${selected.length}개 프로젝트`;
+  document.querySelector("#empty-state").hidden = selected.length !== 0;
+  choose.disabled = selected.length === 0;
   for (const button of filters.querySelectorAll("button")) button.setAttribute("aria-pressed", String(button.dataset.filter === category));
 }
 
 filters.addEventListener("click", event => {
   const button = event.target.closest("button[data-filter]");
   if (button && filters.contains(button)) render(button.dataset.filter);
+});
+
+search.addEventListener("input", () => render(selectedCategory));
+search.addEventListener("keydown", event => {
+  if (event.key === "Escape") { search.value = ""; render(selectedCategory); }
+});
+document.querySelector("#clear-search").addEventListener("click", () => {
+  search.value = ""; render("all"); search.focus();
+});
+choose.addEventListener("click", () => {
+  const random = new Uint32Array(1);
+  crypto.getRandomValues(random);
+  const project = pickProject(selectProjects(selectedCategory, search.value), random[0] / 4294967296, lastPick);
+  if (!project) return;
+  lastPick = project.id;
+  openPreview(project, choose);
 });
 document.querySelector("#dialog-close").addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", event => {
@@ -99,6 +122,7 @@ for (const button of filters.querySelectorAll("button")) button.querySelector("s
 
 render("all");
 filters.hidden = false;
+document.querySelector("#discovery").hidden = false;
 
 function syncPreviewWithHash() {
   const project = getProject(location.hash.slice(1));
@@ -106,7 +130,7 @@ function syncPreviewWithHash() {
     if (dialog.open) dialog.close();
     return;
   }
-  if (!grid.querySelector(`[data-project="${project.id}"]`)) render("all");
+  if (!grid.querySelector(`[data-project="${project.id}"]`)) { search.value = ""; render("all"); }
   openPreview(project, grid.querySelector(`[data-project="${project.id}"] .project-preview`));
 }
 

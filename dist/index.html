@@ -31,6 +31,11 @@
         <div class="catalog-stamp" aria-label="프로젝트 모음" hidden><span>COLLECTION</span><strong id="project-total"></strong><span>각자 다른 방식으로, 직접 해보기.</span></div>
       </section>
       <section id="projects" class="catalog" aria-labelledby="catalog-title">
+        <div class="discovery" id="discovery" hidden>
+          <div class="discovery-copy"><span class="eyebrow">FIND YOUR NEXT CHALLENGE</span><p>오늘은 무엇을 바꿔볼까요?</p></div>
+          <div class="search-wrap"><label for="catalog-search">기능·원리·프로젝트 검색</label><input id="catalog-search" type="search" maxlength="120" placeholder="예: 중력, 논리, 확률, Canvas" autocomplete="off" /></div>
+          <button type="button" id="choose-project">하나 골라주기 <span aria-hidden="true">↗</span></button>
+        </div>
         <div class="catalog-toolbar">
           <h2 id="catalog-title">프로젝트</h2>
           <div class="filters" role="group" aria-label="프로젝트 분류" hidden>
@@ -42,17 +47,18 @@
           <p class="result-count" id="result-count" aria-live="polite" aria-atomic="true">프로젝트 목록</p>
         </div>
         <div class="project-grid" id="project-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><h3>이 조건에 맞는 실험이 없습니다.</h3><p>다른 단어나 분류로 찾아보세요.</p><button type="button" id="clear-search">검색 지우고 전체 보기</button></div>
         <noscript>
           <div class="fallback-list">
             <p>아래 링크에서 각 사이트를 바로 열 수 있습니다.</p>
             <ul>
               <li><a href="https://hyungminyoon1.github.io/sense-lab/">SENSE LAB — 감각 아케이드</a> · <a href="https://github.com/HyungminYoon1/sense-lab">코드</a></li>
-              <li><a href="https://hyungminyoon1.github.io/packet-journey/">PACKET JOURNEY — 웹 요청 탐험</a> · <a href="https://github.com/HyungminYoon1/packet-journey">코드</a></li>
+              <li><a href="https://hyungminyoon1.github.io/packet-journey/">PACKET JOURNEY — 웹 요청 탐정</a> · <a href="https://github.com/HyungminYoon1/packet-journey">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/think-forge/">THINK FORGE — 수학·컴퓨터과학 문제은행</a> · <a href="https://github.com/HyungminYoon1/think-forge">코드</a></li>
-              <li><a href="https://hyungminyoon1.github.io/orbit-courier/">ORBIT COURIER — 궤도 택배</a> · <a href="https://github.com/HyungminYoon1/orbit-courier">코드</a></li>
+              <li><a href="https://hyungminyoon1.github.io/orbit-courier/">ORBIT COURIER — 궤도 임무 연구소</a> · <a href="https://github.com/HyungminYoon1/orbit-courier">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/light-route/">LIGHT ROUTE — 빛의 미궁</a> · <a href="https://github.com/HyungminYoon1/light-route">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/pocket-city/">POCKET CITY — 도시 전략</a> · <a href="https://github.com/HyungminYoon1/pocket-city">코드</a></li>
-              <li><a href="https://hyungminyoon1.github.io/pixel-kitchen/">PIXEL KITCHEN — 이미지 가공실</a> · <a href="https://github.com/HyungminYoon1/pixel-kitchen">코드</a></li>
+              <li><a href="https://hyungminyoon1.github.io/pixel-kitchen/">PIXEL KITCHEN — 픽셀 복원 실험실</a> · <a href="https://github.com/HyungminYoon1/pixel-kitchen">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/swarm-garden/">SWARM GARDEN — 군집 정원</a> · <a href="https://github.com/HyungminYoon1/swarm-garden">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/traffic-lab/">TRAFFIC LAB — 정체 연구소</a> · <a href="https://github.com/HyungminYoon1/traffic-lab">코드</a></li>
               <li><a href="https://hyungminyoon1.github.io/logic-foundry/">LOGIC FOUNDRY — 논리회로 작업대</a> · <a href="https://github.com/HyungminYoon1/logic-foundry">코드</a></li>
