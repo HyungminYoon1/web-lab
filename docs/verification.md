@@ -1,5 +1,18 @@
 # Verification record
 
+## 세 독립 게임 — 2026-10-09 / LOCAL snapshot before publication
+
+- Authorization: 사용자가 높은 난도와 실제 게임 같은 화면의 세 게임 구현 및 “검증 후 바로 공개”를 승인했습니다. 이전 절의 “새 게임은 아이디어 단계”는 그 이전 작업 단계의 기록입니다.
+- VERIFIED sources: echo-vault, parcel-panic, neon-tactics의 권위 문서/규칙/캠페인/UI/렌더링/테스트/도구/워크플로와 WEB LAB의 변경 소개·README·대체 링크·분류/검색·실제 JPEG 캡처. .env 내용, .git 객체와 무관한 개인 파일은 읽거나 공개하지 않았습니다.
+- LOCAL_TEST: 새 게임 20+23+23 및 갤러리 9 = 75/75 PASS. 새 게임별 공개 파일 7, 갤러리 공개 파일 19/미리보기 15; 구문·참조·CSP·privacy/pure model·UTF8/no-BOM/CRLF gates PASS.
+- MODEL: 게임마다 12개, 총 36개 저작 캠페인의 실제 이동/설비/명령 해답을 실행했습니다. 물류는 출고 ID/시간/비용/점유 보존과 합류·FIFO·정비/마감 양 끝을 검사했고, 전술은 독립 벽 피해/수중 제거/공격 순서·죽은 공격자/폭탄 연쇄 기대값을 검사했습니다.
+- BROWSER_LOCAL: headless Chromium 1440×1000에서 각 게임의 1/7/12를 일반 키보드·팔레트·Canvas 클릭·명령 확인으로 완주했습니다. 390×900/320×900 반응형 화면과 조작, 320px에서 실제 1번 캠페인 승리 및 결과 카드 전체가 화면 안에 들어오는 것을 확인했습니다. 문서 가로 넘침·관찰한 pageerror 없음. 물류/금고의 실제 시계 시작/정지, 되돌리기/복구/힌트 유지; 전술의 기체/기술/미확정 목표·명령/AP·적 턴 취소를 확인했습니다.
+- LIFECYCLE distinction: 이 headless 환경은 새 탭 전환에도 document.hidden=false였으므로 실제 visibility transition은 NOT_OBSERVED입니다. 합성 blur event로 중단 핸들러와 포커스 복귀 시 자동 재개하지 않음을 확인했습니다. 합성 이벤트를 실제 백그라운드 탭 검증으로 표현하지 않습니다.
+- Scope: 기존 12개 서비스 코드와 개인 대표 사이트를 바꾸지 않았습니다. 갤러리는 소개 15개/게임 6개가 실제 목록에서 계산되며 새 게임은 각각 독립 저장소입니다. 서버/DB/전체 랭킹·쿠키/영구 저장·분석·자동 소리는 추가하지 않았습니다.
+- PARTIAL: 실제 브라우저 완주는 선택한 캠페인; 나머지는 모델 해답. 물리적 모바일·모든 플랫폼·스크린리더·독립된 사람의 재미/난도 평가는 NOT_RUN입니다.
+- QA: 공개 dist 밖의 ../output/playwright/three-games-20261009에 루프백 preview-server.mjs(4179), 실제 UI QA 스크립트·결과·캡처를 보관합니다. 4178의 기존 미리보기는 보존했습니다.
+- REMOTE_CI/LIVE: 이 로컬 snapshot 시점에는 NOT_RUN. 승인에 따라 배포 후 실제 원격/공개 결과를 별도 최신 절에 기록합니다.
+
 ## 승인 후 개편본 공개 배포 — 2026-10-09
 
 - Authorization: 사용자가 로컬 검토 이후 기존 개편본의 공개 배포를 명시적으로 승인했습니다. 이전 LOCAL ONLY 절은 승인 전 작업 단계의 기록이며, 아래 단계가 그 제한을 해제합니다.

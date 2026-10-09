@@ -25,10 +25,15 @@
 | LOGIC FOUNDRY — 논리회로 작업대 | [실행](https://hyungminyoon1.github.io/logic-foundry/) | [코드](https://github.com/HyungminYoon1/logic-foundry) |
 | ROUTE RACE — 길찾기 알고리즘 경주 | [실행](https://hyungminyoon1.github.io/route-race/) | [코드](https://github.com/HyungminYoon1/route-race) |
 | DATA MIRAGE — 숫자의 착시 | [실행](https://hyungminyoon1.github.io/data-mirage/) | [코드](https://github.com/HyungminYoon1/data-mirage) |
+| ECHO VAULT — 시간의 금고 | [실행](https://hyungminyoon1.github.io/echo-vault/) | [코드](https://github.com/HyungminYoon1/echo-vault) |
+| PARCEL PANIC — 컨베이어 대작전 | [실행](https://hyungminyoon1.github.io/parcel-panic/) | [코드](https://github.com/HyungminYoon1/parcel-panic) |
+| NEON TACTICS — 내일의 공격 | [실행](https://hyungminyoon1.github.io/neon-tactics/) | [코드](https://github.com/HyungminYoon1/neon-tactics) |
 
 실험·학습·게임별 분류, 실제 실행 화면, 주요 기능과 구현 포인트를 제공합니다. 미리보기는 정적인 화면 캡처이며 서비스를 자동 실행하지 않습니다. 각 서비스와 소스는 새 탭에서 엽니다. #sense-lab 등의 주소 조각으로 특정 소개를 바로 열 수 있습니다.
 
 ## 실행과 배포
+
+세 게임 추가(2026-10-09): ECHO VAULT, PARCEL PANIC, NEON TACTICS는 각각 12개 캠페인을 갖는 독립 정적 게임입니다. 새 게임의 모델 해답과 실제 브라우저 검증을 마친 뒤 이 갤러리에 추가했습니다. 기존 12개 서비스 코드와 개인 대표 사이트는 수정하지 않았습니다. 새 통합 로컬 서버는 공개 dist 밖의 `../output/playwright/three-games-20261009/preview-server.mjs`이며 `127.0.0.1:4179`에서 별도로 실행합니다. 로컬/원격 CI/실제 공개 결과는 [검증 기록](docs/verification.md)의 최신 절을 확인하세요.
 
 2026-10-09 개편은 먼저 로컬 전용으로 검토한 뒤 사용자의 명시적 승인을 받아 공개했습니다. 13개 저장소의 원격 verify/deploy와 94개 공개 파일 해시 일치를 확인했으며, 실제 실행 범위는 [최신 검증 기록](docs/verification.md)에서 구분합니다. 통합 로컬 검토 서버도 공개 dist 밖의 `../output/playwright/review-20261009/preview-server.mjs`에 보존했습니다. `node`로 실행하면 `http://127.0.0.1:4178/web-lab/`에서 전체 로컬 앱을 연결합니다. 서버 응답에서만 실행 URL을 치환하므로 각 저장소의 공개 URL은 그대로입니다. 노란 LOCAL PREVIEW 표시가 붙습니다. 이 서버는 loopback GET/HEAD 전용이며 파일 업로드·API·원격 공개 기능이 없습니다.
 
@@ -56,6 +61,6 @@ npm run check
 
 이 갤러리에는 계정, 데이터 제출 폼, 분석 도구, 쿠키, localStorage, 외부 API 호출이나 자동 소리 재생이 없습니다. 검색 입력은 메모리 내 목록 필터에만 사용합니다. 각 서비스 자체의 기기 내 기록은 별개이며 해당 저장소에서 설명합니다. GitHub 호스팅 자체 로그는 앱의 저장 기능과 별개입니다.
 
-AI 에이전트와 함께 제작한 프로젝트입니다. 이번 개편은 갤러리와 12개 서비스에 한정되며, 로컬 검토 후 승인을 받아 해당 공개 사이트에 반영했습니다. 개인 대표 사이트는 변경하지 않았습니다. 서비스는 각각 독립된 저장소에서 관리합니다. 갤러리 자체에는 별도 라이선스를 아직 부여하지 않았으며, THINK FORGE의 MIT 시험 변형 콘텐츠에는 별도 콘텐츠 라이선스가 적용됩니다.
+AI 에이전트와 함께 제작한 프로젝트입니다. 첫 개편은 갤러리와 기존 12개 서비스를 검증·공개한 작업이며, 이후 세 독립 게임을 추가했습니다. 세 게임 추가 작업은 새 게임 저장소와 갤러리 소개에만 한정됩니다. 개인 대표 사이트와 기존 서비스 코드는 변경하지 않았습니다. 서비스는 각각 독립된 저장소에서 관리합니다. 갤러리 자체에는 별도 라이선스를 아직 부여하지 않았으며, THINK FORGE의 MIT 시험 변형 콘텐츠에는 별도 콘텐츠 라이선스가 적용됩니다.
 
 UTF-8 without BOM / CRLF. 로컬·원격 CI·공개 배포 검증은 검증 기록에서 구분합니다.

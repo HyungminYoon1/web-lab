@@ -35,6 +35,16 @@ test("direct preview selection only accepts known project ids", () => {
   assert.equal(getProject(""), null);
 });
 
+test("new game entries are independent, searchable and included in game counts", () => {
+  for (const id of ["echo-vault", "parcel-panic", "neon-tactics"]) {
+    assert.equal(getProject(id)?.category, "game");
+    assert(selectProjects("game").some(project => project.id === id));
+  }
+  assert.equal(selectProjects("game", "시간 루프")[0]?.id, "echo-vault");
+  assert.equal(selectProjects("game", "공장 자동화")[0]?.id, "parcel-panic");
+  assert.equal(selectProjects("game", "공격 예고")[0]?.id, "neon-tactics");
+});
+
 test("search combines category and all terms without mutating the catalog", () => {
   assert.equal(selectProjects("all", "  think forge ")[0]?.id, "think-forge");
   assert(selectProjects("all", "중력").some(project => project.id === "orbit-courier"));
