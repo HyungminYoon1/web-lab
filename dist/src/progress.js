@@ -6,7 +6,7 @@ export function parseProgress(raw, allowedIds) {
   try {
     const data = JSON.parse(raw);
     if (data?.version !== 1 || !data.apps || typeof data.apps !== "object" || Array.isArray(data.apps)) return result;
-    for (const id of allowedIds.slice(0, 15)) {
+    for (const id of allowedIds.slice(0, 64)) {
       if (!Object.hasOwn(data.apps, id)) continue;
       const entry = data.apps[id];
       if (!entry || !Number.isInteger(entry.total) || entry.total < 1 || entry.total > 1000 || !Number.isInteger(entry.completed) || entry.completed < 0 || entry.completed > entry.total) continue;

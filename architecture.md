@@ -10,7 +10,7 @@ Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the pers
 - dist/styles.css: dark catalog presentation, responsive layout, visible focus and reduced motion.
 - dist/src/projects.js: immutable, curated metadata, pure category/id selection and total/category counts. Only manually reviewed, allowlisted public services; the catalog length is not fixed. This is not automatic repository discovery.
 - dist/src/app.js: DOM construction, category/difficulty selection and native-dialog lifecycle. Text is assigned through textContent, not user-input HTML. Static data owns project URLs.
-- dist/src/progress.js: pure allowlisted parsing of the local completion summary, at most 6000 input characters and 15 apps, numeric counts bounded to 1000. The UI owns the single read-only storage boundary.
+- dist/src/progress.js: pure allowlisted parsing of the local completion summary, at most 6000 input characters and 64 catalog ids, numeric counts bounded to 1000. The UI owns the single read-only storage boundary. D13 expands only the reader's catalog bound; the shared v1 schema and existing service writers remain unchanged. New creative/chemistry apps use only their own keys and create no shared entries.
 - dist/assets/previews/: snapshots of the user's existing public sites, copied from verified local captures. No live iframe, autoplay, app execution or external image request.
 - tools/: loopback-only static preview and read-only integrity checks. Never deployed.
 - test/: focused catalog/link/selection tests. Not a substitute for real-browser or live-site verification.

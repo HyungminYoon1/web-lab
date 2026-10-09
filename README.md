@@ -1,6 +1,6 @@
 # WEB LAB
 
-브라우저에서 실행하는 게임·실험·학습 도구의 갤러리입니다.
+브라우저에서 실행하는 게임·실험·학습·창작 도구의 갤러리입니다.
 
 [갤러리](https://hyungminyoon1.github.io/web-lab/) · [구조](architecture.md) · [결정 기록](docs/decisions.md) · [검증 기록](docs/verification.md)
 
@@ -8,6 +8,10 @@
 
 | 프로젝트 | 실행 | 소스 |
 | --- | --- | --- |
+| DRAW DESK — 그림 공방 | [실행](https://hyungminyoon1.github.io/draw-desk/) | [코드](https://github.com/HyungminYoon1/draw-desk) |
+| SCORE LAB — 작곡실 | [실행](https://hyungminyoon1.github.io/score-lab/) | [코드](https://github.com/HyungminYoon1/score-lab) |
+| CLAY ROOM — 3D 조각 공방 | [실행](https://hyungminyoon1.github.io/clay-room/) | [코드](https://github.com/HyungminYoon1/clay-room) |
+| ELEMENT ATLAS — 화학 실험실 | [실행](https://hyungminyoon1.github.io/element-atlas/) | [코드](https://github.com/HyungminYoon1/element-atlas) |
 | ECHO VAULT — 시간의 금고 | [실행](https://hyungminyoon1.github.io/echo-vault/) | [코드](https://github.com/HyungminYoon1/echo-vault) |
 | PARCEL PANIC — 컨베이어 대작전 | [실행](https://hyungminyoon1.github.io/parcel-panic/) | [코드](https://github.com/HyungminYoon1/parcel-panic) |
 | NEON TACTICS — 내일의 공격 | [실행](https://hyungminyoon1.github.io/neon-tactics/) | [코드](https://github.com/HyungminYoon1/neon-tactics) |

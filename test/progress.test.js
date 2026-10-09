@@ -2,6 +2,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { parseProgress } from "../dist/src/progress.js";
 const ids = ["echo-vault", "parcel-panic"];
+
+test("added catalog entries do not truncate older completion summaries",()=>{
+ const allowed=Array.from({length:19},(_,i)=>'app-'+i);
+ const value=parseProgress(JSON.stringify({version:1,apps:{'app-18':{completed:2,total:3}}}),allowed);
+ assert.deepEqual(value['app-18'],{completed:2,total:3});
+});
 test("local summary only exposes allowlisted numeric completion", () => {
   const value = parseProgress(JSON.stringify({version:1,apps:{"echo-vault":{completed:2,total:12,seed:"private",name:"private"},unknown:{completed:3,total:4}}}),ids);
   assert.deepEqual(Object.keys(value),["echo-vault"]);

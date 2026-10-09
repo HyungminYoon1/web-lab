@@ -6,9 +6,42 @@ export const categories = Object.freeze([
   { id: "experiment", label: "실험" },
   { id: "learning", label: "학습" },
   { id: "game", label: "게임" },
+  { id: "creative", label: "창작" },
 ]);
 
 const catalog = [
+  {
+    id: "draw-desk", number: "17", name: "DRAW DESK", subtitle: "그림 공방", category: "creative", categoryLabel: "드로잉 도구",
+    description: "펜압 브러시와 레이어로 그리고 PNG·SVG로 저장합니다.",
+    purpose: "직접 그리거나 패턴을 만들고, 위치·크기·각도를 정밀하게 편집하세요.",
+    features: ["펜압·보정 브러시, 도형·글자·레이어·실행 취소", "0.1px 이동·숫자 편집 · 끌어당김·회전 패턴 레이어", "최대 8192px·32MP PNG, 벡터 SVG와 편집 JSON"],
+    build: "벡터 좌표를 유지하고 출력 해상도에서 다시 렌더링합니다.",
+    tags: ["드로잉 / 레이어", "PNG / SVG", "정밀 편집"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
+  },
+  {
+    id: "score-lab", number: "18", name: "SCORE LAB", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
+    description: "다중 트랙 피아노 롤에서 작곡하고 음원·악보로 저장합니다.",
+    purpose: "음높이·길이·세기를 편집하고 피아노와 합성 악기를 조합하세요.",
+    features: ["8트랙 · 960 PPQ 정밀 편집·복사·실행 취소", "실제 피아노 샘플 · 합성 베이스·패드·드럼·트랙 믹스", "48kHz 24bit WAV · MIDI·MusicXML·SVG·300dpi PDF"],
+    build: "연주 시간은 그대로 유지하고 악보만 16분음표 격자로 표시합니다.",
+    tags: ["피아노 롤", "작곡 / 악보", "WAV / MIDI"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
+  },
+  {
+    id: "clay-room", number: "19", name: "CLAY ROOM", subtitle: "3D 조각 공방", category: "creative", categoryLabel: "3D 조각 도구",
+    description: "고밀도 메시를 밀고 깎아 3D 모델로 저장합니다.",
+    purpose: "브러시와 대칭 편집으로 표면을 조각하고 GLB·STL로 내보내세요.",
+    features: ["밀기·깎기·다듬기·평탄화·주름, 펜압과 X 대칭", "최대 131072 정점 · 형태를 유지하는 세분화·정밀 변환", "재질 포함 GLB · mm 좌표 STL · 실제 4K PNG·편집 JSON"],
+    build: "실제 정점 좌표를 바꾸고 변형된 메시를 그대로 내보냅니다.",
+    tags: ["WebGL / 조각", "GLB / STL", "고밀도 메시"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
+  },
+  {
+    id: "element-atlas", number: "16", name: "ELEMENT ATLAS", subtitle: "화학 실험실", category: "learning", categoryLabel: "화학 학습",
+    description: "원소의 실제 모습과 물성을 살펴보고 다양한 문제를 풉니다.",
+    purpose: "주기율표에서 원소를 비교하고 전자 배치·동위원소·주기적 경향을 익히세요.",
+    features: ["118원소 · 물성·전자 배치·2024 표준 원자량", "실제 시료 사진 56종 · 결정 기록 89원소·격자와 원문 출처", "4단계 난이도·10유형 무작위 문제·해설·오답 복습"],
+    build: "출처가 있는 데이터와 사진을 사용하고 알려지지 않은 값은 비워 둡니다.",
+    tags: ["주기율표", "원소 / 결정", "문제 / 복습"], difficulty: "입문~심화", entry: "intro", duration: "5~30분"
+  },
   {
     "id": "echo-vault",
     "number": "13",
@@ -89,11 +122,11 @@ const catalog = [
     "category": "experiment",
     "categoryLabel": "감각 실험",
     "description": "색 구분, 반응속도, 위치 기억을 테스트합니다.",
-    "purpose": "색감·반응속도·기억력을 비교하고 고주파와 그래픽 패턴을 실험하세요.",
+    "purpose": "색감·반응속도·기억력을 비교하고 두 음의 높낮이를 구분하세요.",
     "features": [
       "4×4→6×6 적응형 색감 12라운드와 무작위 색·위치",
       "연타·조기 입력 감지, 5회 반응의 중앙값·변동폭",
-      "8라운드 위치 순서 기억·10–18 kHz 듣기·패턴 스튜디오"
+      "8라운드 위치 순서 기억·10–18 kHz 듣기·12라운드 음높이 구분"
     ],
     "build": "문제마다 색·위치·대기 시간을 무작위로 선택합니다.",
     "tags": [

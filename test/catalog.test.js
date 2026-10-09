@@ -89,7 +89,7 @@ test("totals adapt to added and removed projects without a fixed collection size
   assert.equal(expanded.learning, current.learning + 1);
   assert.equal(expanded.game, current.game);
   assert.equal(countProjects(projects.slice(1)).all, projects.length - 1);
-  assert.deepEqual(countProjects([]), { all: 0, experiment: 0, learning: 0, game: 0 });
+  assert.deepEqual(countProjects([]), { all: 0, experiment: 0, learning: 0, game: 0, creative: 0 });
   assert(Object.isFrozen(current));
   assert.throws(() => countProjects([{ category: "unknown" }]), RangeError);
   assert.throws(() => countProjects([{ category: "all" }]), RangeError);
@@ -108,7 +108,8 @@ test("about anchor provides a labelled introduction and browsing instructions wi
   const about = shell.match(/<section class="about" id="about" aria-labelledby="about-title">([\s\S]*?)<\/section>/)?.[1];
   assert(about);
   assert.match(about, /<h2 id="about-title">실험실 소개<\/h2>/);
-  assert.match(about, /브라우저에서 사용하는 게임, 실험, 학습 도구/);
+  assert.match(about, /브라우저에서 사용하는 게임, 실험, 학습, 창작 도구/);
+  assert.match(about, /<dt>창작<\/dt><dd>그림·음악·3D 조각/);
   assert.match(about, /<dt>실험<\/dt><dd>조건을 바꾸며 결과와 원리/);
   assert.match(about, /<dt>학습<\/dt><dd>문제를 풀고 풀이를 확인/);
   assert.match(about, /<dt>게임<\/dt><dd>정해진 규칙 안에서 목표/);
