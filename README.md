@@ -26,7 +26,7 @@
 | TRAFFIC LAB — 정체 연구소 | [실행](https://hyungminyoon1.github.io/traffic-lab/) | [코드](https://github.com/HyungminYoon1/traffic-lab) |
 | LOGIC FOUNDRY — 논리회로 작업대 | [실행](https://hyungminyoon1.github.io/logic-foundry/) | [코드](https://github.com/HyungminYoon1/logic-foundry) |
 | ROUTE RACE — 길찾기 알고리즘 경주 | [실행](https://hyungminyoon1.github.io/route-race/) | [코드](https://github.com/HyungminYoon1/route-race) |
-| DATA MIRAGE — 숫자의 착시 | [실행](https://hyungminyoon1.github.io/data-mirage/) | [코드](https://github.com/HyungminYoon1/data-mirage) |
+| DATA MIRAGE — 통계 학습실 | [실행](https://hyungminyoon1.github.io/data-mirage/) | [코드](https://github.com/HyungminYoon1/data-mirage) |
 
 분류·검색·시작 난이도로 프로젝트를 고를 수 있습니다. ‘하나 골라주기’는 현재 조건의 소개창을 열며 게임을 자동 실행하지 않습니다. `#sense-lab`처럼 주소 조각으로 특정 소개를 열 수 있습니다. 미리보기는 실제 실행 화면을 캡처한 정적 이미지입니다.
 

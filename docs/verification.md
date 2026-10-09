@@ -1,5 +1,15 @@
 # Verification record
 
+## 2026-10-10 개념 학습·다중 객체·조작 안내·랭킹/DB 점검 — LOCAL / LIVE_READ_ONLY
+
+- SOURCE VERIFIED: 변경한 ELEMENT ATLAS/CLAY ROOM/DATA MIRAGE/PARCEL PANIC 및 WEB LAB의 관련 authority 문서·모델/UI·테스트·정적 검사, 두 랭킹 앱의 공통 client/adapter와 backend controller/service/repository·고정 규칙 계약을 검토했습니다. 다중 객체 구조 변경은 사용자가 승인했습니다. 서버·DB·NEON TACTICS의 tracked source는 변경하지 않았습니다.
+- LOCAL: ELEMENT19 + CLAY15 + DATA43 + PARCEL45 + WEB LAB16 = 138tests PASS. 네 앱의 114/16/16/17 public files 및 갤러리24 files 정적 검사·git diff --check PASS. 새 갤러리 소개 네 개는 구현과 일치하며 다른15개 카탈로그 객체와 JPEG bytes가 HEAD와 모두 같습니다. DATA MIRAGE는 기존 learning 범주를 유지하고 PARCEL PANIC은 기본 연습 진입으로 수정했습니다. 캡처는 실제 실행 1440×1000 JPEG이며 가상 홍보 이미지가 아닙니다.
+- ACTUAL GALLERY BROWSER: 새 네 소개/목적/기능·실제 JPEG decode·실행 링크, 전체19개/범주3·5·5·6, 충분통계량 검색/빈 결과 복구/입문 조건/실험실 소개, desktop1440/mobile390/320의 네 소개창을 확인했습니다. root overflow, 관측된 page errors 및 실패 assets 0. 네 개 앱의 별도 실제 기능/다운로드 증거는 각 docs/verification.md에 기록했습니다. QA의 최초 빈 결과 전용 버튼 locator는 실제 숨김 상태라 시간초과했으며 보이는 검색/빈 결과 흐름으로 수정 후 전체 통과했습니다.
+- LIVE_READ_ONLY at 2026-10-10 03:09 KST: 기존 Worker /health와 /v1/boards/parcel-panic, /v1/boards/neon-tactics가 모두 HTTP200, 허용 GitHub Pages Origin CORS 일치, status ok 및 양쪽 entries0입니다. SQLite 목록 조회는 현재 동작합니다. 이번 작업의 새 계정/도전 ticket/score 등록·삭제·서버 배포는 0/NOT_RUN입니다. 과거 쓰기 검증은 backend의 이전 기록이며 이번 조회 증거와 구분합니다.
+- LOCAL RANKING FAULT FIXTURES: 두 실제 client에 network abort/503/paused/daily/storage/rules update, Parcel12초 timeout을 가정하여 상태 안내·재시도 복귀·개인 게임 상태 유지·정상 빈 목록 복귀를 확인했습니다. intercepted GET15개만 사용했습니다. 이는 실제 서비스 장애/새 공개 점수 등록 증거가 아닙니다. 공통 client와 backend copy의 SHA256 동일, frozen rules8파일이 서버 manifest와 동일합니다. 공개 대상은 최종 Parcel14/Neon16뿐입니다.
+- DB AUDIT PARTIAL: 전체19앱+허브 first-party dist JS/mjs/HTML 파일 목록·네트워크/저장 SDK·CSP를 검사했습니다. 원격 호출은 두 ranking-client 및 SCORE LAB의 자기 origin 로컬 MP3 fetch뿐입니다. 다른17앱/허브에는 원격 DB SDK/호출 연결이 발견되지 않았습니다. localStorage 개인 작업/기록은 원격 DB가 아닙니다. 서버는 Neon/D1이 아니라 기존 Cloudflare SQLite Durable Object이며 players(익명 ID·credential digest), tickets(규칙/만료/재시도), bests(검증 결과·명령·동점 정보), daily quotas를 저장하는 구조입니다. 개별 사용자 row를 읽거나 credentials를 출력하지 않았습니다.
+- NOT_INSPECTED / NOT_RUN: 다른15앱의 모든 함수/게임 완료·third-party vendor 내부·외부 provider 전체 계정/다른 프로젝트 DB는 이번 전체 기능 검토 범위가 아닙니다. 물리 기기/독립 전문가·난이도/악용·부하/요금계정 재검증은 하지 않았습니다. 서버 가용성은 확인 시점의 GET 결과이지 지속 보장이 아닙니다. 이번 변경 REMOTE_CI/각 Pages LIVE는 위 로컬 결과와 별도로 확인합니다. 상세 QA는 ignored output/playwright/2026-10-10-improvements에 있습니다.
+
 ## 2026-10-10 원소 사진 확장 — REMOTE_CI / LIVE
 
 - REMOTE_CI: 구현 `5c0f97a0d54a71a2be7d129ba2ba3aed5afcf2a2`의 [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37958003862). origin 확인 후 정상 fast-forward로 게시했습니다.

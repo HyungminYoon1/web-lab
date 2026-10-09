@@ -19,7 +19,8 @@ test("catalog projects have unique ids and complete introductions", () => {
 test("entry difficulty composes with category and search", () => {
   assert(selectProjects("all", "", "intro").every(project => project.entry === "intro"));
   assert(selectProjects("game", "", "advanced").every(project => project.category === "game" && project.entry === "advanced"));
-  assert.equal(selectProjects("all", "공장 자동화", "advanced")[0]?.id, "parcel-panic");
+  assert.equal(selectProjects("all", "공장 자동화", "intro")[0]?.id, "parcel-panic");
+  assert.equal(selectProjects("all", "공장 자동화", "advanced").length, 0);
   assert.throws(() => selectProjects("all", "", "impossible"), RangeError);
 });
 test("all execution and code links belong to the expected public repositories", () => {
@@ -28,6 +29,18 @@ test("all execution and code links belong to the expected public repositories", 
     assert.equal(project.source, `https://github.com/HyungminYoon1/${project.id}`);
     assert.equal(project.image, `assets/previews/${project.id}.jpg`);
   }
+});
+
+test("new concept paths and multi-object tools appear in their real categories", () => {
+  const clay = getProject("clay-room"), chemistry = getProject("element-atlas"), statistics = getProject("data-mirage");
+  assert.equal(clay.category, "creative");
+  assert.match(clay.features.join(" "), /8객체.*부피.*131072/);
+  assert.equal(chemistry.category, "learning");
+  assert.match(chemistry.features.join(" "), /10개.*1–30.*97종.*100장/);
+  assert.equal(statistics.category, "learning");
+  assert.equal(statistics.subtitle, "통계 학습실");
+  assert.match(statistics.features.join(" "), /18개.*24개.*6개/);
+  assert.equal(getProject("parcel-panic").entry, "intro");
 });
 test("category filters agree with the catalog without mutating it", () => {
   const counts = countProjects();
