@@ -1,5 +1,13 @@
 # Verification record
 
+## 2026-10-10 이번 개선의 공개 확인 — REMOTE_CI / LIVE
+
+- Exact implementation verify/deploy PASS: ELEMENT ATLAS `17b7477737090989656f68f54960abc05eec8528` [37971546431](https://github.com/HyungminYoon1/element-atlas/actions/runs/37971546431); CLAY ROOM `9488d2ed4c0ff1d361f1c3e20076312a1afe02fb` [37971545503](https://github.com/HyungminYoon1/clay-room/actions/runs/37971545503); DATA MIRAGE `e6ceb7ea40c8314d3bc6aafe8ed5d4c36252ff32` [37971545931](https://github.com/HyungminYoon1/data-mirage/actions/runs/37971545931); PARCEL PANIC `8544ca3ebc37d103cdfaeb01d282e56172cfa3bb` [37971545719](https://github.com/HyungminYoon1/parcel-panic/actions/runs/37971545719); WEB LAB `69c7d2ee42cd21ad7a14f0e727d8036cf6312093` [37971547451](https://github.com/HyungminYoon1/web-lab/actions/runs/37971547451). 각 origin/branch 확인 후 normal fast-forward로 게시했습니다.
+- LIVE_HTTP_SHA256 at 2026-10-10 03:12 KST: 위 다섯 앱의 모든 public files 187/187개가 HTTP200이며 로컬 검증 byte/hash와 일치합니다(114/16/16/17/24). 새 네 JPEG도 실제 공개 bytes가 일치합니다. 이는 다른 15앱의 모든 동작을 재검증했다는 의미가 아닙니다.
+- LIVE_BROWSER: 별도 Chromium에서 Fe2+ 전자배치·실제 탄소 사진·설명→기존 문제 연결, CLAY 실제 local Worker 50:50 분할(3객체, 두 단면 닫힘, A=0.49999996040031836)·장면 undo/redo, 통계18개 개념/충분통계량·censored 두 답 문제·보조 실험/복귀, PARCEL 실제 기본 연습2화물/15박자 성공, 갤러리 새 설명·미리보기 decode를 확인했습니다. page errors/실패 asset 응답0.
+- LIVE_READ_ONLY_BROWSER: 공개 Pages의 실제 두 client에서 순위 보기만 직접 눌렀습니다. Parcel/Neon 각각 HTTP200·entries0, 목록 표시·재시도 버튼 및 320px root overflow0. 총 실제 API GET2, POST/PUT/DELETE0입니다. 새 익명 사용자/도전 ticket/점수 쓰기 테스트를 하지 않았으며 서버/DB 배포나 규칙 변경도 하지 않았습니다. NEON TACTICS와 web-lab-ranking은 local/remote HEAD가 작업 전과 그대로 같습니다.
+- 이 추가 기록은 docs-only 후속입니다. 검증한 dist/규칙/캡처를 변경하지 않습니다. 별도 LOCAL fault fixture·물리기기/전문가/전체 기능 검토 한계는 아래 기록을 유지합니다.
+
 ## 2026-10-10 개념 학습·다중 객체·조작 안내·랭킹/DB 점검 — LOCAL / LIVE_READ_ONLY
 
 - SOURCE VERIFIED: 변경한 ELEMENT ATLAS/CLAY ROOM/DATA MIRAGE/PARCEL PANIC 및 WEB LAB의 관련 authority 문서·모델/UI·테스트·정적 검사, 두 랭킹 앱의 공통 client/adapter와 backend controller/service/repository·고정 규칙 계약을 검토했습니다. 다중 객체 구조 변경은 사용자가 승인했습니다. 서버·DB·NEON TACTICS의 tracked source는 변경하지 않았습니다.
