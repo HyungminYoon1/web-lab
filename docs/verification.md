@@ -1,5 +1,12 @@
 # Verification record
 
+## 2026-10-10 원소 사진 확장 — REMOTE_CI / LIVE
+
+- REMOTE_CI: 구현 `5c0f97a0d54a71a2be7d129ba2ba3aed5afcf2a2`의 [verify/deploy PASS](https://github.com/HyungminYoon1/web-lab/actions/runs/37958003862). origin 확인 후 정상 fast-forward로 게시했습니다.
+- LIVE HTTP: 공개 dist 24개 모두 HTTP200·검증한 로컬 SHA256 일치. 원소 도감111개를 포함해 이번 범위135/135개가 일치했습니다. 다른 앱의 전체 재검증을 뜻하지 않습니다.
+- LIVE BROWSER: 공개 WEB LAB에서 해당 소개창의 사진97종·100장 문구, 실제1440×1000 JPEG 디코딩, 원소 도감 실행 링크와 Escape 닫기를 확인했습니다. 1440/390/320px 가로 넘침·관찰한 페이지 예외·실패 응답0. 격리 QA 브라우저의 저장 상태는 변경되지 않았으며 사용자의 실제 브라우저 프로필은 열거나 수정하지 않았습니다.
+- 사진의 물리적 순도·전문가 검증과 미확보 사유는 원소 도감의 출처/검토 기록에서 구분합니다. 실제 공개 스크린샷과 HTTP 해시 보고서는 element-atlas의 ignored output/playwright/photo-coverage에 보관합니다. 이 후속 증거 기록은 docs만 변경하며 공개 코드/이미지·랭킹 API는 변경하지 않습니다.
+
 ## 2026-10-10 원소 사진 확장 — LOCAL
 
 - Scope: ELEMENT ATLAS 소개 한 항목과 해당 실제 화면 JPEG만 변경했습니다. 다른 18개 카탈로그 객체는 이전 HEAD와 완전히 같으며 나머지 미리보기·앱 코드·랭킹 설정은 변경하지 않았습니다.
