@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="감각 실험, 웹 요청 탐험, 수학·컴퓨터과학 학습과 게임. 브라우저에서 직접 실험하고 배우고 플레이하는 웹 프로젝트를 만나보세요." />
+    <meta name="description" content="브라우저에서 실행하는 게임, 실험, 학습 도구." />
     <meta name="theme-color" content="#171a21" />
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
@@ -24,16 +24,15 @@
     <main>
       <section class="catalog-intro" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">EXPERIMENTS / LEARNING / GAMES</p>
-          <h1 id="page-title">브라우저에서 여는<br />웹 실험실.</h1>
-          <p class="intro-copy">감각을 시험하고, 원리를 이해하고, 작은 세계를 움직여 보세요.</p>
+          <h1 id="page-title">게임 · 실험 · 학습</h1>
+          <p class="intro-copy">브라우저에서 바로 실행할 수 있습니다.</p>
         </div>
-        <div class="catalog-stamp" aria-label="프로젝트 모음" hidden><span>COLLECTION</span><strong id="project-total"></strong><span>각자 다른 방식으로, 직접 해보기.</span></div>
+        <div class="catalog-stamp" aria-label="프로젝트 모음" hidden><span>프로젝트</span><strong id="project-total"></strong></div>
       </section>
       <section id="projects" class="catalog" aria-labelledby="catalog-title">
         <div class="discovery" id="discovery" hidden>
-          <div class="discovery-copy"><span class="eyebrow">FIND YOUR NEXT CHALLENGE</span><p>오늘은 무엇을 바꿔볼까요?</p></div>
           <div class="search-wrap"><label for="catalog-search">기능·원리·프로젝트 검색</label><input id="catalog-search" type="search" maxlength="120" placeholder="예: 중력, 논리, 확률, Canvas" autocomplete="off" /></div>
+          <label class="difficulty-filter">난이도<select id="difficulty-filter"><option value="all">전체</option><option value="intro">입문부터</option><option value="advanced">심화부터</option></select></label>
           <button type="button" id="choose-project">하나 골라주기 <span aria-hidden="true">↗</span></button>
         </div>
         <div class="catalog-toolbar">
@@ -47,7 +46,7 @@
           <p class="result-count" id="result-count" aria-live="polite" aria-atomic="true">프로젝트 목록</p>
         </div>
         <div class="project-grid" id="project-grid"></div>
-        <div class="empty-state" id="empty-state" hidden><h3>이 조건에 맞는 실험이 없습니다.</h3><p>다른 단어나 분류로 찾아보세요.</p><button type="button" id="clear-search">검색 지우고 전체 보기</button></div>
+        <div class="empty-state" id="empty-state" hidden><h3>검색 결과가 없습니다.</h3><button type="button" id="clear-search">전체 보기</button></div>
         <noscript>
           <div class="fallback-list">
             <p>아래 링크에서 각 사이트를 바로 열 수 있습니다.</p>
@@ -72,20 +71,19 @@
         </noscript>
       </section>
       <section class="about" id="about" aria-labelledby="about-title">
-        <div><p class="eyebrow">BEHIND THE LAB</p><h2 id="about-title">결과도, 만드는 방식도<br />열려 있습니다.</h2></div>
+        <div><h2 id="about-title">WEB LAB</h2></div>
         <div class="about-copy">
-          <p>실험, 학습 도구, 게임. 서로 다른 질문에서 출발한 프로젝트를 한곳에 모았습니다. 각 소개에서 주요 기능과 구현 포인트를 살펴보고, 실제 사이트와 코드를 함께 열어볼 수 있습니다.</p>
-          <p>HTML, CSS, JavaScript와 브라우저 API로 만들고 GitHub Pages로 공개했습니다. AI 에이전트와 함께 기획·구현·검증한 프로젝트이며, 각각 독립된 저장소에서 관리합니다.</p>
-          <p class="about-note">미리보기는 실제 실행 화면의 캡처입니다. 이 갤러리는 소리를 재생하거나 게임을 자동 실행하지 않으며, 방문 기록을 별도로 수집하거나 저장하지 않습니다.</p>
+          <p>각 프로젝트의 실행 화면과 소스 코드를 제공합니다.</p>
+          <p class="about-note">완료 표시는 이 브라우저의 개인 기록입니다. 소요 시간은 예상입니다.</p>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><span>WEB LAB / SMALL WORLDS</span><span>HTML · CSS · JavaScript · GitHub Pages</span></footer>
+    <footer class="site-footer"><span>WEB LAB</span><span>GitHub Pages</span></footer>
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
       <div class="dialog-top"><p class="eyebrow" id="dialog-category"></p><button class="dialog-close" id="dialog-close" type="button" aria-label="미리보기 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button></div>
       <div class="dialog-body">
         <figure class="detail-preview"><img id="dialog-image" src="assets/previews/sense-lab.jpg" alt="" /><figcaption><span>실제 실행 화면</span><a id="dialog-image-link" href="assets/previews/sense-lab.jpg" target="_blank" rel="noopener noreferrer">화면 크게 보기</a></figcaption></figure>
-        <div class="detail-copy"><h2 id="dialog-title"></h2><p class="detail-subtitle" id="dialog-subtitle"></p><p id="dialog-purpose"></p><h3>무엇을 할 수 있나요?</h3><ul class="feature-list" id="dialog-features"></ul><h3>구현 포인트</h3><p id="dialog-build"></p><div class="detail-tags" id="dialog-tags"></div><div class="detail-actions"><a class="run-link" id="dialog-run" href="https://hyungminyoon1.github.io/sense-lab/" target="_blank" rel="noopener noreferrer">사이트 실행</a><a class="source-link" id="dialog-source" href="https://github.com/HyungminYoon1/sense-lab" target="_blank" rel="noopener noreferrer">소스 코드</a></div></div>
+        <div class="detail-copy"><h2 id="dialog-title"></h2><p class="detail-subtitle" id="dialog-subtitle"></p><p id="dialog-purpose"></p><p id="dialog-session" class="session-meta"></p><ul class="feature-list" id="dialog-features"></ul><div class="detail-tags" id="dialog-tags"></div><div class="detail-actions"><a class="run-link" id="dialog-run" href="https://hyungminyoon1.github.io/sense-lab/" target="_blank" rel="noopener noreferrer">실행</a><a class="source-link" id="dialog-source" href="https://github.com/HyungminYoon1/sense-lab" target="_blank" rel="noopener noreferrer">소스 코드</a></div></div>
       </div>
     </dialog>
   </body>

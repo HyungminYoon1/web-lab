@@ -1,5 +1,14 @@
 # Decisions
 
+## D11 — 간결한 소개와 개인 완료 표시
+
+- Context: 사용자가 전체 앱 보완과 미리보기 갱신, 불필요한 AI식 문구 제거를 승인했습니다.
+- Options: 기존 긴 소개 유지; 계정/API 기반 방문 기록; 간결한 기능 설명과 기기 내 최소 완료 요약.
+- Decision: 난이도·예상 소요 시간을 카탈로그에 추가하고 검색/분류와 함께 필터합니다. AI 제작 강조와 반복·과장 문구를 제거합니다. 갤러리는 승인된 web-lab-progress-v1 요약만 읽고 다른 앱의 개인 실행 내용은 읽거나 수정하지 않습니다. 계정·추적·API는 갤러리에 추가하지 않습니다.
+- Rationale: 방문자가 짧은 정보로 앱을 선택하고 개인 완료 여부를 확인할 수 있습니다. 저장 데이터와 공개 랭킹을 혼동하지 않습니다.
+- Affected: dist/index.html, styles.css, src/projects.js, src/app.js, src/progress.js, test/, tools/check.mjs, architecture.md, README.md 및 최종 실제 캡처.
+- Review: 저장 제한·오염 JSON·저장 차단·분류/검색/난이도 조합·첫 화면·키보드·작은 화면을 검증합니다. 예상 소요 시간은 실측 평균이나 보장 시간이 아닙니다. 각 앱의 완료 판정은 실제 독립 성공에 근거해야 합니다.
+
 ## D10 — 승인된 세 가지 독립 게임과 갤러리 연결
 
 - Context: 사용자가 ECHO VAULT·PARCEL PANIC·NEON TACTICS의 높은 난도/재미/게임다운 화면을 요구하며 구현과 검증 후 바로 공개를 승인했습니다.

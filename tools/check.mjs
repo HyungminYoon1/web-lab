@@ -31,9 +31,11 @@ for (const project of projects) {
   assert(image[0] === 0xff && image[1] === 0xd8 && image.length > 1000, `Missing JPEG preview: ${project.id}`);
 }
 const app = await readFile(resolve(root, "src/app.js"), "utf8");
-assert(!/\bfetch\s*\(|\blocalStorage\b|\bsessionStorage\b|document\.cookie/.test(app), "Unexpected app data access");
-for (const filename of ["index.html", "styles.css", "src/app.js", "src/projects.js"]) {
+assert(!/\bfetch\s*\(|\bsessionStorage\b|document\.cookie|localStorage\.(?:setItem|removeItem|clear)/.test(app), "Unexpected network or gallery storage write");
+assert(app.includes("localStorage.getItem(PROGRESS_KEY)"), "Only the approved completion summary may be read");
+assert.equal((app.match(/localStorage\.getItem/g) ?? []).length, 1, "Unexpected private service record access");
+for (const filename of ["index.html", "styles.css", "src/app.js", "src/projects.js", "src/progress.js"]) {
   const buffer = await readFile(resolve(root, filename));
   assert(!(buffer[0] === 0xef && buffer[1] === 0xbb && buffer[2] === 0xbf), `UTF-8 BOM: ${filename}`);
 }
-console.log(`PASS: ${count} public files, ${projects.length} JPEG previews, syntax, local references, CSP and no app storage/network.`);
+console.log(`PASS: ${count} public files, ${projects.length} JPEG previews, syntax, assets, CSP, read-only completion summary and no runtime network.`);

@@ -9,7 +9,8 @@ Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the pers
 - dist/index.html: Korean semantic shell, project navigation, no-JavaScript links, native preview dialog and public context.
 - dist/styles.css: dark catalog presentation, responsive layout, visible focus and reduced motion.
 - dist/src/projects.js: immutable, curated metadata, pure category/id selection and total/category counts. Only manually reviewed, allowlisted public services; the catalog length is not fixed. This is not automatic repository discovery.
-- dist/src/app.js: DOM construction, category selection and native-dialog lifecycle. Text is assigned through textContent, not user-input HTML. Static data owns project URLs.
+- dist/src/app.js: DOM construction, category/difficulty selection and native-dialog lifecycle. Text is assigned through textContent, not user-input HTML. Static data owns project URLs.
+- dist/src/progress.js: pure allowlisted parsing of the local completion summary, at most 6000 input characters and 15 apps, numeric counts bounded to 1000. The UI owns the single read-only storage boundary.
 - dist/assets/previews/: snapshots of the user's existing public sites, copied from verified local captures. No live iframe, autoplay, app execution or external image request.
 - tools/: loopback-only static preview and read-only integrity checks. Never deployed.
 - test/: focused catalog/link/selection tests. Not a substitute for real-browser or live-site verification.
@@ -17,7 +18,7 @@ Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the pers
 
 ## Boundaries and state
 
-The gallery stores no visitor records or settings and makes no fetch/XHR requests. Category and preview state exist only in DOM/memory and the optional URL fragment. Opening a service or its code is a deliberate external navigation. External links use noopener noreferrer; document referrer policy is no-referrer. Service-local storage, audio and game state are not read or changed by the gallery.
+The gallery stores no visitor records or settings and makes no fetch/XHR requests. Category, search, difficulty and preview state exist only in DOM/memory and the optional URL fragment. Opening a service or its code is a deliberate external navigation. External links use noopener noreferrer; document referrer policy is no-referrer. The approved 2026-10-09 extension reads only the bounded web-lab-progress-v1 completion summary (completed/total per allowlisted app). It does not read private run payloads, write or delete service records, start audio or change game state. Malformed/unavailable summaries fail closed to no badge. This personal-browser summary is not public ranking or identity.
 
 CSP metadata blocks app-initiated network connections, frame embeds and inline scripts. GitHub hosting logs are separate; CSP metadata is not a universal security boundary or a substitute for response headers.
 

@@ -10,8 +10,17 @@ test("catalog projects have unique ids and complete introductions", () => {
     assert(project.name && project.description && project.purpose && project.build);
     assert.equal(project.features.length, 3);
     assert.equal(project.tags.length, 3);
+    assert(project.difficulty && project.duration);
+    assert(["intro", "advanced"].includes(project.entry));
     assert(Object.isFrozen(project));
   }
+});
+
+test("entry difficulty composes with category and search", () => {
+  assert(selectProjects("all", "", "intro").every(project => project.entry === "intro"));
+  assert(selectProjects("game", "", "advanced").every(project => project.category === "game" && project.entry === "advanced"));
+  assert.equal(selectProjects("all", "공장 자동화", "advanced")[0]?.id, "parcel-panic");
+  assert.throws(() => selectProjects("all", "", "impossible"), RangeError);
 });
 test("all execution and code links belong to the expected public repositories", () => {
   for (const project of projects) {

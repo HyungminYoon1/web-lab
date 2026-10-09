@@ -1,4 +1,5 @@
-import { countProjects, getProject, pickProject, selectProjects } from "./projects.js";
+import { countProjects, getProject, pickProject, projects, selectProjects } from "./projects.js";
+import { parseProgress, PROGRESS_KEY } from "./progress.js";
 
 const grid = document.querySelector("#project-grid");
 const dialog = document.querySelector("#project-dialog");
@@ -8,6 +9,18 @@ let selectedCategory = "all";
 let lastPick = null;
 const search = document.querySelector("#catalog-search");
 const choose = document.querySelector("#choose-project");
+const difficulty = document.querySelector("#difficulty-filter");
+let progress = readProgress();
+
+function readProgress() {
+  try { return parseProgress(localStorage.getItem(PROGRESS_KEY), projects.map(project => project.id)); }
+  catch { return Object.create(null); }
+}
+
+function sessionText(project) {
+  const record = progress[project.id];
+  return `${project.difficulty} · 예상 ${project.duration}` + (record?.completed ? ` · ${record.completed}/${record.total} 완료` : "");
+}
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -30,7 +43,7 @@ function openPreview(project, opener) {
   document.querySelector("#dialog-title").textContent = project.name;
   document.querySelector("#dialog-subtitle").textContent = project.subtitle;
   document.querySelector("#dialog-purpose").textContent = project.purpose;
-  document.querySelector("#dialog-build").textContent = project.build;
+  document.querySelector("#dialog-session").textContent = sessionText(project);
   const image = document.querySelector("#dialog-image");
   image.src = project.image;
   image.alt = `${project.name} 실제 실행 화면`;
@@ -45,7 +58,7 @@ function openPreview(project, opener) {
 
 function render(category) {
   selectedCategory = category;
-  const selected = selectProjects(category, search.value);
+  const selected = selectProjects(category, search.value, difficulty.value);
   grid.replaceChildren(...selected.map((project, index) => {
     const article = element("article", "project-card");
     article.dataset.project = project.id;
@@ -66,12 +79,12 @@ function render(category) {
     const tags = element("div", "project-tags");
     tags.append(...project.tags.map(text => element("span", "", text)));
     const actions = element("div", "card-actions");
-    const run = externalLink("사이트 실행", project.url, "run-link");
+    const run = externalLink("실행", project.url, "run-link");
     run.setAttribute("aria-label", `${project.name} 사이트 실행 (새 탭)`);
     const source = externalLink("소스 코드", project.source, "source-link");
     source.setAttribute("aria-label", `${project.name} 소스 코드 (새 탭)`);
     actions.append(run, source);
-    content.append(meta, element("h3", "", project.name), element("p", "project-subtitle", project.subtitle), element("p", "project-description", project.description), tags, actions);
+    content.append(meta, element("h3", "", project.name), element("p", "project-subtitle", project.subtitle), element("p", "project-description", project.description), element("p", "session-meta", sessionText(project)), tags, actions);
     article.append(preview, content);
     return article;
   }));
@@ -87,16 +100,17 @@ filters.addEventListener("click", event => {
 });
 
 search.addEventListener("input", () => render(selectedCategory));
+difficulty.addEventListener("change", () => render(selectedCategory));
 search.addEventListener("keydown", event => {
   if (event.key === "Escape") { search.value = ""; render(selectedCategory); }
 });
 document.querySelector("#clear-search").addEventListener("click", () => {
-  search.value = ""; render("all"); search.focus();
+  search.value = ""; difficulty.value = "all"; render("all"); search.focus();
 });
 choose.addEventListener("click", () => {
   const random = new Uint32Array(1);
   crypto.getRandomValues(random);
-  const project = pickProject(selectProjects(selectedCategory, search.value), random[0] / 4294967296, lastPick);
+  const project = pickProject(selectProjects(selectedCategory, search.value, difficulty.value), random[0] / 4294967296, lastPick);
   if (!project) return;
   lastPick = project.id;
   openPreview(project, choose);
@@ -130,9 +144,21 @@ function syncPreviewWithHash() {
     if (dialog.open) dialog.close();
     return;
   }
-  if (!grid.querySelector(`[data-project="${project.id}"]`)) { search.value = ""; render("all"); }
+  if (!grid.querySelector(`[data-project="${project.id}"]`)) { search.value = ""; difficulty.value = "all"; render("all"); }
   openPreview(project, grid.querySelector(`[data-project="${project.id}"] .project-preview`));
 }
 
 window.addEventListener("hashchange", syncPreviewWithHash);
 syncPreviewWithHash();
+
+function refreshProgress() {
+  const next = readProgress();
+  if (JSON.stringify(next) === JSON.stringify(progress)) return;
+  progress = next;
+  render(selectedCategory);
+  const project = getProject(location.hash.slice(1));
+  if (dialog.open && project) document.querySelector("#dialog-session").textContent = sessionText(project);
+}
+window.addEventListener("focus", refreshProgress);
+window.addEventListener("pageshow", refreshProgress);
+window.addEventListener("storage", event => { if (event.key === PROGRESS_KEY || event.key === null) refreshProgress(); });
