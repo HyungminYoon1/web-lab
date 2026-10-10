@@ -1,5 +1,11 @@
 # Verification record
 
+## 2026-10-10 CLAY ROOM 선택·이동 소개 — LOCAL
+
+- SOURCE VERIFIED: 갤러리 architecture/README, CLAY ROOM 항목과 해당 decision·UI/정적 검사·workflow를 확인했습니다. 전체 카탈로그/다른 앱의 모든 코드 검토는 PARTIAL이며 이번 기능 변경 대상이 아닙니다.
+- 변경은 CLAY ROOM 목적/첫 기능과 실제 1440×1000 JPEG뿐입니다. 클릭 선택·마우스/키보드 이동 소개를 추가했고 다른 18개 카탈로그 객체와 JPEG bytes는 HEAD와 같음을 확인했습니다. 갤러리의 읽기 전용 저장 계약과 기존 랭킹/서버는 바꾸지 않습니다. D16에 범위를 기록했습니다.
+- LOCAL: 16/16 tests, 24 public files/19JPEG 정적 검사와 git diff --check PASS. ACTUAL BROWSER: 새 목적/기능·실행 링크·1440×1000 JPEG decode, Escape 닫기/19개 카드 보존, 1440/390/320px root overflow0·page errors0·실패 assets0입니다. 상세 QA는 ignored output/playwright/2026-10-10-controls에 있습니다. 조각 앱의 별도 조작·4K PNG/GLB/STL 검증은 clay-room/docs/verification.md에 기록합니다. 공개 CI/LIVE와 물리 기기/모든 앱의 전체 검증은 별도입니다.
+
 ## 2026-10-10 이번 개선의 공개 확인 — REMOTE_CI / LIVE
 
 - Exact implementation verify/deploy PASS: ELEMENT ATLAS `17b7477737090989656f68f54960abc05eec8528` [37971546431](https://github.com/HyungminYoon1/element-atlas/actions/runs/37971546431); CLAY ROOM `9488d2ed4c0ff1d361f1c3e20076312a1afe02fb` [37971545503](https://github.com/HyungminYoon1/clay-room/actions/runs/37971545503); DATA MIRAGE `e6ceb7ea40c8314d3bc6aafe8ed5d4c36252ff32` [37971545931](https://github.com/HyungminYoon1/data-mirage/actions/runs/37971545931); PARCEL PANIC `8544ca3ebc37d103cdfaeb01d282e56172cfa3bb` [37971545719](https://github.com/HyungminYoon1/parcel-panic/actions/runs/37971545719); WEB LAB `69c7d2ee42cd21ad7a14f0e727d8036cf6312093` [37971547451](https://github.com/HyungminYoon1/web-lab/actions/runs/37971547451). 각 origin/branch 확인 후 normal fast-forward로 게시했습니다.

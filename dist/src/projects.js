@@ -29,8 +29,8 @@ const catalog = [
   {
     id: "clay-room", number: "19", name: "CLAY ROOM", subtitle: "3D 조각 공방", category: "creative", categoryLabel: "3D 조각 도구",
     description: "여러 덩어리를 조각하고 평면·부피 비율로 나눕니다.",
-    purpose: "크기와 위치를 정밀하게 바꾸고, 여러 객체를 다루어 GLB·STL로 내보내세요.",
-    features: ["최대 8객체 · 추가·복제·부피 배율·선택 조각", "평면·1–99% 부피 분할과 닫힌 단면 · 전체 131072 정점", "다중 객체 GLB·mm STL·4K PNG·편집 JSON·옛 파일 읽기"],
+    purpose: "클릭으로 선택하고 드래그·키보드로 위치를 바꾸세요. 여러 객체를 조각해 GLB·STL로 저장합니다.",
+    features: ["최대 8객체 · 클릭 선택·드래그·정밀 키보드 이동·복제", "평면·1–99% 부피 분할과 닫힌 단면 · 전체 131072 정점", "다중 객체 GLB·mm STL·4K PNG·편집 JSON·옛 파일 읽기"],
     build: "실제 정점 좌표를 바꾸고 변형된 메시를 그대로 내보냅니다.",
     tags: ["WebGL / 조각", "GLB / STL", "고밀도 메시"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
   },
