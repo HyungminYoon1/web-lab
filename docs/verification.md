@@ -1,5 +1,11 @@
 # Verification record
 
+## 2026-10-10 CLAY ROOM 부드러운 이동 미리보기 — LOCAL
+
+- SOURCE VERIFIED: 갤러리 architecture/README, 이번 결정·정적 검사·workflow와 CLAY ROOM의 변경 UI를 확인했습니다. 다른 앱의 전체 코드·동작 검토는 PARTIAL입니다.
+- 변경은 CLAY ROOM의 실제 1440×1000 JPEG와 기록뿐입니다. 19개 카탈로그 메타데이터 및 다른 18개 JPEG bytes의 동일성을 검사합니다. 읽기 전용 요약·기존 랭킹/서버·호스팅은 변경하지 않습니다. D17에 범위를 기록했습니다.
+- LOCAL: 16/16 tests, 24 public files/19JPEG 정적 검사와 git diff --check PASS. Git 체크아웃의 CRLF와 커밋 blob의 LF를 정규화해 카탈로그 source 동일성을 확인했으며 다른 18개 JPEG bytes는 그대로입니다. ACTUAL BROWSER: 새 1440×1000 JPEG decode·실행 링크·19개 카드 보존, 1440/390/320px root overflow0·관찰한 page errors0입니다. 결과는 ignored output/playwright/2026-10-10-smooth에 보관합니다. 조각 앱의 27개 테스트와 실제 프레임·키/마우스·정밀/취소 검증은 clay-room/docs/verification.md에 기록합니다. REMOTE_CI/LIVE 및 물리 기기/모든 앱의 전체 검증은 구분합니다.
+
 ## 2026-10-10 CLAY ROOM 선택·이동 소개 — LOCAL
 
 - SOURCE VERIFIED: 갤러리 architecture/README, CLAY ROOM 항목과 해당 decision·UI/정적 검사·workflow를 확인했습니다. 전체 카탈로그/다른 앱의 모든 코드 검토는 PARTIAL이며 이번 기능 변경 대상이 아닙니다.
