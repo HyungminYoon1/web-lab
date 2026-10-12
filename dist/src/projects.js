@@ -11,6 +11,14 @@ export const categories = Object.freeze([
 
 const catalog = [
   {
+    id: "engineer-practice", number: "20", name: "정보처리기사 실기 학습실", subtitle: "개념·답안 작성·복습", category: "learning", categoryLabel: "국가자격 학습",
+    description: "C·Java·Python·SQL과 개발 이론을 직접 답안을 쓰며 익힙니다.",
+    purpose: "진단평가로 시작해 개념·실행 과정·오답 복습을 연결하고 150분 모의시험에 도전하세요.",
+    features: ["88개 개념 · 코드 16·SQL 6·계산 8유형과 단답, 조건 변형 포함 304문항", "직접 답안 작성 · 단계별 과정 · 오답 원인·지연 복습", "20문항 진단·150분 모의시험 · 자동 저장·백업·문제/해설 인쇄"],
+    build: "자체 제작한 코드·SQL 변형을 실제 언어와 SQLite로 실행해 정답을 검사합니다.",
+    tags: ["정보처리기사 / 실기", "C / Java / Python / SQL", "답안 / 복습"], difficulty: "기초~응용", entry: "intro", duration: "15~150분"
+  },
+  {
     id: "draw-desk", number: "17", name: "DRAW DESK", subtitle: "그림 공방", category: "creative", categoryLabel: "드로잉 도구",
     description: "펜압 브러시와 레이어로 그리고 PNG·SVG로 저장합니다.",
     purpose: "직접 그리거나 패턴을 만들고, 위치·크기·각도를 정밀하게 편집하세요.",
@@ -121,12 +129,12 @@ const catalog = [
     "subtitle": "감각 아케이드",
     "category": "experiment",
     "categoryLabel": "감각 실험",
-    "description": "색 구분, 반응속도, 위치 기억을 테스트합니다.",
-    "purpose": "색감·반응속도·기억력을 비교하고 두 음의 높낮이를 구분하세요.",
+    "description": "색·소리·기억·반응과 짧은 시간차를 구분합니다.",
+    "purpose": "색감·반응속도·기억력을 확인하고 음높이와 두 점의 표시 순서를 구분하세요.",
     "features": [
-      "4×4→6×6 적응형 색감 12라운드와 무작위 색·위치",
-      "연타·조기 입력 감지, 5회 반응의 중앙값·변동폭",
-      "8라운드 위치 순서 기억·10–18 kHz 듣기·12라운드 음높이 구분"
+      "적응형 색감 12라운드 · 연타 감지 반응속도 · 위치 순서 기억",
+      "10–18 kHz 듣기 · 12라운드 음높이 구분",
+      "시간차 구분 12라운드 · 작은 두 점·표시 간격 확인·즉시 중단"
     ],
     "build": "문제마다 색·위치·대기 시간을 무작위로 선택합니다.",
     "tags": [

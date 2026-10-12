@@ -341,3 +341,9 @@
 - LIVE_RESPONSIVE: 390×844에서 DATA MIRAGE 소개창과 실제 이미지, 320×780에서 전체12개 목록과 가로 넘침 없음 확인. 관찰한 경고/오류 로그 없음.
 - ACTUAL_PREVIEWS: 새 서비스의 공개 실행 화면을 직접 캡처했습니다. 효과·설정·시드는 캡처 당시 상태이며 갤러리에서 자동 실행하거나 실시간 갱신하지 않습니다.
 - 이후 검증 기록만 추가한 문서 전용 커밋은 위 dist 파일을 변경하지 않습니다. 그 커밋의 워크플로 결과는 Actions에서 별도 확인합니다.
+# 2026-10-12 — 정보처리기사 실기 학습실과 시간차 구분
+
+- Local Node: PASS 17 tests and static checker, 25 public files / 20 real JPEG previews. Total 20, categories experiment 5 / learning 6 / game 6 / creative 3 are catalog-derived; not new constants.
+- Isolated Chrome: learning filter shows six cards; ‘정보처리기사’ finds one. Precise dialog title, new execution/source links and loaded real image verified. SENSE LAB dialog accurately introduces finite temporal-order trials and new image. Desktop and 320px dialog captures reviewed; document width 320 and dialog scroll width 280; no uncaught JS errors in selected flows.
+- Only engineer-practice and sense-lab captures/catalog entries changed; remaining service code is outside scope. No backend, private learning record access or shared-completion write added.
+- Remote CI/public Pages: NOT_RUN at preparation time. Gallery publication waits for new app URL confirmation.

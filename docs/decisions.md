@@ -1,5 +1,14 @@
 # Decisions
 
+## D18 — 국가자격 학습실과 시간차 구분 연결 (2026-10-12)
+
+- Context: 사용자가 SENSE LAB의 유사 시간 지각 실험과 정보처리기사 실기 학습 앱을 승인하고, 명칭과 실제 캡처 갱신을 요청했습니다.
+- Options: 기존 문제은행 병합·백엔드 추가; 독립 정적 학습 앱과 읽기 전용 갤러리 항목.
+- Decision: `engineer-practice`를 ‘정보처리기사 실기 학습실’로 등록합니다. SENSE LAB은 임상 CFF 검사가 아닌 작은 두 점의 시간차 구분으로 소개합니다. 두 앱의 실제 Chrome 캡처만 갱신하며 다른 항목·미리보기·개인 완료 저장 정책은 유지합니다.
+- Rationale: 정확한 목적과 검증된 기능만 소개하며 새 DB·서버·공유 기록 쓰기를 추가하지 않습니다.
+- Affected: dist/src/projects.js, dist/index.html, dist/assets/previews/{engineer-practice,sense-lab}.jpg, README.md, test/catalog.test.js, docs/verification.md.
+- Review: 학습실의 새 URL 공개가 확인된 후 갤러리를 공개합니다. 전체/학습 개수·검색·소개창·좁은 화면·실행 링크를 검증합니다. 304문항은 고정 조건 변형을 포함하며 304개 독립 유형이 아닙니다.
+
 ## D17 — 부드러운 이동 UI의 실제 미리보기
 
 - Context: 사용자가 CLAY ROOM의 객체/카메라 키 이동을 부드럽게 하고 객체 이동에서 카메라로 돌아가는 방법을 명확히 하도록 요청했습니다.
