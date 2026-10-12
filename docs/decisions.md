@@ -1,5 +1,14 @@
 # Decisions
 
+## D19 — 실기 학습실 재검토와 실제 화면 갱신 (2026-10-12)
+
+- Context: 사용자가 88개 개념·304문항의 시험 대비 충분성, TDD 재검토와 미수록 범위의 문제화를 요청했습니다.
+- Options: 숫자만 갱신; 전체 갤러리/저장 구조 개편; 검증한 학습실 항목과 실제 화면만 갱신.
+- Decision: engineer-practice의 134개 개념·70개 응용 유형·583문항과 범위별 문제 연결을 소개하고 실제 Chrome JPEG를 교체합니다. 이 수치는 변형 포함 수이며 공식 합격 확률이 아닙니다. 다른 19개 항목과 19개 캡처·공유 요약 읽기·호스팅은 그대로 둡니다.
+- Rationale: 공개 UI와 소개를 맞추고 비공개 학습 기록·DB·랭킹 기능을 갤러리에 추가하지 않습니다. 임시 MySQL/PostgreSQL은 학습 앱의 개발/CI 검증 도구이지 서비스 DB가 아닙니다.
+- Affected: dist/src/projects.js, dist/assets/previews/engineer-practice.jpg, test/catalog.test.js, docs/verification.md.
+- Review: 별도 원격 CI와 공개 파일·소개창·미리보기 로드 확인. 다른 앱의 전체 기능 재감사는 범위 밖입니다.
+
 ## D18 — 국가자격 학습실과 시간차 구분 연결 (2026-10-12)
 
 - Context: 사용자가 SENSE LAB의 유사 시간 지각 실험과 정보처리기사 실기 학습 앱을 승인하고, 명칭과 실제 캡처 갱신을 요청했습니다.

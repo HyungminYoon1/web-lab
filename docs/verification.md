@@ -1,5 +1,12 @@
 # Verification record
 
+## 2026-10-12 — 실기 학습실 재검토 반영
+
+- LOCAL_NODE: 17 tests PASS; static checker PASS (25 public files, 20 real JPEG previews). New 134 concepts/70 applied families/583 bounded items are not a pass probability or 583 independent skills.
+- BROWSER_LOCAL: current engineer-practice introduction, precise title, counts, execution/source links and decoded 1440×1000 actual Chrome JPEG verified. Desktop dialog screenshot reviewed. Only this learning entry/capture is updated; gallery still reads only its allowlisted completion summary and has no runtime DB/API.
+- SOURCE/PRESERVATION: authority documents and related catalog/test/check paths inspected. Other 19 service entries/previews are outside feature-audit scope and remain byte/content-identical to prior HEAD. No SENSE LAB or other service implementation changed.
+- REMOTE_CI / LIVE: NOT_RUN at this pre-publication checkpoint. Initial delivery and older entries below are historical, not new release evidence.
+
 ## 2026-10-10 CLAY ROOM 부드러운 이동 미리보기 — LOCAL
 
 - SOURCE VERIFIED: 갤러리 architecture/README, 이번 결정·정적 검사·workflow와 CLAY ROOM의 변경 UI를 확인했습니다. 다른 앱의 전체 코드·동작 검토는 PARTIAL입니다.

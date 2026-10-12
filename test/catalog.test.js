@@ -18,7 +18,7 @@ test("catalog projects have unique ids and complete introductions", () => {
 
 test("practical qualification learning and finite temporal experiment are accurately listed", async () => {
   const app=getProject("engineer-practice");assert.equal(app.name,"정보처리기사 실기 학습실");assert.equal(app.category,"learning");
-  assert.match(app.features.join(" "),/88개.*304문항.*150분/);assert.equal(selectProjects("learning","정보처리기사")[0]?.id,app.id);
+  assert.match(app.features.join(" "),/134개.*583문항.*150분/);assert.equal(selectProjects("learning","정보처리기사")[0]?.id,app.id);
   assert.match(getProject("sense-lab").features.join(" "),/시간차 구분 12라운드/);
   assert.doesNotMatch(getProject("sense-lab").features.join(" "),/청력 나이|임계.*검사/);
   const shell=await readFile(new URL("../dist/index.html",import.meta.url),"utf8");assert.match(shell,/engineer-practice\/">정보처리기사 실기 학습실/);

@@ -13,9 +13,9 @@ const catalog = [
   {
     id: "engineer-practice", number: "20", name: "정보처리기사 실기 학습실", subtitle: "개념·답안 작성·복습", category: "learning", categoryLabel: "국가자격 학습",
     description: "C·Java·Python·SQL과 개발 이론을 직접 답안을 쓰며 익힙니다.",
-    purpose: "진단평가로 시작해 개념·실행 과정·오답 복습을 연결하고 150분 모의시험에 도전하세요.",
-    features: ["88개 개념 · 코드 16·SQL 6·계산 8유형과 단답, 조건 변형 포함 304문항", "직접 답안 작성 · 단계별 과정 · 오답 원인·지연 복습", "20문항 진단·150분 모의시험 · 자동 저장·백업·문제/해설 인쇄"],
-    build: "자체 제작한 코드·SQL 변형을 실제 언어와 SQLite로 실행해 정답을 검사합니다.",
+    purpose: "2026 출제기준의 영역별 문제를 풀고 개념·실행 과정·오답 복습을 연결하세요. 모의 점수는 공식 합격 가능성을 뜻하지 않습니다.",
+    features: ["134개 개념 · 응용 70유형·개념 단답, 조건 변형 포함 583문항", "12개 영역별 문제 · SQL 작성·프로시저·UML·보안·스케줄링", "20문항 진단·150분 모의시험 · 자동 저장·백업·문제/해설 인쇄"],
+    build: "원본 코드·SQL은 언어 런타임·SQLite·임시 MySQL·PostgreSQL에서 정답을 검증합니다. 앱에는 DB 서버가 없습니다.",
     tags: ["정보처리기사 / 실기", "C / Java / Python / SQL", "답안 / 복습"], difficulty: "기초~응용", entry: "intro", duration: "15~150분"
   },
   {
