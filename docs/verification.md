@@ -1,5 +1,12 @@
 # Verification record
 
+## 2026-10-13 — 전체 유지보수 통합 검증 / LOCAL
+
+- Scope: 20 apps + gallery + ranking API. Full inventory, per-repository changes/tests, source coverage limits and separately verified release evidence are in [maintenance-20261013.md](maintenance-20261013.md).
+- Gallery: 17 Node tests/static checker PASS; 20 real Chrome captures updated. All preview image decodes, execution/source URLs, Escape focus return, category/search/difficulty/recommendation/empty state and about link checked. Actual cross-tab storage update no longer detaches the preview opener. No-JS fallback retains 40 links; selected 1440/320px flows show no page errors or horizontal overflow.
+- The new capture assets reflect current implemented states, not fabricated scenes. Larger source screenshots are viewport-cropped, without stretching; city/swarm/orbit/light use the interaction-board region. The gallery still reads only allowlisted completion summaries and performs no DB/API calls.
+- REMOTE_CI/LIVE: separate release evidence is recorded in the maintenance report, not inferred from local tests.
+
 ## 2026-10-12 — 실기 학습실 재검토 반영
 
 - LOCAL_NODE: 17 tests PASS; static checker PASS (25 public files, 20 real JPEG previews). New 134 concepts/70 applied families/583 bounded items are not a pass probability or 583 independent skills.

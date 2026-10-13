@@ -2,7 +2,7 @@
 
 ## Scope and hosting
 
-Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the personal root repository and all linked service repositories. Only this repository is changed or deployed. No Sites/Cloudflare manifest, backend, external API, identity, database or package runtime dependencies.
+Independent, public, static GitHub Pages gallery at /web-lab/. Preserve the personal root repository and the independent linked service repositories. This repository owns only the gallery; approved service maintenance is implemented and deployed separately in each service's repository. No Sites/Cloudflare manifest, backend, external API, identity, database or package runtime dependencies in this gallery.
 
 ## Layers
 

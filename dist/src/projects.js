@@ -12,16 +12,16 @@ export const categories = Object.freeze([
 const catalog = [
   {
     id: "engineer-practice", number: "20", name: "정보처리기사 실기 학습실", subtitle: "개념·답안 작성·복습", category: "learning", categoryLabel: "국가자격 학습",
-    description: "C·Java·Python·SQL과 개발 이론을 직접 답안을 쓰며 익힙니다.",
+    description: "학습 길잡이에서 시작해 C·Java·Python·SQL과 개발 이론을 익힙니다.",
     purpose: "2026 출제기준의 영역별 문제를 풀고 개념·실행 과정·오답 복습을 연결하세요. 모의 점수는 공식 합격 가능성을 뜻하지 않습니다.",
-    features: ["134개 개념 · 응용 70유형·개념 단답, 조건 변형 포함 583문항", "12개 영역별 문제 · SQL 작성·프로시저·UML·보안·스케줄링", "20문항 진단·150분 모의시험 · 자동 저장·백업·문제/해설 인쇄"],
+    features: ["134개 개념 · 응용 70유형·개념 단답, 조건 변형 포함 583문항", "6개 학습 길잡이·24단계 · 예제에서 다른 조건의 문제로 연결", "20문항 진단·150분 모의시험 · 자동 저장·백업·문제/해설 인쇄"],
     build: "원본 코드·SQL은 언어 런타임·SQLite·임시 MySQL·PostgreSQL에서 정답을 검증합니다. 앱에는 DB 서버가 없습니다.",
     tags: ["정보처리기사 / 실기", "C / Java / Python / SQL", "답안 / 복습"], difficulty: "기초~응용", entry: "intro", duration: "15~150분"
   },
   {
     id: "draw-desk", number: "17", name: "DRAW DESK", subtitle: "그림 공방", category: "creative", categoryLabel: "드로잉 도구",
     description: "펜압 브러시와 레이어로 그리고 PNG·SVG로 저장합니다.",
-    purpose: "직접 그리거나 패턴을 만들고, 위치·크기·각도를 정밀하게 편집하세요.",
+    purpose: "해안선 편집 연습으로 시작해 레이어·패턴을 만들고 위치·크기·각도를 정밀하게 편집하세요.",
     features: ["펜압·보정 브러시, 도형·글자·레이어·실행 취소", "0.1px 이동·숫자 편집 · 끌어당김·회전 패턴 레이어", "최대 8192px·32MP PNG, 벡터 SVG와 편집 JSON"],
     build: "벡터 좌표를 유지하고 출력 해상도에서 다시 렌더링합니다.",
     tags: ["드로잉 / 레이어", "PNG / SVG", "정밀 편집"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
@@ -29,7 +29,7 @@ const catalog = [
   {
     id: "score-lab", number: "18", name: "SCORE LAB", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
     description: "다중 트랙 피아노 롤에서 작곡하고 음원·악보로 저장합니다.",
-    purpose: "음높이·길이·세기를 편집하고 피아노와 합성 악기를 조합하세요.",
+    purpose: "두 마디 연습 곡에서 음높이·길이·세기를 바꾸고 피아노와 합성 악기를 조합하세요.",
     features: ["8트랙 · 960 PPQ 정밀 편집·복사·실행 취소", "실제 피아노 샘플 · 합성 베이스·패드·드럼·트랙 믹스", "48kHz 24bit WAV · MIDI·MusicXML·SVG·300dpi PDF"],
     build: "연주 시간은 그대로 유지하고 악보만 16분음표 격자로 표시합니다.",
     tags: ["피아노 롤", "작곡 / 악보", "WAV / MIDI"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
@@ -37,7 +37,7 @@ const catalog = [
   {
     id: "clay-room", number: "19", name: "CLAY ROOM", subtitle: "3D 조각 공방", category: "creative", categoryLabel: "3D 조각 도구",
     description: "여러 덩어리를 조각하고 평면·부피 비율로 나눕니다.",
-    purpose: "클릭으로 선택하고 드래그·키보드로 위치를 바꾸세요. 여러 객체를 조각해 GLB·STL로 저장합니다.",
+    purpose: "두 조각 편집 연습으로 분할·개별 재질·이동을 익히세요. 여러 객체를 조각해 GLB·STL로 저장합니다.",
     features: ["최대 8객체 · 클릭 선택·드래그·정밀 키보드 이동·복제", "평면·1–99% 부피 분할과 닫힌 단면 · 전체 131072 정점", "다중 객체 GLB·mm STL·4K PNG·편집 JSON·옛 파일 읽기"],
     build: "실제 정점 좌표를 바꾸고 변형된 메시를 그대로 내보냅니다.",
     tags: ["WebGL / 조각", "GLB / STL", "고밀도 메시"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
@@ -46,7 +46,7 @@ const catalog = [
     id: "element-atlas", number: "16", name: "ELEMENT ATLAS", subtitle: "화학 실험실", category: "learning", categoryLabel: "화학 학습",
     description: "전자 상태부터 결합과 물성까지, 원소를 이해하는 규칙을 배웁니다.",
     purpose: "10개 기본 개념에서 출발해 전자배치·주기율표·실제 표본·문제를 연결하세요.",
-    features: ["10개 학습 규칙 · 1–30 전자배치 작업대 · 수소 1s 확률", "118원소 · 97종 사진 100장 · 표본·관측 구분 · 결정 89종", "4단계 난이도·10유형 무작위 문제·해설·오답 복습"],
+    features: ["10개 학습 규칙·추론 도전 · 1–30 전자배치 · 수소 1s 확률", "118원소 · 97종 사진 100장 · 표본·관측 구분 · 결정 89종", "4단계 난이도·10유형 무작위 문제·해설·오답 복습"],
     build: "출처가 있는 데이터와 사진을 사용하고 알려지지 않은 값은 비워 둡니다.",
     tags: ["주기율표", "원소 / 결정", "문제 / 복습"], difficulty: "입문~심화", entry: "intro", duration: "5~30분"
   },
@@ -181,7 +181,7 @@ const catalog = [
     "purpose": "범주와 난이도를 선택해 학습하거나 10문제 도전에 참여하세요.",
     "features": [
       "수학 8개·컴퓨터과학 8개 범주, 4단계 난이도·48개 유형",
-      "독창 문제 41개·MIT 시험 변형 7개 유형과 단계별 해설",
+      "독창 41개·MIT 시험 변형 7개 유형 · 반례·조건 변경 도전 10개",
       "20–40분 10문제 도전·미응답 포함 전체 복습·버전별 오답 재현"
     ],
     "build": "같은 문제 코드와 버전으로 조건을 재현합니다.",
@@ -397,7 +397,7 @@ const catalog = [
     "purpose": "핵심 규칙·풀이 예제·새 문제를 공부하고, 보조 실험으로 가정을 확인하세요.",
     "features": [
       "18개 개념 · 확률·표본·추정·검정·충분통계량·델타 방법",
-      "24개 다단계 수치 문제 유형 · 무작위 조건·계산 해설",
+      "24개 다단계 수치 유형·해석 과제 9개 · 답별 비교·해설",
       "기존 6개 보조 실험 · 원자료·시드 재현·JSON"
     ],
     "build": "같은 시드로 원자료를 재현합니다.",

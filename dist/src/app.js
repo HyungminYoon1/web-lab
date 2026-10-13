@@ -155,7 +155,10 @@ function refreshProgress() {
   const next = readProgress();
   if (JSON.stringify(next) === JSON.stringify(progress)) return;
   progress = next;
-  render(selectedCategory);
+  for (const card of grid.querySelectorAll("[data-project]")) {
+    const project = getProject(card.dataset.project);
+    if (project) card.querySelector(".session-meta").textContent = sessionText(project);
+  }
   const project = getProject(location.hash.slice(1));
   if (dialog.open && project) document.querySelector("#dialog-session").textContent = sessionText(project);
 }
