@@ -1,6 +1,6 @@
 # WEB LAB maintenance — 2026-10-13
 
-Status: local implementation and targeted verification complete; remote publication evidence is recorded separately below. Local success alone is not a release declaration.
+Status: published and verified. Local tests, exact-commit remote CI, public files/browser checks and the Worker deployment are recorded separately below.
 
 ## Scope and decisions
 
@@ -58,7 +58,7 @@ Exploratory cases include near-capacity and corrupt backups, external summary up
 
 ## Remote release evidence
 
-The 20 applications and ranking API source are published. Gallery publication is pending the final integration check.
+All 20 applications, WEB LAB and the ranking API source are published; all 22 implementation commits passed their GitHub workflows.
 
 | Repository | Implementation commit | Exact-commit Actions |
 | --- | --- | --- |
@@ -83,8 +83,9 @@ The 20 applications and ranking API source are published. Gallery publication is
 | pixel-kitchen | `ff04ef7885` | [38350352462](https://github.com/HyungminYoon1/pixel-kitchen/actions/runs/38350352462) · success |
 | swarm-garden | `86b39c5bc6` | [38350357210](https://github.com/HyungminYoon1/swarm-garden/actions/runs/38350357210) · success |
 | traffic-lab | `451510e44c` | [38350361724](https://github.com/HyungminYoon1/traffic-lab/actions/runs/38350361724) · success |
+| web-lab | `fe02444885` | [38350832472](https://github.com/HyungminYoon1/web-lab/actions/runs/38350832472) · success |
 
 - LIVE_FILES: all 346 public files from the 20 apps returned HTTP 200 and matched the verified local bytes (SHA-256 and byte equality). These requests used the public URLs without preview hosting or response substitution.
 - LIVE_BROWSER: all 20 apps loaded in fresh isolated Chrome at 1440x1000 and 390x844. In these initial-page checks there were no observed page errors, failing asset responses or root horizontal overflow. The published engineer guide's example/self-check and transition to a new practice question also passed. Detailed local workflows remain distinct from this public smoke subset.
 - LIVE_RANKING: Worker version `8a155cfb-07ab-448c-8569-9229ea8bc725` deployed successfully from the ranking commit above. Public health and both boards returned HTTP 200 with expected CORS; both boards were empty at verification time. The actual Pages clients each performed a successful board read and retry (four real GETs total). Two separately intercepted GET fixtures (Neon network failure, Parcel 503) showed the connection message and preserved personal play; these are simulated failures, not actual production outages. No production POST/PUT/DELETE, identities, tickets or test scores were created.
-- LIVE_GALLERY: pending; its exact commit/CI, all 25 public files and final preview checks are recorded after publication.
+- LIVE_GALLERY: the implementation commit and workflow above passed. All 25 public files, including 20 new JPEGs, returned HTTP 200 and matched local verified bytes. Total public-file coverage is 371/371 across all 21 Pages sites. Actual public Chrome opened/decoded all 20 introductions, restored focus after Escape, found the qualification app by search, showed six games and the about section, and displayed the new swarm preview at 320px without horizontal overflow. No observed page errors or failed asset responses. Later evidence-only documentation commits do not change the validated dist files.
