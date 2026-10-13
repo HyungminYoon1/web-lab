@@ -1,6 +1,6 @@
 # 전체 앱 엣지케이스 감사 — 2026-10-13
 
-상태: LOCAL 검증 완료, RELEASE_PENDING. 공개 배포 항목이 채워지기 전에는 이번 변경이 공개되었다고 해석하지 않습니다. 앞선 [유지보수](maintenance-20261013.md)와 구분하는 새로운 테스트 중심 감사입니다.
+상태: 검증한 수정본 배포 완료. 랭킹 로컬 transport 1건은 미해결로 남깁니다. 앞선 [유지보수](maintenance-20261013.md)와 구분하는 새로운 테스트 중심 감사입니다.
 
 ## 범위와 결과의 의미
 
@@ -72,4 +72,35 @@
 
 ## 공개 배포 증거
 
-RELEASE_PENDING — 실제 push, 정확한 SHA의 CI, 모든 dist 파일 비교, 선택 공개 UI와 Worker 버전/읽기 확인 후 채웁니다. 과거 유지보수 릴리스 증거를 이번 결과로 사용하지 않습니다.
+2026-10-13 16:02 KST 확인. 22개 저장소 origin/main과 noreply identity를 검증한 뒤 normal fast-forward로 push했습니다. 구현 SHA의 CI **22/22 SUCCESS**, Pages **21개/371개 공개 파일 HTTP200 및 로컬 bytes/SHA256 일치**, 공개 브라우저 **21/21 PASS**입니다.
+
+공개 Chrome은 각 앱의 로드·텍스트·1440/390/320px 가로 넘침/예외/실패 응답을 확인했습니다. 갤러리20카드·빈 검색·새 DRAW 미리보기·Escape 포커스·소개 링크, 실기 빈 답안/실제 채점/중복 제출 잠금, 두 게임의 실제 순위 보기 GET200도 확인했습니다. 다른 모든 로컬 회귀를 공개에서 반복한 것은 아닙니다. 관찰한 page error/실패 HTTP0, 공개 POST/DELETE0입니다.
+
+랭킹 서버 source `08db8b6852a05f113a720f24a1651fa5130561d6`, Worker version `e1346b26-4bbf-4630-ad9c-bb2645669c0c`로 배포했습니다. 직전 계정 UI의 Free/$0/Current plan 확인, 새 자원/요금/스키마/권한 변경 없음. 운영 /health와 두 /v1/boards가 HTTP200, 허용 Origin CORS 일치, 각 entries0으로 응답했습니다. 운영 쓰기/부하/413 재현은 NOT_RUN이며 위 로컬 미해결 항목을 유지합니다.
+
+| 저장소 / 앱별 상세 기록 | 검증·배포한 구현 commit | 해당 commit CI | 공개 파일 수 |
+| --- | --- | --- | ---: |
+| [clay-room](https://github.com/HyungminYoon1/clay-room/blob/main/docs/edge-cases-20261013.md) | [0958230b](https://github.com/HyungminYoon1/clay-room/commit/0958230b4a63c5f459b2e2cae0ce204999f66983) | [SUCCESS](https://github.com/HyungminYoon1/clay-room/actions/runs/38359870274) | 17 |
+| [data-mirage](https://github.com/HyungminYoon1/data-mirage/blob/main/docs/edge-cases-20261013.md) | [45d4e0ce](https://github.com/HyungminYoon1/data-mirage/commit/45d4e0ce4fe9f9ddf73f81956168a6705252fa72) | [SUCCESS](https://github.com/HyungminYoon1/data-mirage/actions/runs/38359869614) | 16 |
+| [draw-desk](https://github.com/HyungminYoon1/draw-desk/blob/main/docs/edge-cases-20261013.md) | [98a93904](https://github.com/HyungminYoon1/draw-desk/commit/98a9390470b0f5c78210e016361a3d0f4e437c3a) | [SUCCESS](https://github.com/HyungminYoon1/draw-desk/actions/runs/38359869802) | 8 |
+| [echo-vault](https://github.com/HyungminYoon1/echo-vault/blob/main/docs/edge-cases-20261013.md) | [b22f6bba](https://github.com/HyungminYoon1/echo-vault/commit/b22f6bba1262e69a9688f08eb0e969c4b2f45a83) | [SUCCESS](https://github.com/HyungminYoon1/echo-vault/actions/runs/38359875947) | 10 |
+| [element-atlas](https://github.com/HyungminYoon1/element-atlas/blob/main/docs/edge-cases-20261013.md) | [41cef9ab](https://github.com/HyungminYoon1/element-atlas/commit/41cef9ab593e5626629e185f50e9f73b9ef24799) | [SUCCESS](https://github.com/HyungminYoon1/element-atlas/actions/runs/38359876498) | 114 |
+| [engineer-practice](https://github.com/HyungminYoon1/engineer-practice/blob/main/docs/edge-cases-20261013.md) | [905e34b6](https://github.com/HyungminYoon1/engineer-practice/commit/905e34b6519c5428b8c0204c51d2fbc8f1d1772e) | [SUCCESS](https://github.com/HyungminYoon1/engineer-practice/actions/runs/38359875875) | 11 |
+| [light-route](https://github.com/HyungminYoon1/light-route/blob/main/docs/edge-cases-20261013.md) | [c5d28589](https://github.com/HyungminYoon1/light-route/commit/c5d285892f0b8c67ceb064473f3ef1082e9bf90f) | [SUCCESS](https://github.com/HyungminYoon1/light-route/actions/runs/38359882251) | 9 |
+| [logic-foundry](https://github.com/HyungminYoon1/logic-foundry/blob/main/docs/edge-cases-20261013.md) | [25cf82c3](https://github.com/HyungminYoon1/logic-foundry/commit/25cf82c3f776f26079f21ea93bd015160b051d9a) | [SUCCESS](https://github.com/HyungminYoon1/logic-foundry/actions/runs/38359882762) | 9 |
+| [neon-tactics](https://github.com/HyungminYoon1/neon-tactics/blob/main/docs/edge-cases-20261013.md) | [0fe0a839](https://github.com/HyungminYoon1/neon-tactics/commit/0fe0a83949f5ab38bd57d266c13e24273a7d0407) | [SUCCESS](https://github.com/HyungminYoon1/neon-tactics/actions/runs/38359882935) | 14 |
+| [orbit-courier](https://github.com/HyungminYoon1/orbit-courier/blob/main/docs/edge-cases-20261013.md) | [27645524](https://github.com/HyungminYoon1/orbit-courier/commit/27645524d0f390e548ed937570b9d60b607c988c) | [SUCCESS](https://github.com/HyungminYoon1/orbit-courier/actions/runs/38359889260) | 9 |
+| [packet-journey](https://github.com/HyungminYoon1/packet-journey/blob/main/docs/edge-cases-20261013.md) | [a38bdbe0](https://github.com/HyungminYoon1/packet-journey/commit/a38bdbe0392a656c9601b626a32d08c796c1e5ff) | [SUCCESS](https://github.com/HyungminYoon1/packet-journey/actions/runs/38359889588) | 7 |
+| [parcel-panic](https://github.com/HyungminYoon1/parcel-panic/blob/main/docs/edge-cases-20261013.md) | [d8e8d8f0](https://github.com/HyungminYoon1/parcel-panic/commit/d8e8d8f0cc6ca7b49bda38e45b45293fdbe8a9c0) | [SUCCESS](https://github.com/HyungminYoon1/parcel-panic/actions/runs/38359889300) | 17 |
+| [pixel-kitchen](https://github.com/HyungminYoon1/pixel-kitchen/blob/main/docs/edge-cases-20261013.md) | [19a72673](https://github.com/HyungminYoon1/pixel-kitchen/commit/19a72673e87b181b89b6033ecf2825cdb7abc80b) | [SUCCESS](https://github.com/HyungminYoon1/pixel-kitchen/actions/runs/38359894919) | 8 |
+| [pocket-city](https://github.com/HyungminYoon1/pocket-city/blob/main/docs/edge-cases-20261013.md) | [0274c194](https://github.com/HyungminYoon1/pocket-city/commit/0274c1941fc94c9fce89076068ccd7e3f0deda30) | [SUCCESS](https://github.com/HyungminYoon1/pocket-city/actions/runs/38359895397) | 9 |
+| [route-race](https://github.com/HyungminYoon1/route-race/blob/main/docs/edge-cases-20261013.md) | [70b2a570](https://github.com/HyungminYoon1/route-race/commit/70b2a57025811df012a73b30567a228af95814f7) | [SUCCESS](https://github.com/HyungminYoon1/route-race/actions/runs/38359895376) | 8 |
+| [score-lab](https://github.com/HyungminYoon1/score-lab/blob/main/docs/edge-cases-20261013.md) | [ae4e97e5](https://github.com/HyungminYoon1/score-lab/commit/ae4e97e5a310ec7bc3d76fb0cdcfd5a1284c8bab) | [SUCCESS](https://github.com/HyungminYoon1/score-lab/actions/runs/38359901208) | 30 |
+| [sense-lab](https://github.com/HyungminYoon1/sense-lab/blob/main/docs/edge-cases-20261013.md) | [37d339c0](https://github.com/HyungminYoon1/sense-lab/commit/37d339c02bfc716412fff59785745860c87320f8) | [SUCCESS](https://github.com/HyungminYoon1/sense-lab/actions/runs/38359900076) | 16 |
+| [swarm-garden](https://github.com/HyungminYoon1/swarm-garden/blob/main/docs/edge-cases-20261013.md) | [67cfde85](https://github.com/HyungminYoon1/swarm-garden/commit/67cfde8529ab989b36af58d31373267bb028792b) | [SUCCESS](https://github.com/HyungminYoon1/swarm-garden/actions/runs/38359899568) | 9 |
+| [think-forge](https://github.com/HyungminYoon1/think-forge/blob/main/docs/edge-cases-20261013.md) | [6acca2ee](https://github.com/HyungminYoon1/think-forge/commit/6acca2eea2b72cd10cbfb2bdb2f2e49f66d8079f) | [SUCCESS](https://github.com/HyungminYoon1/think-forge/actions/runs/38359906447) | 16 |
+| [traffic-lab](https://github.com/HyungminYoon1/traffic-lab/blob/main/docs/edge-cases-20261013.md) | [6bbcba7d](https://github.com/HyungminYoon1/traffic-lab/commit/6bbcba7dc3af73857c90c619d69cf07630cb62c1) | [SUCCESS](https://github.com/HyungminYoon1/traffic-lab/actions/runs/38359906451) | 9 |
+| [web-lab](https://github.com/HyungminYoon1/web-lab/blob/main/docs/edge-cases-20261013.md) | [59f48792](https://github.com/HyungminYoon1/web-lab/commit/59f48792be9bf91afdbe1da8116c07041026e654) | [SUCCESS](https://github.com/HyungminYoon1/web-lab/actions/runs/38359907826) | 25 |
+| [web-lab-ranking](https://github.com/HyungminYoon1/web-lab-ranking/blob/main/docs/edge-cases-20261013.md) | [08db8b68](https://github.com/HyungminYoon1/web-lab-ranking/commit/08db8b6852a05f113a720f24a1651fa5130561d6) | [SUCCESS](https://github.com/HyungminYoon1/web-lab-ranking/actions/runs/38359911949) | 별도 Worker |
+
+상위 ignored QA의 checks.json, release-git.json, release-ci.json, live-files.json, live-browser.json, worker-release.json에 실제 결과를 보관합니다. 이 표를 추가하는 후속 commit은 WEB LAB 문서만 변경하며 검증한 공개 dist를 변경하지 않습니다.

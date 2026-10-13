@@ -1,9 +1,10 @@
 # Verification record
 
-## 2026-10-13 — 체계적 엣지케이스 감사 / LOCAL
+## 2026-10-13 — 체계적 엣지케이스 감사 / LOCAL · REMOTE_CI · LIVE
 
 - 갤러리25/25 Node 검사(신규8, baseline에서도 통과한 coverage)와 정적 검사 PASS. 검색/필터/선택/hash/요약 경계, 실제 dialog/포커스/2탭 저장 이벤트, 저장 거부와 no-JS40링크 확인. 브라우저 도구는 수동 실행이며 CI에서는 Node 검사를 실행합니다.
 - 22개 repo의 앱별 수정/검증·미검증 범위·실제 배포 증거는 [edge-cases-20261013.md](edge-cases-20261013.md)에 기록합니다. 랭킹 로컬 transport의 간헐적413 후속 오류는 해결했다고 주장하지 않습니다. DRAW DESK의 실제 미리보기만 갱신했습니다.
+- 구현 SHA22/22 CI SUCCESS, Pages21개 공개371파일 HTTP200/byte equality, 공개 Chrome21/21 선택 smoke PASS. 두 순위 조회와 서버 health200; 운영 쓰기0. Worker version e1346b26-4bbf-4630-ad9c-bb2645669c0c. 전체 로컬 브라우저 회귀를 운영에서 재실행했다고 주장하지 않습니다. 이 결과 추가는 문서만 변경합니다.
 
 ## 2026-10-13 — 전체 유지보수 통합 검증 / LOCAL
 
