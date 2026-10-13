@@ -1,5 +1,14 @@
 # Decisions
 
+## D22 — 전체 경계 감사와 증거별 릴리스 판단 (2026-10-13)
+
+- Context: 사용자가 모든 앱/갤러리/서버의 경계 테스트, 실패 재현 후 수정, 검증 후 배포와 미검증 공개를 요청했습니다. LIGHT의 원문 보존/요약 갱신 중단은 명시 승인했습니다.
+- Options: 정적 검사만 반복; 모두 TDD로 통칭; 추가 coverage와 실제 RED_GREEN 및 실행 환경을 구분.
+- Decision: 22개 독립 repo에 재실행 가능한 검사/보고서를 유지합니다. 오류는 수정 전 Node 또는 브라우저 실패를 기록하고 같은 검사로 재검증하며 baseline PASS와 구분합니다. Node는 기존 CI, 브라우저는 수동 실행입니다. 운영 랭킹 쓰기 없이 로컬 SQLite/workerd에서 합성 기록을 만들고 지웁니다. 로컬413 후속 proxy 오류는 미해결로 기록하고 검증된 로직 개선은 해당 한계를 명시해 배포합니다. 제한 완화/무제한 stream 읽기/실패를 숨기는 재시도는 하지 않습니다.
+- Rationale: 개인 기록/공개 점수를 보호하고 개발 런타임 문제를 숨기지 않으면서 확인된 결함 수정을 전달합니다. readback은 디스크 내구성/다중 탭 원자성의 보증이 아닙니다.
+- Affected: docs/edge-cases-20261013.md, docs/verification.md, test/edge-cases.test.js, tools/browser-edges.mjs, tools/verify-browser-edges.mjs, dist/assets/previews/draw-desk.jpg; 앱별 기록과 승인된 LIGHT D13.
+- Review: 전체 검사, client/규칙 equality, remotes, 정확한 SHA의 CI, 공개 파일/선택 UI 및 Worker 읽기 확인을 구분합니다. Free 확인 외 새 비용/자원/스키마/보관/랭킹 범위 변경 없음. 로컬 transport·물리 기기·운영 부하는 후속 과제입니다.
+
 ## D20 — 전체 앱 자동 유지보수와 갤러리 검증 (2026-10-13)
 
 - Context: 사용자가 정보처리기사 백업 오류와 WEB LAB 전체 앱의 오류·콘텐츠 보완을 자동 구현하도록 승인했습니다. 중대한 결정만 문의하며 멀티 에이전트를 허용했습니다.

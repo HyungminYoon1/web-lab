@@ -1,5 +1,10 @@
 # Verification record
 
+## 2026-10-13 — 체계적 엣지케이스 감사 / LOCAL
+
+- 갤러리25/25 Node 검사(신규8, baseline에서도 통과한 coverage)와 정적 검사 PASS. 검색/필터/선택/hash/요약 경계, 실제 dialog/포커스/2탭 저장 이벤트, 저장 거부와 no-JS40링크 확인. 브라우저 도구는 수동 실행이며 CI에서는 Node 검사를 실행합니다.
+- 22개 repo의 앱별 수정/검증·미검증 범위·실제 배포 증거는 [edge-cases-20261013.md](edge-cases-20261013.md)에 기록합니다. 랭킹 로컬 transport의 간헐적413 후속 오류는 해결했다고 주장하지 않습니다. DRAW DESK의 실제 미리보기만 갱신했습니다.
+
 ## 2026-10-13 — 전체 유지보수 통합 검증 / LOCAL
 
 - Scope: 20 apps + gallery + ranking API. Full inventory, per-repository changes/tests, source coverage limits and separately verified release evidence are in [maintenance-20261013.md](maintenance-20261013.md).
