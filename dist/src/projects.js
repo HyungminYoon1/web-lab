@@ -11,6 +11,14 @@ export const categories = Object.freeze([
 
 const catalog = [
   {
+    id: "internet-security-study", number: "21", name: "인터넷보안 학습실", subtitle: "원리·예제·사건 분석·복습", category: "learning", categoryLabel: "인터넷보안 학습",
+    description: "보안의 원리를 이해하고 예제와 문제로 중간·기말 범위를 익힙니다.",
+    purpose: "개념 이해·풀이 예제·스스로 설명·문제 적용의 네 단계로 공부하세요. 교안의 페이지별 학습 범위와 정정 근거도 확인할 수 있습니다.",
+    features: ["144개 개념 · 631문항 · 중간 1–7주·기말 9–14주", "6개 학습 경로 · 보기별 해설·확신도와 간격 복습", "60분 모의고사 · 가상 사건 분석·기록 백업"],
+    build: "직접 작성한 정적 학습 자료와 검증 출처를 연결합니다. 계정·DB 없이 기록을 이 브라우저에 저장합니다.",
+    tags: ["인터넷보안 / 중간·기말", "원리 / 사건 분석", "문제 / 복습"], difficulty: "기초~응용", entry: "intro", duration: "10~60분"
+  },
+  {
     id: "engineer-practice", number: "20", name: "정보처리기사 실기 학습실", subtitle: "개념·답안 작성·복습", category: "learning", categoryLabel: "국가자격 학습",
     description: "학습 길잡이에서 시작해 C·Java·Python·SQL과 개발 이론을 익힙니다.",
     purpose: "2026 출제기준의 영역별 문제를 풀고 개념·실행 과정·오답 복습을 연결하세요. 모의 점수는 공식 합격 가능성을 뜻하지 않습니다.",

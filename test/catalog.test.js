@@ -3,6 +3,19 @@ import assert from "node:assert/strict";
 import { categories, countProjects, getProject, pickProject, projects, selectProjects } from "../dist/src/projects.js";
 import { readFile } from "node:fs/promises";
 
+test("Internet Security guided learning is searchable with real source and preview links", async () => {
+  const app = getProject("internet-security-study");
+  assert(app, "new learning app is explicitly registered");
+  assert.equal(app.name, "인터넷보안 학습실"); assert.equal(app.category, "learning");
+  assert.match(app.features.join(" "), /144개.*631문항.*60분/);
+  assert.equal(selectProjects("learning", "인터넷보안")[0]?.id, app.id);
+  assert.equal(app.url, "https://hyungminyoon1.github.io/internet-security-study/");
+  const shell = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+  assert.match(shell, /internet-security-study\/">인터넷보안 학습실/);
+  const jpeg = await readFile(new URL(`../dist/${app.image}`, import.meta.url));
+  assert.equal(jpeg[0], 0xff); assert.equal(jpeg[1], 0xd8); assert(jpeg.length > 10000);
+});
+
 test("catalog projects have unique ids and complete introductions", () => {
   assert(projects.length > 0);
   assert.equal(new Set(projects.map(project => project.id)).size, projects.length);

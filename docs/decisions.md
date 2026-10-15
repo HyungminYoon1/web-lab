@@ -1,5 +1,14 @@
 # Decisions
 
+## D23 — 인터넷보안 학습실 연결 (2026-10-15)
+
+- Context: 사용자가 중간·기말 전체 교안 기반 학습 지원 앱의 구현·검증·Pages 배포와 WEB LAB 추가를 승인했다.
+- Options: 기존 문제은행에 병합; 새 카테고리; 독립 학습 서비스 등록.
+- Decision: 독립 internet-security-study의 공개 배포를 확인한 뒤 기존 학습 분류에 추가한다. 144개 개념·631문항·네 단계 학습·6개 연결 경로·60분 모의고사를 실제 구현 기준으로 소개한다. 실제 공개 실행 화면 JPEG와 코드·대체 링크를 함께 제공한다.
+- Rationale: 기존 서비스와 갤러리 구조를 유지하고 단순 문제 수가 아닌 개념 이해·복습 흐름을 전달한다. 갤러리는 새 저장 키·네트워크 호출·랭킹을 추가하지 않는다.
+- Affected: dist/src/projects.js, dist/index.html, dist/assets/previews/internet-security-study.jpg, README.md, test/catalog.test.js, docs/verification.md.
+- Review: 등록 전 실패 테스트, 전체 카탈로그 검사, 실제 이미지·검색·학습 분류·소개창·실행 링크, CI 및 공개 바이트를 검증한다. 앱의 교안 정정·자료 확인 한계는 독립 저장소의 감사 기록을 따른다.
+
 ## D22 — 전체 경계 감사와 증거별 릴리스 판단 (2026-10-13)
 
 - Context: 사용자가 모든 앱/갤러리/서버의 경계 테스트, 실패 재현 후 수정, 검증 후 배포와 미검증 공개를 요청했습니다. LIGHT의 원문 보존/요약 갱신 중단은 명시 승인했습니다.

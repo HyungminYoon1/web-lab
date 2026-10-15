@@ -1,5 +1,14 @@
 # Verification record
 
+## 2026-10-15 — 인터넷보안 학습실 추가 / LOCAL
+
+- SOURCE: 새 앱의 architecture/README·교재 감사·검증 기록, 갤러리 구조·결정·카탈로그·셸·관련 테스트를 확인했다. 다른 20개 서비스의 기능을 이번에 다시 감사하지 않았다.
+- APP_DEPLOYED: internet-security-study `451c6e3`, [Actions 38711115933](https://github.com/HyungminYoon1/internet-security-study/actions/runs/38711115933) Windows/Linux·브라우저·배포 SUCCESS. 공개 29파일 HTTP 200/바이트 일치 및 공개 Chromium 21시나리오 PASS 후 등록했다.
+- LOCAL_NODE: 새 카탈로그 검사 RED(미등록) → 추가 후 전체 26/26 및 정적 검사 PASS. 실제 21개 프로젝트·21개 JPEG, 고정 총계 없음.
+- LOCAL_BROWSER: 실제 공개 앱에서 캡처한 1440×1000 JPEG를 사용. 학습 필터·인터넷보안 검색·소개창의 144개/631문항/60분·이미지 디코딩·320px 가로 넘침 없음·Escape 초점 복귀 PASS. 실행 링크의 실제 팝업에서 공개 앱 제목과 오늘의 학습 표시 확인. JavaScript 비활성 상태에서 42개 대체 링크와 새 서비스 링크 확인. 선택한 흐름의 pageerror 없음.
+- PRESERVATION: 기존 카탈로그 항목/미리보기·완료 요약 키·다른 앱 기록·랭킹 서버를 수정하지 않았다. 새 파일 하나와 카탈로그/대체 링크/문서/관련 테스트만 갱신했다.
+- REMOTE_CI/LIVE: 갤러리 자체의 배포 성공은 후속 증거 절에서 별도로 확인한다.
+
 ## 2026-10-13 — 체계적 엣지케이스 감사 / LOCAL · REMOTE_CI · LIVE
 
 - 갤러리25/25 Node 검사(신규8, baseline에서도 통과한 coverage)와 정적 검사 PASS. 검색/필터/선택/hash/요약 경계, 실제 dialog/포커스/2탭 저장 이벤트, 저장 거부와 no-JS40링크 확인. 브라우저 도구는 수동 실행이며 CI에서는 Node 검사를 실행합니다.
