@@ -7,7 +7,10 @@
 - LOCAL_NODE: 새 카탈로그 검사 RED(미등록) → 추가 후 전체 26/26 및 정적 검사 PASS. 실제 21개 프로젝트·21개 JPEG, 고정 총계 없음.
 - LOCAL_BROWSER: 실제 공개 앱에서 캡처한 1440×1000 JPEG를 사용. 학습 필터·인터넷보안 검색·소개창의 144개/631문항/60분·이미지 디코딩·320px 가로 넘침 없음·Escape 초점 복귀 PASS. 실행 링크의 실제 팝업에서 공개 앱 제목과 오늘의 학습 표시 확인. JavaScript 비활성 상태에서 42개 대체 링크와 새 서비스 링크 확인. 선택한 흐름의 pageerror 없음.
 - PRESERVATION: 기존 카탈로그 항목/미리보기·완료 요약 키·다른 앱 기록·랭킹 서버를 수정하지 않았다. 새 파일 하나와 카탈로그/대체 링크/문서/관련 테스트만 갱신했다.
-- REMOTE_CI/LIVE: 갤러리 자체의 배포 성공은 후속 증거 절에서 별도로 확인한다.
+- REMOTE_CI: `b77fa2f239372c2de258526c692914c6e744287c`, [Actions 38712156953](https://github.com/HyungminYoon1/web-lab/actions/runs/38712156953) verify/deploy SUCCESS. 새 앱의 후속 증거 커밋 `4b795ac`도 [Actions 38711752310](https://github.com/HyungminYoon1/internet-security-study/actions/runs/38711752310) Windows/Linux/package/deploy SUCCESS다.
+- LIVE_FILES: 공개 갤러리 26파일 모두 HTTP 200 및 로컬 바이트 일치. 기존 20개 카탈로그 항목과 20개 이미지가 이전 `14fde4a`와 동일함도 따로 비교했다.
+- LIVE_BROWSER: 새 공개 컨텍스트에서 소개창·실제 이미지·학습 분류/검색·320px 넘침·Escape 초점 복귀·42개 no-JS 링크·새 학습실로 여는 실제 팝업을 재검증했다. 선택한 흐름에서 pageerror 없음. 앱의 학습·저장 전체 회귀는 독립 저장소의 21개 공개 시나리오 결과와 구분한다.
+- 이 결과 추가는 문서만 변경하며 배포할 dist 내용은 바꾸지 않는다.
 
 ## 2026-10-13 — 체계적 엣지케이스 감사 / LOCAL · REMOTE_CI · LIVE
 
