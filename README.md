@@ -11,7 +11,7 @@
 | 인터넷보안 학습실 | [실행](https://hyungminyoon1.github.io/internet-security-study/) | [코드](https://github.com/HyungminYoon1/internet-security-study) |
 | 정보처리기사 실기 학습실 | [실행](https://hyungminyoon1.github.io/engineer-practice/) | [코드](https://github.com/HyungminYoon1/engineer-practice) |
 | DRAW DESK — 그림 공방 | [실행](https://hyungminyoon1.github.io/draw-desk/) | [코드](https://github.com/HyungminYoon1/draw-desk) |
-| SCORE LAB — 작곡실 | [실행](https://hyungminyoon1.github.io/score-lab/) | [코드](https://github.com/HyungminYoon1/score-lab) |
+| MUSIC ROOM — 작곡실 | [실행](https://hyungminyoon1.github.io/score-lab/) | [코드](https://github.com/HyungminYoon1/score-lab) |
 | CLAY ROOM — 3D 조각 공방 | [실행](https://hyungminyoon1.github.io/clay-room/) | [코드](https://github.com/HyungminYoon1/clay-room) |
 | ELEMENT ATLAS — 화학 실험실 | [실행](https://hyungminyoon1.github.io/element-atlas/) | [코드](https://github.com/HyungminYoon1/element-atlas) |
 | ECHO VAULT — 시간의 금고 | [실행](https://hyungminyoon1.github.io/echo-vault/) | [코드](https://github.com/HyungminYoon1/echo-vault) |

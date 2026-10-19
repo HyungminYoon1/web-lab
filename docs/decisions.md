@@ -1,5 +1,14 @@
 # Decisions
 
+## D25 — MUSIC ROOM catalog identity (2026-10-19)
+
+- Context: approved SCORE LAB 16-track orchestral expansion and clearer music identity. Display name becomes MUSIC ROOM · 작곡실.
+- Options: new URL and migration, or retain identity/address and update display text. Decision: keep score-lab id, source/run URLs, image path and own save key. Update only its metadata, no-JS label, README and actual JPEG.
+- Rationale: old links/files continue to work; gallery remains static/read-only, never runs audio or reads composition records. Other 20 entries/images unchanged.
+- Affected: dist/src/projects.js, dist/index.html, dist/assets/previews/score-lab.jpg, README, focused catalog test and music-link verifier.
+- Review: search/deep link/real image, 390/320 layout, 42 no-JS execution/source links, Node/static tests and separate public deployment verification.
+
+
 ## D24 — SENSE LAB의 6종 완료 표시와 실제 화면 / 2026-10-19
 
 - Context: 사용자가 상세 기록은 선택 저장, 완료 여부만 WEB LAB의 n/6종 체험 완료로 표시하고 기존 기록 보존·설명/난이도 개선 후 공개를 승인했다.

@@ -1,5 +1,12 @@
 # Verification record
 
+## 2026-10-19 MUSIC ROOM catalog — LOCAL PASS
+
+- Only score-lab display name/metadata/no-JS label and real JPEG updated; URL/source/identity unchanged. Other 20 records/images untouched.
+- Node **28/28 PASS** (new title/address/capability test failed on old catalog, then passed). Static **26 files / 21 JPEGs PASS**. Isolated browser: fresh composer 1440×1050 JPEG; deep link/name/16-track/30-sound copy/run URL; orchestra search; image load; 390/320 overflow; no-JS 21 services / 42 links. No page errors. Evidence: output/playwright/music-20261019.
+- Reproduce: `node tools/verify-music-link-20261019.mjs ../output/playwright/implement-20261012/package.json GALLERY_URL MUSIC_URL`; `--capture` intentionally refreshes only this preview. Disposable contexts, not the user's profile.
+- VERIFIED architecture/README, catalog/shell/workflow/relevant tests; requirements/api-spec absent. Other app implementations not re-audited. No new dependency, runtime network request, backend, shared record or ranking change. CI/live checked after push separately from local results.
+
 ## 2026-10-19 — SENSE LAB 6종 체험 완료 / LOCAL · REMOTE_CI · LIVE
 
 - SOURCE VERIFIED: 갤러리 구조·README·배포 워크플로·카탈로그/요약/렌더러/관련 테스트 및 SENSE LAB의 승인된 저장 계약·변경 UI를 확인했다. 과거 검증 기록은 관련 절만 확인했으며 다른 20개 서비스의 전체 기능 검토는 PARTIAL이다.

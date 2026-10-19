@@ -35,12 +35,12 @@ const catalog = [
     tags: ["드로잉 / 레이어", "PNG / SVG", "정밀 편집"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
   },
   {
-    id: "score-lab", number: "18", name: "SCORE LAB", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
-    description: "다중 트랙 피아노 롤에서 작곡하고 음원·악보로 저장합니다.",
-    purpose: "두 마디 연습 곡에서 음높이·길이·세기를 바꾸고 피아노와 합성 악기를 조합하세요.",
-    features: ["8트랙 · 960 PPQ 정밀 편집·복사·실행 취소", "실제 피아노 샘플 · 합성 베이스·패드·드럼·트랙 믹스", "48kHz 24bit WAV · MIDI·MusicXML·SVG·300dpi PDF"],
-    build: "연주 시간은 그대로 유지하고 악보만 16분음표 격자로 표시합니다.",
-    tags: ["피아노 롤", "작곡 / 악보", "WAV / MIDI"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
+    id: "score-lab", number: "18", name: "MUSIC ROOM", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
+    description: "현악·관악·타악기를 편곡하고 음악과 악보로 저장합니다.",
+    purpose: "오케스트라·현악 사중주 예제를 고쳐 보세요. 악기를 미리 듣고 트랙을 더하거나, 코드와 선율을 직접 그릴 수 있습니다.",
+    features: ["최대 16트랙 · 30개 음색 · 실제 오케스트라 녹음 180개", "악기 검색·미리듣기 · 코드·영역 선택·세기 편집·구간 반복", "960 PPQ · 48kHz 24bit WAV · MIDI·MusicXML·SVG·PDF"],
+    build: "무료 재배포 음원을 필요한 만큼 불러옵니다. 기존 SCORE LAB 프로젝트와 주소를 유지합니다.",
+    tags: ["오케스트라 / 피아노 롤", "작곡 / 악보", "WAV / MIDI"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
   },
   {
     id: "clay-room", number: "19", name: "CLAY ROOM", subtitle: "3D 조각 공방", category: "creative", categoryLabel: "3D 조각 도구",
