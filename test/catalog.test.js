@@ -3,12 +3,14 @@ import assert from "node:assert/strict";
 import { categories, countProjects, getProject, pickProject, projects, selectProjects } from "../dist/src/projects.js";
 import { readFile } from "node:fs/promises";
 
-test('MUSIC ROOM retains the score-lab address with orchestral capabilities',async()=>{
-  const app=getProject('score-lab');assert.equal(app.name,'MUSIC ROOM');
+test('MUSIC ROOM uses renamed repository and keeps the old gallery fragment as an alias',async()=>{
+  const app=getProject('music-room');assert.equal(app.name,'MUSIC ROOM');
   assert.match(app.features.join(' '),/16트랙.*30개 음색/);
-  assert.equal(selectProjects('creative','오케스트라')[0]?.id,'score-lab');
-  assert.equal(app.url,'https://hyungminyoon1.github.io/score-lab/');
-  assert.match(await readFile(new URL('../dist/index.html',import.meta.url),'utf8'),/score-lab\/">MUSIC ROOM/);
+  assert.equal(selectProjects('creative','오케스트라')[0]?.id,'music-room');
+  assert.equal(getProject('score-lab'),app);
+  assert.equal(app.url,'https://hyungminyoon1.github.io/music-room/');
+  assert.match(app.features.join(' '),/MIDI 가져오기.*템포·박자/);
+  assert.match(await readFile(new URL('../dist/index.html',import.meta.url),'utf8'),/music-room\/">MUSIC ROOM/);
 });
 
 test("Internet Security guided learning is searchable with real source and preview links", async () => {

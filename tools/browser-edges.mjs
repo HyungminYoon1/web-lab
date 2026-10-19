@@ -15,7 +15,7 @@ export async function verifyGalleryEdges(page,base,{capture}={}){
   await page.locator('#clear-search').click();
   check('clear resets result count and returns focus',await page.locator('.project-card').count()===projects.length&&await page.locator('#catalog-search').evaluate(el=>el===document.activeElement));
   await page.locator('[data-filter="creative"]').click();await page.locator('#difficulty-filter').selectOption('advanced');
-  check('combined filters do not show another category',await page.locator('.project-card').evaluateAll(xs=>xs.every(x=>['draw-desk','score-lab','clay-room'].includes(x.dataset.project))));
+  check('combined filters do not show another category',await page.locator('.project-card').evaluateAll(xs=>xs.every(x=>['draw-desk','music-room','clay-room'].includes(x.dataset.project))));
   await page.locator('#catalog-search').fill('zz-no-match');await page.locator('#catalog-search').press('Escape');
   check('Escape clears query only',await page.locator('#catalog-search').inputValue()===''&&await page.locator('#difficulty-filter').inputValue()==='advanced');
   await page.goto(base+'/web-lab/#sense-lab');

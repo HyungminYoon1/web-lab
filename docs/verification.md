@@ -1,5 +1,11 @@
 # Verification record
 
+## 2026-10-19 music-room rename / MIDI catalog — LOCAL PASS
+
+- D26: changed only the MUSIC ROOM identity, execution/source URLs, MIDI features, no-JS links, README, real preview and affected tests/tools. getProject('score-lab') preserves old gallery fragments while canonicalizing to music-room. No automatic redirect is claimed for the standalone old Pages URL.
+- Node **28/28 PASS**, new-name/alias test failed before catalog implementation; static **26 files / 21 JPEGs PASS**. Actual isolated browser verifies old and new fragment, new run/source links, MIDI copy, real1440px image, orchestra search, 390/320 root overflow0 and no-JS21services/42links. No page errors. Preview shows the new MIDI-import and time-map controls, not a fabricated mockup.
+- VERIFIED gallery architecture/README/catalog/shell/relevant tests and tools; requirements/api-spec absent. Other20app implementations are NOT_INSPECTED in this task. No changes to their metadata/images, summary reader, accounts or ranking services. Remote deployment/new URL tests are separate from local checks.
+
 ## 2026-10-19 MUSIC ROOM catalog — LOCAL PASS
 
 - Only score-lab display name/metadata/no-JS label and real JPEG updated; URL/source/identity unchanged. Other 20 records/images untouched.

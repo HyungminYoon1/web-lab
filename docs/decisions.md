@@ -1,5 +1,13 @@
 # Decisions
 
+## D26 — MUSIC ROOM repository rename and MIDI import (2026-10-19)
+
+- Context: user explicitly requests renaming score-lab to music-room, adding MIDI import with part selection and tempo/meter preservation. Supersedes D25's old-address decision.
+- Options: keep the old catalog identity with URL exceptions; rename the catalog identity and add a fragment alias. Choose music-room id/source/run/image with getProject('score-lab') alias, so old WEB LAB deep links still reach the same app. Do not claim the old standalone Pages URL redirects.
+- Decision: update only the music entry, no-JS links, README, actual preview, tests and verification helper. Preserve every other catalog object/image and gallery read-only storage/network boundary. No new repo for old-name redirects, root site changes, external calls or private song reads.
+- Rationale: consistent repository identity and new public link without breaking bookmarked gallery previews. Same-origin song data is the app's concern; gallery never migrates it.
+- Review: new/old gallery fragments, MIDI search, new execution/source URL, 320/390 dialog, no-JS fallback, actual screenshot, Node/static and post-deploy checks. App's parser/audio tests and Windows/Linux CI live in its repository.
+
 ## D25 — MUSIC ROOM catalog identity (2026-10-19)
 
 - Context: approved SCORE LAB 16-track orchestral expansion and clearer music identity. Display name becomes MUSIC ROOM · 작곡실.

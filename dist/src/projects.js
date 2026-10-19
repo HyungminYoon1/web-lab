@@ -35,11 +35,11 @@ const catalog = [
     tags: ["드로잉 / 레이어", "PNG / SVG", "정밀 편집"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
   },
   {
-    id: "score-lab", number: "18", name: "MUSIC ROOM", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
+    id: "music-room", number: "18", name: "MUSIC ROOM", subtitle: "작곡실", category: "creative", categoryLabel: "음악 편집 도구",
     description: "현악·관악·타악기를 편곡하고 음악과 악보로 저장합니다.",
-    purpose: "오케스트라·현악 사중주 예제를 고쳐 보세요. 악기를 미리 듣고 트랙을 더하거나, 코드와 선율을 직접 그릴 수 있습니다.",
-    features: ["최대 16트랙 · 30개 음색 · 실제 오케스트라 녹음 180개", "악기 검색·미리듣기 · 코드·영역 선택·세기 편집·구간 반복", "960 PPQ · 48kHz 24bit WAV · MIDI·MusicXML·SVG·PDF"],
-    build: "무료 재배포 음원을 필요한 만큼 불러옵니다. 기존 SCORE LAB 프로젝트와 주소를 유지합니다.",
+    purpose: "오케스트라 예제나 MIDI 파일을 가져와 악기와 음표를 바꿔 보세요. 가져올 트랙을 선택하고 원래 템포·박자 변화를 유지해 다시 저장합니다.",
+    features: ["최대 16트랙 · 30개 음색 · 실제 오케스트라 녹음 180개", "MIDI 가져오기·트랙 선택 · 템포·박자 변화 보존 · 코드·세기 편집", "960 PPQ · 48kHz 24bit WAV · MIDI·MusicXML·SVG·PDF"],
+    build: "파일은 브라우저에서만 처리합니다. 기존 SCORE LAB 저장 곡을 유지하며 music-room 주소에서 운영합니다.",
     tags: ["오케스트라 / 피아노 롤", "작곡 / 악보", "WAV / MIDI"], difficulty: "입문~심화", entry: "intro", duration: "10~60분"
   },
   {
@@ -459,5 +459,6 @@ export function pickProject(entries, entropy, previousId = null) {
 }
 
 export function getProject(id) {
+  if (id === "score-lab") id = "music-room";
   return projects.find(project => project.id === id) ?? null;
 }
