@@ -1,5 +1,5 @@
 import { countProjects, getProject, pickProject, projects, selectProjects } from "./projects.js";
-import { parseProgress, PROGRESS_KEY } from "./progress.js";
+import { parseProgress, completionText, PROGRESS_KEY } from "./progress.js";
 
 const grid = document.querySelector("#project-grid");
 const dialog = document.querySelector("#project-dialog");
@@ -19,7 +19,8 @@ function readProgress() {
 
 function sessionText(project) {
   const record = progress[project.id];
-  return `${project.difficulty} · 예상 ${project.duration}` + (record?.completed ? ` · ${record.completed}/${record.total} 완료` : "");
+  const completion = completionText(project.id, record);
+  return `${project.difficulty} · 예상 ${project.duration}` + (completion ? ` · ${completion}` : "");
 }
 
 function element(tag, className, text) {

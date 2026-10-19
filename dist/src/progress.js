@@ -1,5 +1,13 @@
 export const PROGRESS_KEY = "web-lab-progress-v1";
 
+export function completionText(id, record) {
+  if (id === "sense-lab") {
+    if (record && [3, 6].includes(record.total)) return `${record.completed}/6종 체험 완료${record.total === 3 ? " · 기존 기록" : ""}`;
+    return "0/6종 체험 완료";
+  }
+  return record?.completed ? `${record.completed}/${record.total} 완료` : "";
+}
+
 export function parseProgress(raw, allowedIds) {
   const result = Object.create(null);
   if (typeof raw !== "string" || raw.length > 6000 || !Array.isArray(allowedIds)) return result;

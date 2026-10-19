@@ -24,4 +24,6 @@ CSP metadata blocks app-initiated network connections, frame embeds and inline s
 
 Preview images are static snapshots, not live-status badges. Descriptions come from each service's README and architecture, with public HTTP/title checks. No fabricated uptime, user count, rating or global score is shown. Static images and descriptions are updated manually in this repository without editing the services.
 
+D24 (2026-10-19): SENSE LAB alone uses `n/6종 체험 완료`; its optional detailed records are not read. Previous total-3 summaries retain their count and are labelled prior records until SENSE refreshes the minimal aggregate. No gallery write or new storage key is introduced. Other app labels remain unchanged.
+
 UTF-8 without BOM and CRLF for text. Images are binary. The gallery can be used without JavaScript through the maintained execution and source fallback links. Page titles and descriptive copy do not state a fixed catalog size; UI counts derive from the project catalog.

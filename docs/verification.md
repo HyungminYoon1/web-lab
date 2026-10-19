@@ -1,5 +1,15 @@
 # Verification record
 
+## 2026-10-19 — SENSE LAB 6종 체험 완료 / LOCAL
+
+- SOURCE VERIFIED: 갤러리 구조·README·배포 워크플로·카탈로그/요약/렌더러/관련 테스트 및 SENSE LAB의 승인된 저장 계약·변경 UI를 확인했다. 과거 검증 기록은 관련 절만 확인했으며 다른 20개 서비스의 전체 기능 검토는 PARTIAL이다.
+- LOCAL_NODE: `completionText` 미구현 실패를 확인한 뒤 n/6종 체험 완료·이전 total 3의 완료 수 보존·빈 기록·다른 앱 표시 유지 검사와 전체 27/27, 정적 검사 PASS.
+- LOCAL_BROWSER: SENSE LAB의 실제 6종 심화 완료 후 별도 WEB LAB 탭에서 6/6종 체험 완료 확인. 상세 결과를 자동 저장하지 않고 명시 저장/삭제와 완료 표시가 독립적임을 SENSE의 76개 실제 Chromium 검증에서 확인했다. 음소거 Web Audio이며 실제 사람의 감각 능력 검증은 아니다.
+- GALLERY_BROWSER: 25개 선택 흐름 PASS, pageerror 0. 열려 있는 소개창에 다른 탭의 새 total 6/옛 total 3 요약 반영, 손상 시 0 표시, 이미지 디코딩, 검색/분류/추천/초점/1440·390·320px 확인. 별도 저장 차단 및 no-JS 42개 링크 PASS. 기존 수동 도구의 낡은 20개 고정 기대치를 현재 카탈로그에서 계산하도록 갱신하고, native dialog close 후 URL 갱신을 기다리도록 테스트 경합을 수정했다. 이는 앱 버그 수정과 구분한다.
+- PREVIEW: SENSE `b90f763`의 공개 Pages 배포 성공 후 실제 1440×1000 Chrome 화면을 JPEG로 캡처했다. 가상 홍보 이미지·로컬 배너·합성 점수를 사용하지 않는다.
+- PRESERVATION: 갤러리는 기존 최소 요약만 읽는다. 상세 기록·계정·DB·랭킹·다른 앱 집계 정책을 변경하지 않는다. 기존 20개 카탈로그 항목·JPEG는 유지하고 SENSE 소개와 실제 캡처만 갱신한다.
+- REMOTE_CI / LIVE: 아직 실행 전. 공개 배포와 실제 JPEG 캡처·공개 브라우저 검증 결과는 배포 뒤 별도로 기록한다.
+
 ## 2026-10-15 — 인터넷보안 학습실 추가 / LOCAL
 
 - SOURCE: 새 앱의 architecture/README·교재 감사·검증 기록, 갤러리 구조·결정·카탈로그·셸·관련 테스트를 확인했다. 다른 20개 서비스의 기능을 이번에 다시 감사하지 않았다.

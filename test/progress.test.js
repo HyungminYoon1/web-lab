@@ -1,7 +1,17 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { parseProgress } from "../dist/src/progress.js";
+import * as progressModel from "../dist/src/progress.js";
 const ids = ["echo-vault", "parcel-panic"];
+
+test("SENSE LAB shows six test kinds, including prior three-kind summaries, without fabricating completion", () => {
+  assert.equal(typeof progressModel.completionText,"function");
+  for(let n=0;n<=6;n++) assert.equal(progressModel.completionText("sense-lab",{completed:n,total:6}),`${n}/6종 체험 완료`);
+  assert.equal(progressModel.completionText("sense-lab",{completed:2,total:3}),"2/6종 체험 완료 · 기존 기록");
+  assert.equal(progressModel.completionText("sense-lab"),"0/6종 체험 완료");
+  assert.equal(progressModel.completionText("echo-vault",{completed:2,total:12}),"2/12 완료");
+  assert.equal(progressModel.completionText("echo-vault"),"");
+});
 
 test("added catalog entries do not truncate older completion summaries",()=>{
  const allowed=Array.from({length:19},(_,i)=>'app-'+i);
