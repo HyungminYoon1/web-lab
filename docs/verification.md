@@ -1,6 +1,6 @@
 # Verification record
 
-## 2026-10-19 — SENSE LAB 6종 체험 완료 / LOCAL
+## 2026-10-19 — SENSE LAB 6종 체험 완료 / LOCAL · REMOTE_CI · LIVE
 
 - SOURCE VERIFIED: 갤러리 구조·README·배포 워크플로·카탈로그/요약/렌더러/관련 테스트 및 SENSE LAB의 승인된 저장 계약·변경 UI를 확인했다. 과거 검증 기록은 관련 절만 확인했으며 다른 20개 서비스의 전체 기능 검토는 PARTIAL이다.
 - LOCAL_NODE: `completionText` 미구현 실패를 확인한 뒤 n/6종 체험 완료·이전 total 3의 완료 수 보존·빈 기록·다른 앱 표시 유지 검사와 전체 27/27, 정적 검사 PASS.
@@ -8,7 +8,11 @@
 - GALLERY_BROWSER: 25개 선택 흐름 PASS, pageerror 0. 열려 있는 소개창에 다른 탭의 새 total 6/옛 total 3 요약 반영, 손상 시 0 표시, 이미지 디코딩, 검색/분류/추천/초점/1440·390·320px 확인. 별도 저장 차단 및 no-JS 42개 링크 PASS. 기존 수동 도구의 낡은 20개 고정 기대치를 현재 카탈로그에서 계산하도록 갱신하고, native dialog close 후 URL 갱신을 기다리도록 테스트 경합을 수정했다. 이는 앱 버그 수정과 구분한다.
 - PREVIEW: SENSE `b90f763`의 공개 Pages 배포 성공 후 실제 1440×1000 Chrome 화면을 JPEG로 캡처했다. 가상 홍보 이미지·로컬 배너·합성 점수를 사용하지 않는다.
 - PRESERVATION: 갤러리는 기존 최소 요약만 읽는다. 상세 기록·계정·DB·랭킹·다른 앱 집계 정책을 변경하지 않는다. 기존 20개 카탈로그 항목·JPEG는 유지하고 SENSE 소개와 실제 캡처만 갱신한다.
-- REMOTE_CI / LIVE: 아직 실행 전. 공개 배포와 실제 JPEG 캡처·공개 브라우저 검증 결과는 배포 뒤 별도로 기록한다.
+- REMOTE_CI: `4c5819aeb7cb330c9df1f659f5e4a97b1c8481e3`, [Actions 39242558920](https://github.com/HyungminYoon1/web-lab/actions/runs/39242558920), Ubuntu verify/deploy SUCCESS. SENSE는 `b90f763`, [Actions 39242247494](https://github.com/HyungminYoon1/sense-lab/actions/runs/39242247494) SUCCESS. 로컬 Windows 검사와 원격 Ubuntu 검사를 구분한다.
+- LIVE_FILES: 공개 26개 파일 모두 HTTP 200/로컬 바이트 일치. 변경하지 않은 20개 카탈로그 객체와 20개 JPEG는 이전 HEAD와 동일함도 별도 확인했다.
+- LIVE_BROWSER: 공개 사이트에서 위 25개 흐름, 저장 차단, no-JS 42링크 재실행 PASS. pageerror 0. 테스트는 별도 격리 컨텍스트의 합성 저장 값만 쓰며 기존 방문자 데이터·서버를 변경하지 않는다. 실제 모바일 하드웨어/스크린리더/모든 앱의 기능 전수 검증은 아니다.
+- LIVE_INTEGRATION: 공개 SENSE LAB의 실제 여섯 과제 종료와 선택 저장을 포함한 76개 검증 PASS 뒤 별도 공개 WEB LAB 탭의 `6/6종 체험 완료`까지 확인했다. 격리한 새 브라우저 기록이며 실제 기존 방문자의 기록을 삭제하지 않았다.
+- 이후 결과 기록 커밋은 문서만 변경하며 검증한 dist 내용은 바꾸지 않는다.
 
 ## 2026-10-15 — 인터넷보안 학습실 추가 / LOCAL
 
