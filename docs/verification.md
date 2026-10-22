@@ -1,5 +1,14 @@
 # Verification record
 
+## 2026-10-22 — engineer-practice answer-first preview / LOCAL
+
+- Scope: update only the actual engineer-practice JPEG after its D12 question-title/concept disclosure and exact Java-identifier grading repair. Catalog metadata, all other app images, completion summaries and the local-only handoff are unchanged.
+- CAPTURE: fresh isolated Chrome at 1440x1000, unsubmitted practice question; no answer-bearing card title, concept links or internal question code. The JPEG is an actual app capture, visually reviewed. The deliberate applied-family selector remains available for study.
+- LOCAL: Node 28/28 and static 26-file/21-JPEG checks PASS. Actual dialog decodes the refreshed 1440px JPEG, retains the accurate title/run URL and has no root overflow at 1440/320px; no observed page errors. Other 20 preview binaries are unchanged.
+- App tests/native/browser evidence belongs to engineer-practice/docs/verification.md. Gallery Node/static, dialog/image/link and public deployment evidence is recorded independently after execution.
+- APP_REMOTE_CI: engineer-practice `9674bd2b85b91900582cae0cfa57c1ad7a39bc15`, [Actions 39779794884](https://github.com/HyungminYoon1/engineer-practice/actions/runs/39779794884), Ubuntu verify/deploy SUCCESS, including 52 Node tests, 279 output executions, 5 valid/5 rejected-case JDBC compilations and 15 DBMS executions. Local Windows execution is separate from this Ubuntu CI.
+- APP_LIVE: all 11 public dist files return HTTP 200 and match local bytes. All eight new isolated public Chrome disclosure/grading scenarios PASS, including diagnostic/mock print, reload, submission, practice Java rejection, compatible historical totals and 320px. No page errors. Test contexts contain only synthetic local records; no existing user data or server records are touched.
+
 ## 2026-10-19 music-room rename / MIDI catalog — LOCAL PASS
 
 - D26: changed only the MUSIC ROOM identity, execution/source URLs, MIDI features, no-JS links, README, real preview and affected tests/tools. getProject('score-lab') preserves old gallery fragments while canonicalizing to music-room. No automatic redirect is claimed for the standalone old Pages URL.
