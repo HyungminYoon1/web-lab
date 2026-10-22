@@ -1,5 +1,14 @@
 # Decisions
 
+## D27 — Internet Security optional accounts and evidence-based teaching (2026-10-22)
+
+- Context: the user requested correcting the outdated no-account/no-DB app description, refreshing actual previews, and publishing both repositories after verification.
+- Options: retain the stale copy; add account services to the gallery; describe the independent app’s optional Neon synchronization. Choose the last option.
+- Decision: update only internet-security-study metadata, its real home-screen JPEG, README and verification helper/records. Explain guest browser storage, optional email/password sync and confirmed guest import. Describe primary-evidence teaching; handout comparisons belong to the app’s optional appendix. Keep existing execution/source/no-JS links.
+- Rationale: visitors need accurate capabilities without implying automatic guest upload or adding gallery identity/data access.
+- Affected: dist/src/projects.js, dist/assets/previews/internet-security-study.jpg, README, focused gallery verifier and decision/verification records.
+- Review: optional-sync search/dialog, real 1440px capture, 390/320 layout, no-JS links, unchanged other catalog/image entries, Node/static, exact-commit Actions and public byte/UI checks. No gallery API call, private-record access, storage write or backend change. LOCAL_HANDOFF.txt remains excluded by .git/info/exclude.
+
 ## D26 — MUSIC ROOM repository rename and MIDI import (2026-10-19)
 
 - Context: user explicitly requests renaming score-lab to music-room, adding MIDI import with part selection and tempo/meter preservation. Supersedes D25's old-address decision.

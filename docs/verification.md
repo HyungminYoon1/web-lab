@@ -1,5 +1,18 @@
 # Verification record
 
+## 2026-10-22 — 인터넷보안 소개·선택적 계정 동기화 / LOCAL
+
+- SOURCE: 지정된 로컬 인계문 전체와 추적 제외 설정, 갤러리 architecture/README·카탈로그·화면·검사·배포 설정, 연결 앱의 계정 계약과 이번 본문·부록 변경을 확인했다. 큰 저작 파일과 과거 기록은 관련 구간만 읽었으며, 원본 PDF와 다른 20개 앱 구현은 이번에 재검토하지 않았다.
+- CHANGE: 인터넷보안 학습실의 비로그인 브라우저 저장·선택적 이메일 계정 동기화·사용자 확인 후 기존 기록 가져오기를 소개한다. 반복적인 교안 비교 안내는 제거하고 근거 중심 학습을 설명한다. 연결 앱의 비교 이력은 선택 부록에 보존한다.
+- PREVIEW: 앱 `12fdd38`의 공개 Pages 배포 성공 후 격리한 새 방문자의 실제 1440×1000 홈을 JPEG로 캡처하고 육안 확인했다. 로그인 선택과 부록 이동이 보이며 가상 기록·합성 UI를 넣지 않았다.
+- LOCAL: 갤러리 Node **28/28**, 정적 **26개 파일·21개 JPEG PASS**. 독립 연결 검사에서 선택적 동기화 설명/검색, 확인 후 가져오기, 실제 이미지 디코딩, 실행/소스 링크, 390/320px 넘침 없음, JavaScript 비활성 21개 서비스/42개 링크, 갤러리 API 요청 없음과 pageerror 없음 PASS.
+- APP_LOCAL: 앱 Node **124/124**, Chromium **25/25**, 계정 테스트 어댑터 브라우저 **9/9**, 빌드·정적 검사 PASS. 앱의 [본문·부록 검증 기록](https://github.com/HyungminYoon1/internet-security-study/blob/main/docs/evidence-learning-verification.md)에 기술 근거·보존 조건·검증 한계를 구분했다. 실제 Neon 계정의 서버 동기화를 이번에 새로 검증했다는 뜻은 아니다.
+- APP_REMOTE_CI: `12fdd387f9e95b0f0afdc5f21e73e0285fbfd522`, [Actions 39784093876](https://github.com/HyungminYoon1/internet-security-study/actions/runs/39784093876), Windows/Linux verify·package·deploy SUCCESS.
+- APP_LIVE: 공개 앱 39개 dist 파일 HTTP 200/로컬 바이트 일치. 공개 Chromium 전체 **25/25 PASS**. 독립 연결 검사도 공개 앱에서 재실행했고 pageerror 없이 PASS했다.
+- PRESERVATION: 갤러리의 계정 기능·DB 접근·추가 네트워크 요청·상세 기록 열람을 도입하지 않는다. 기존 완료 요약 계약, 다른 앱의 데이터·소개·미리보기와 로컬 인계문의 Git 제외 설정을 유지한다.
+- OTHER_APPS: 나머지 20개 소개 객체와 20개 JPEG 바이트가 변경 전 HEAD와 동일함을 별도 비교했다.
+- Reproduce: `node tools/verify-security-link-20261022.mjs ../internet-security-study/package.json GALLERY_URL APP_URL`. `--capture`는 이 앱의 미리보기만 갱신한다. 로컬 시험과 원격 CI·공개 배포 결과는 구분하며 원격 결과는 실행 후 기록한다.
+
 ## 2026-10-22 — engineer-practice answer-first preview / LOCAL
 
 - Scope: update only the actual engineer-practice JPEG after its D12 question-title/concept disclosure and exact Java-identifier grading repair. Catalog metadata, all other app images, completion summaries and the local-only handoff are unchanged.
