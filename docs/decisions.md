@@ -241,3 +241,12 @@
 - Rationale: 기존 릴리스를 보존하고 계산 모델·UI·검증을 분리하며 사진이나 방문자 정보의 서버 저장을 추가하지 않습니다. 제목은 개수와 무관하게 유지하고 표시 개수는 실제 카탈로그에서 계산합니다.
 - Affected: dist/src/projects.js, dist/assets/previews, dist/index.html, README.md, docs/verification.md 및 독립 저장소의 architecture.md/decisions.md.
 - Review: 이 변경의 실제 목록은 실험5·학습4·게임3입니다. 이 수치는 기록이며 UI 상수가 아닙니다. 새 파일 입력·영구 저장·서버 기능을 추가할 때는 별도 경계 검토가 필요합니다.
+
+## D28 — Shared account entry without gallery authentication (2026-10-23)
+
+- Context: user approved preserving Internet Security accounts and adding optional Engineer Practice sync with separated records.
+- Options: add authentication/state to the gallery; link to the existing account screen and describe each app accurately.
+- Decision: one static WEB LAB account link, update only the two affected entries and their real previews; no gallery SDK, API, new storage or record aggregation.
+- Rationale: keep the documented static gallery boundary and independent app repositories. Shared identity does not imply shared learning/reset data.
+- Affected: dist/index.html, projects.js, two preview JPGs, README/architecture and focused browser verification.
+- Review: mobile navigation, both details/search, no gallery network calls, remaining 19 entries/previews unchanged. Keep LOCAL_HANDOFF.txt locally excluded and untracked.

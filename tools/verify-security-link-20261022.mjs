@@ -22,7 +22,7 @@ try {
   if (process.argv.includes('--capture')) await page.screenshot({ path: resolve(root, 'dist/assets/previews/internet-security-study.jpg'), type: 'jpeg', quality: 88 });
   await page.screenshot({ path: resolve(output, 'app-home.png') });
   checks.push('fresh guest home, visible optional login and authentic preview');
-  for (const [route, heading] of [['account', '계정과 동기화'], ['lesson/w02-signature', '서명 생성·검증과 수신자 암호화의 분리'], ['scope', '학습 범위와 출처'], ['appendix', '부록 · 교안 비교']]) {
+  for (const [route, heading] of [['account', 'WEB LAB 계정'], ['lesson/w02-signature', '서명 생성·검증과 수신자 암호화의 분리'], ['scope', '학습 범위와 출처'], ['appendix', '부록 · 교안 비교']]) {
     await page.goto(app + '#' + route); await page.locator('#view h1').waitFor();
     assert.equal(await page.locator('#view h1').innerText(), heading);
     if (route.startsWith('lesson/')) {
@@ -61,7 +61,7 @@ try {
   }
   await catalog.locator('#dialog-close').click(); await catalog.waitForFunction(() => !location.hash);
   await catalog.locator('#catalog-search').fill('계정 동기화');
-  assert.equal(await catalog.locator('#project-grid .project-card').count(), 1);
+  assert.equal(await catalog.locator('#project-grid .project-card').count(), 2);
   assert.deepEqual(requests, []);
   checks.push('optional-sync description/search, real image, execution/source links, 390/320px dialog and zero gallery API requests');
   await ctx.close();

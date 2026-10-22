@@ -27,3 +27,5 @@ Preview images are static snapshots, not live-status badges. Descriptions come f
 D24 (2026-10-19): SENSE LAB alone uses `n/6종 체험 완료`; its optional detailed records are not read. Previous total-3 summaries retain their count and are labelled prior records until SENSE refreshes the minimal aggregate. No gallery write or new storage key is introduced. Other app labels remain unchanged.
 
 UTF-8 without BOM and CRLF for text. Images are binary. The gallery can be used without JavaScript through the maintained execution and source fallback links. Page titles and descriptive copy do not state a fixed catalog size; UI counts derive from the project catalog.
+
+D28 (2026-10-23): the approved WEB LAB account extension shares the existing managed identity only inside the two learning apps. The gallery adds a deliberate link to the Internet Security account screen and updates those two descriptions/previews. It still owns no Auth SDK, session, API calls or additional storage. Other app entries and images stay unchanged.
