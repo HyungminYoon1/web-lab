@@ -1,6 +1,6 @@
 # Verification record
 
-## 2026-10-22 — 인터넷보안 소개·선택적 계정 동기화 / LOCAL
+## 2026-10-22 — 인터넷보안 소개·선택적 계정 동기화 / LOCAL · REMOTE_CI · LIVE
 
 - SOURCE: 지정된 로컬 인계문 전체와 추적 제외 설정, 갤러리 architecture/README·카탈로그·화면·검사·배포 설정, 연결 앱의 계정 계약과 이번 본문·부록 변경을 확인했다. 큰 저작 파일과 과거 기록은 관련 구간만 읽었으며, 원본 PDF와 다른 20개 앱 구현은 이번에 재검토하지 않았다.
 - CHANGE: 인터넷보안 학습실의 비로그인 브라우저 저장·선택적 이메일 계정 동기화·사용자 확인 후 기존 기록 가져오기를 소개한다. 반복적인 교안 비교 안내는 제거하고 근거 중심 학습을 설명한다. 연결 앱의 비교 이력은 선택 부록에 보존한다.
@@ -11,7 +11,10 @@
 - APP_LIVE: 공개 앱 39개 dist 파일 HTTP 200/로컬 바이트 일치. 공개 Chromium 전체 **25/25 PASS**. 독립 연결 검사도 공개 앱에서 재실행했고 pageerror 없이 PASS했다.
 - PRESERVATION: 갤러리의 계정 기능·DB 접근·추가 네트워크 요청·상세 기록 열람을 도입하지 않는다. 기존 완료 요약 계약, 다른 앱의 데이터·소개·미리보기와 로컬 인계문의 Git 제외 설정을 유지한다.
 - OTHER_APPS: 나머지 20개 소개 객체와 20개 JPEG 바이트가 변경 전 HEAD와 동일함을 별도 비교했다.
-- Reproduce: `node tools/verify-security-link-20261022.mjs ../internet-security-study/package.json GALLERY_URL APP_URL`. `--capture`는 이 앱의 미리보기만 갱신한다. 로컬 시험과 원격 CI·공개 배포 결과는 구분하며 원격 결과는 실행 후 기록한다.
+- REMOTE_CI: 갤러리 `271675dc7096368094518a954666ed24b514e0a6`, [Actions 39784904856](https://github.com/HyungminYoon1/web-lab/actions/runs/39784904856), Ubuntu verify·deploy SUCCESS.
+- LIVE_FILES: 갤러리의 26개 공개 dist 파일 모두 HTTP 200/로컬 바이트 일치. 앱의 39개 파일과 별도로 확인했다.
+- LIVE_BROWSER: 두 공개 사이트를 대상으로 연결 검사 전체 PASS. 새 소개/검색·동기화/가져오기 안내·실제 JPEG·실행/소스 링크·계정/개념/출처/부록·390/320px·21개 no-JS 서비스와 42개 링크를 확인했다. 갤러리 fetch/XHR 요청 0, pageerror 0. 공개 데스크톱 소개창과 앱 홈 캡처도 육안 확인했다.
+- Reproduce: `node tools/verify-security-link-20261022.mjs ../internet-security-study/package.json GALLERY_URL APP_URL`. `--capture`는 이 앱의 미리보기만 갱신한다. 로컬 시험과 원격 CI·공개 배포 결과는 구분한다. 이 결과 추가 커밋은 문서만 수정하며 검증한 dist 바이트는 유지한다.
 
 ## 2026-10-22 — engineer-practice answer-first preview / LOCAL
 
