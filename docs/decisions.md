@@ -1,5 +1,14 @@
 # Decisions
 
+## D29 — Portfolio navigation and reviewed publication (2026-11-18)
+
+- Context: user requested a modern redesign of the independent portfolio and a gallery entry link, reviewed the local design and then explicitly approved both repositories for commit, push and Pages deployment after final privacy/link checks.
+- Options: register the portfolio as another app; share identity/records; add deliberate navigation between independent static sites.
+- Decision: add one portfolio link in the gallery header navigation and responsive wrapping. The user subsequently requested removing the duplicate about-section link; no footer duplicate is added. Keep the 21-app catalog, completion contract and independent repositories. Public source retains the real Pages URL; an ignored local review server substitutes only the two sites' navigation destinations with loopback URLs in HTML responses. Publication uses the existing main-branch GitHub Pages workflows after the approved final checks; the preview server and original personal files remain excluded.
+- Rationale: visitors can find the developer portfolio without changing app counts, loading embedded content or reading account/learning data.
+- Affected: dist/index.html, dist/styles.css, README.md, docs/decisions.md, docs/verification.md. Portfolio implementation lives in its own repository.
+- Review: desktop/320px header link, no duplicate in about/footer, local popup round trip, no-JS access, existing search/dialog, unchanged catalog/modules/previews and LOCAL_HANDOFF.txt exclusion.
+
 ## D27 — Internet Security optional accounts and evidence-based teaching (2026-10-22)
 
 - Context: the user requested correcting the outdated no-account/no-DB app description, refreshing actual previews, and publishing both repositories after verification.

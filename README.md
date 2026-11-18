@@ -2,7 +2,7 @@
 
 브라우저에서 실행하는 게임·실험·학습·창작 도구의 갤러리입니다.
 
-[갤러리](https://hyungminyoon1.github.io/web-lab/) · [구조](architecture.md) · [결정 기록](docs/decisions.md) · [검증 기록](docs/verification.md)
+[갤러리](https://hyungminyoon1.github.io/web-lab/) · [개발 포트폴리오](https://hyungminyoon1.github.io/) · [구조](architecture.md) · [결정 기록](docs/decisions.md) · [검증 기록](docs/verification.md)
 
 ## 프로젝트
 

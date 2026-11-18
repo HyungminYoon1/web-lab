@@ -1,5 +1,16 @@
 # Verification record
 
+## 2026-11-18 — Portfolio navigation / LOCAL and approved publication
+
+- Scope: one portfolio link in the header and responsive menu spacing. No duplicate about/footer link, catalog entry, app image, module, record or account change. The user reviewed the local version and explicitly approved commit/push/deployment of the portfolio and WEB LAB.
+- SOURCES: VERIFIED the named LOCAL_HANDOFF.txt in full and its Git exclusion. PARTIAL gallery repository: architecture/README, related shell/CSS, tests/tools and relevant decision/verification sections; unrelated app implementations and all old work records were not fully reread. Portfolio source/photo review stays in that repository's excluded local notes.
+- LOCAL: Node 28/28 PASS; static 26-file/21-JPEG checks PASS. All three dist JavaScript modules and 21 JPEGs are unchanged from the prior release.
+- BROWSER: desktop/phone layouts, portfolio link in the header only, local popup round trip, existing search and preview/Escape operation checked. JavaScript-disabled navigation retains 42 app/source fallback links and the portfolio link. No observed gallery fetch/XHR or pageerror.
+- PRIVACY: all 26 tracked text files scanned for contact information, credential patterns and local personal paths. The only generic local executable paths found are the pre-existing Chrome program paths in non-deployed verifier scripts. No personal user-directory path or new private field found. Commit identity uses GitHub noreply. LOCAL_HANDOFF.txt remains ignored and untracked.
+- LINKS: all 58 distinct external URLs across both sites returned HTTP 200 without authentication. The account fragment is a client-side route; its actual WEB LAB account screen was verified in a browser. StoreOps is labelled private in the portfolio with no unconfirmed URL, following the user's final instruction.
+- DEPLOYMENT: the main-branch workflow verifies and deploys only dist. Exact commit/run IDs and public byte/UI checks are reported with the publication result; local checks alone do not establish a successful release.
+- LIMIT: physical mobile devices and other browser engines were not tested in this change. No account operation or connected-app migration was performed.
+
 ## 2026-10-22 — 인터넷보안 소개·선택적 계정 동기화 / LOCAL · REMOTE_CI · LIVE
 
 - SOURCE: 지정된 로컬 인계문 전체와 추적 제외 설정, 갤러리 architecture/README·카탈로그·화면·검사·배포 설정, 연결 앱의 계정 계약과 이번 본문·부록 변경을 확인했다. 큰 저작 파일과 과거 기록은 관련 구간만 읽었으며, 원본 PDF와 다른 20개 앱 구현은 이번에 재검토하지 않았다.

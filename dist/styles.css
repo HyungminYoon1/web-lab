@@ -28,8 +28,8 @@ button:disabled { cursor: default; }
 .brand { display: inline-flex; align-items: center; gap: .45rem; font-size: 1.55rem; font-weight: 900; letter-spacing: -.055em; text-decoration: none; line-height: 1; }
 .brand-mark { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-right: .3rem; background: var(--accent); color: var(--background); font-size: 1.25rem; transform: rotate(-7deg); border-radius: 6px; letter-spacing: -.1em; }
 .brand-lab { color: var(--accent); }
-.site-header nav { display: flex; gap: 1.75rem; font-size: .875rem; }
-.site-header nav a { text-decoration: none; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: .65rem 1.75rem; font-size: .875rem; }
+.site-header nav a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .site-header nav a:hover { color: var(--accent); }
 .catalog-intro { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
 .eyebrow { margin: 0 0 .8rem; color: var(--muted); font-size: .75rem; font-family: Consolas, monospace; letter-spacing: .12em; line-height: 1.5; }
@@ -129,8 +129,8 @@ h1 { margin: 0; font-size: clamp(2rem, 4.2vw, 3.65rem); line-height: 1.25; lette
   .difficulty-filter { width: 100%; }
   #choose-project { width: 100%; }
   .site-header, main, .site-footer { width: calc(100% - 2.5rem); }
-  .site-header { min-height: 76px; }
-  .site-header nav { gap: 1rem; }
+  .site-header { min-height: 76px; flex-wrap: wrap; padding-block: 1rem; gap: .5rem; }
+  .site-header nav { width: 100%; gap: .25rem 1.2rem; }
   .catalog-intro { padding: 2rem 0; align-items: flex-start; gap: 1rem; }
   .catalog-stamp { flex-basis: 95px; padding: .75rem; transform: none; }
   .catalog-stamp strong { font-size: 3rem; }
