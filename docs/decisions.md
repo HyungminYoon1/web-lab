@@ -1,5 +1,11 @@
 # Decisions
 
+## D30 — 독립 계정 센터 연결 (2026-11-20)
+
+사용자가 기존 계정을 모든 WEB LAB 앱의 진입점으로 분리하도록 승인했다. 앱마다 인증 양식을 유지하는 방식, 전체 진도를 중계하는 서버, 독립적인 인증 화면을 검토했다. 갤러리는 독립 계정 센터에 링크한다. 앱 목록·완료 표시에는 새 저장 항목을 추가하지 않는다. 변경 위치는 dist/index.html과 architecture.md다.
+
+계정과 진도 마이그레이션 없이 이전 #account 링크와 비로그인 기록을 유지한다. 배포 검토 순서는 계정 센터, 두 학습 앱, 갤러리다. 계정 센터의 공개 구조 문서에서 인증과 학습 기록의 처리 범위를 확인할 수 있다.
+
 ## D29 — Portfolio navigation and reviewed publication (2026-11-18)
 
 - Context: user requested a modern redesign of the independent portfolio and a gallery entry link, reviewed the local design and then explicitly approved both repositories for commit, push and Pages deployment after final privacy/link checks.

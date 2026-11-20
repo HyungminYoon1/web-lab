@@ -28,4 +28,6 @@ D24 (2026-10-19): SENSE LAB alone uses `n/6종 체험 완료`; its optional deta
 
 UTF-8 without BOM and CRLF for text. Images are binary. The gallery can be used without JavaScript through the maintained execution and source fallback links. Page titles and descriptive copy do not state a fixed catalog size; UI counts derive from the project catalog.
 
-D28 (2026-10-23): the approved WEB LAB account extension shares the existing managed identity only inside the two learning apps. The gallery adds a deliberate link to the Internet Security account screen and updates those two descriptions/previews. It still owns no Auth SDK, session, API calls or additional storage. Other app entries and images stay unchanged.
+D28 (2026-10-23): the approved WEB LAB account extension shares the existing managed identity only inside the two learning apps. At that release the gallery linked to the Internet Security account screen. It still owns no Auth SDK, session, API calls or additional storage. Other app entries and images stay unchanged.
+
+D30 (2026-11-20) assigns credential entry to the independent same-origin project at /web-lab-account/. The gallery header links there without loading a session or a learning record. Existing apps can register a fixed return ID. Only the two learning apps implement record sync.
